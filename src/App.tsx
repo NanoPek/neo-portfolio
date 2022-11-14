@@ -4,11 +4,21 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import HomePage from './screens/HomePage';
+import MyWork from './screens/MyWork';
+import MySkills from './screens/MySkills';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
+  },
+  {
+    path: '/my-work',
+    element: <MyWork />,
+  },
+  {
+    path: '/my-skills-&-tools',
+    element: <MySkills />,
   },
 ]);
 

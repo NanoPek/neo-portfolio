@@ -4,9 +4,9 @@ import welcomeRound from '../assets/welcome.svg';
 
 function HomePage() {
   return (
-    <div className="w-screen h-screen flex flex-col">
-      <Header />
-      <div className="w-full bg-primary">
+    <div className="w-screen h-screen flex flex-col ">
+      <Header dark />
+      <div className="w-full bg-primary pt-[10vh]">
         <div className="flex flex-col bg-primary text-secondary px-12 py-6 ">
           <h1 className="text-5xl font-bold">
             Full-Stack Developer.

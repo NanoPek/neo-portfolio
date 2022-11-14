@@ -13,5 +13,6 @@ root.render(
   </React.StrictMode>,
 );
 
+// eslint-disable-next-line no-console
 reportWebVitals(console.log);
 // This will report metrics into a console.
