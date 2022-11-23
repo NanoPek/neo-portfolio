@@ -9,7 +9,7 @@ import { ReactComponent as GithubIcon } from '../assets/githubIcon.svg';
 function Footer(props: { random?: boolean }) {
   const { random } = props;
 
-  const [colors, setColors] = React.useState(['#FF9505', '#FF9505', '#FF9505', '#FF9505', '#FF9505', '#BEE5BF',
+  const [colors, setColors] = React.useState(['#FF9505', '#FF9505', '#FF9505', '#FF9505', '#FF9505', '#BEE5BF', '#BEE5BF',
     '#FF9505', '#FF9505', '#FF9505']);
 
   const generateRandomColor = () => {
@@ -37,8 +37,8 @@ function Footer(props: { random?: boolean }) {
   }, [random]);
 
   return (
-    <div className="flex flex-col justify-between w-screen h-[450px] px-[15vw] bg-dark py-6 ">
-      <div className="flex flex-col h-[45%] justify-between">
+    <div className="flex flex-col justify-between w-screen h-[65vh] px-[15vw] bg-dark py-6 ">
+      <div className="flex flex-col h-[40%] justify-between">
         <a href="/" className={`text-[${colors[0]}] text-xl`} style={{ color: colors[0] }}>
           Home
         </a>
@@ -52,24 +52,33 @@ function Footer(props: { random?: boolean }) {
           My Résumé
         </a>
       </div>
-      <div className="flex flex-col h-[10vh] justify-between">
+      <div className="flex flex-col h-[20%] justify-between">
         <div className={`text-[${colors[4]}] text-xl`} style={{ color: colors[4] }}>
           CONTACT ME
         </div>
-        <a href="mailto:jecarrez.pro@gmail.com" className={`text-[${colors[5]}] text-xl underline underline-offset-2`} style={{ color: colors[5] }}>
+        <a href="https://www.linkedin.com/in/jeremiecarrez/" className={`text-[${colors[5]}] text-xl underline underline-offset-2`} style={{ color: colors[5] }}>
+          linkedin
+        </a>
+        <a href="mailto:jecarrez.pro@gmail.com" className={`text-[${colors[6]}] text-xl underline underline-offset-2`} style={{ color: colors[6] }}>
           jecarrez.pro@gmail.com
         </a>
       </div>
       <div className="flex flex-row justify-evenly h-[40px]">
         <a href="https://www.linkedin.com/in/jeremiecarrez/" target="_blank" rel="noreferrer">
-          <LinkedinIcon className={`fill-current text-[${colors[6]}]`} style={{ color: colors[6] }} />
+          <LinkedinIcon className={`fill-current text-[${colors[7]}]`} style={{ color: colors[7] }} />
         </a>
         <a href="https://twitter.com/NanoPekTo" target="_blank" rel="noreferrer">
-          <TwitterIcon className={`fill-current text-[${colors[7]}]`} style={{ color: colors[7] }} />
+          <TwitterIcon className={`fill-current text-[${colors[9]}]`} style={{ color: colors[8] }} />
         </a>
         <a href="https://github.com/NanoPek" target="_blank" rel="noreferrer">
-          <GithubIcon className={`fill-current text-[${colors[8]}]`} style={{ color: colors[8] }} />
+          <GithubIcon className={` fill-current text-[${colors[9]}]`} style={{ color: colors[9] }} />
         </a>
+      </div>
+      <div className="flex flex-col justify-between h-[10%] w-full">
+        <div className="h-px w-full bg-secondary" />
+        <div className="text-accent text-lg ">
+          © Jérémie Carrez 2022
+        </div>
       </div>
     </div>
   );

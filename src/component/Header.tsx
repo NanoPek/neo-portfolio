@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ReactComponent as Face } from '../assets/Face.svg';
 import imageOpen from '../assets/FaceOpen.svg';
-import linkedinIcon from '../assets/linkedinIcon.svg';
-import githubIcon from '../assets/githubIcon.svg';
-import twitterIcon from '../assets/twitterIcon.svg';
+
+import { ReactComponent as LinkedinIcon } from '../assets/linkedinIcon.svg';
+import { ReactComponent as TwitterIcon } from '../assets/twitterIcon.svg';
+import { ReactComponent as GithubIcon } from '../assets/githubIcon.svg';
 
 import pdf from '../assets/resumeCARREZJeremie.pdf';
 
@@ -15,6 +17,8 @@ function Header(props: { dark: boolean, random?: boolean }) {
 
   const textColor = dark ? 'text-secondary' : 'text-primary';
   const bgColor = dark ? 'bg-primary' : 'bg-light';
+
+  const location = useLocation();
 
   const toggle = () => {
     setIsToggle(!isToggle);
@@ -59,9 +63,19 @@ function Header(props: { dark: boolean, random?: boolean }) {
       {
         !isToggle ? (
           <header className={`${bgColor} flex flex-row justify-between items-center px-4 w-screen h-[10vh] `}>
-            <div className={` ${textColor} font-extrabold text-3xl`} id="title">
-              Nanȯ
-            </div>
+            {
+              location.pathname !== '/'
+                ? (
+                  <a href="/" className={` ${textColor} font-extrabold text-3xl`} id="title">
+                    Nanȯ
+                  </a>
+                )
+                : (
+                  <div className={` ${textColor} font-extrabold text-3xl`}>
+                    Nanȯ
+                  </div>
+                )
+            }
             <button type="button" onClick={toggle}>
               <Face stroke={faceColor} />
             </button>
@@ -69,45 +83,88 @@ function Header(props: { dark: boolean, random?: boolean }) {
         ) : (
           <div className="bg-light flex flex-col  items-center px-4 w-screen h-screen">
             <header className=" flex flex-row justify-between items-center px-4 w-screen h-[10vh] ">
-              <div className="font-extrabold text-primary text-3xl">
-                Nanȯ
-              </div>
+              {
+                location.pathname !== '/'
+                  ? (
+                    <a href="/" className={` ${textColor} font-extrabold text-3xl`}>
+                      Nanȯ
+                    </a>
+                  )
+                  : (
+                    <div className={` ${textColor} font-extrabold text-3xl`}>
+                      Nanȯ
+                    </div>
+                  )
+              }
               <button type="button" onClick={toggle}>
                 <img src={imageOpen} alt="Menu" />
               </button>
             </header>
             <div className="flex flex-col justify-evenly w-screen px-[15vw] h-[90vh]">
               <div className="flex flex-col h-1/4 justify-between">
-                <a href="/" className="text-primary text-xl">
-                  Home
-                </a>
-                <a href="my-work" className="text-primary text-xl">
-                  My Work
-                </a>
-                <a href="my-skills-&-tools" className="text-primary text-xl">
-                  My Skills & Tools
-                </a>
+                {
+                  location.pathname !== '/'
+                    ? (
+                      <a href="/" className="text-primary text-xl">
+                        Home
+                      </a>
+                    )
+                    : (
+                      <div className="text-primary text-xl">
+                        Home
+                      </div>
+                    )
+                }
+                {
+                  location.pathname !== '/my-work'
+                    ? (
+                      <a href="/my-work" className="text-primary text-xl">
+                        My Work
+                      </a>
+                    )
+                    : (
+                      <div className="text-primary text-xl">
+                        My Work
+                      </div>
+                    )
+                }
+                {
+                  location.pathname !== '/my-skills-&-tools'
+                    ? (
+                      <a href="/my-skills-&-tools" className="text-primary text-xl">
+                        My Skills & Tools
+                      </a>
+                    )
+                    : (
+                      <div className="text-primary text-xl">
+                        My Skills & Tools
+                      </div>
+                    )
+                }
                 <a href={pdf} target="_blank" rel="noreferrer" className="text-primary text-xl">
                   My Résumé
                 </a>
               </div>
-              <div className="flex flex-col h-[10vh] justify-between">
+              <div className="flex flex-col h-[15vh] justify-between">
                 <div className="text-primary text-2xl opacity-50">
                   CONTACT ME
                 </div>
+                <a href="https://www.linkedin.com/in/jeremiecarrez/" className="text-primary text-xl underline underline-offset-2  ">
+                  linkedin
+                </a>
                 <a href="mailto:jecarrez.pro@gmail.com" className="text-primary text-xl underline underline-offset-2  ">
                   jecarrez.pro@gmail.com
                 </a>
               </div>
               <div className="flex flex-row justify-evenly h-[40px]">
                 <a href="https://www.linkedin.com/in/jeremiecarrez/" target="_blank" rel="noreferrer">
-                  <img src={linkedinIcon} alt="LinkedIn" />
+                  <LinkedinIcon className="fill-current text-accent" />
                 </a>
                 <a href="https://twitter.com/NanoPekTo" target="_blank" rel="noreferrer">
-                  <img src={twitterIcon} alt="Twitter" />
+                  <TwitterIcon className="fill-current text-accent" />
                 </a>
                 <a href="https://github.com/NanoPek" target="_blank" rel="noreferrer">
-                  <img src={githubIcon} alt="GitHub" />
+                  <GithubIcon className="fill-current text-accent" />
                 </a>
               </div>
             </div>
