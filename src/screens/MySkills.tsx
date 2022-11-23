@@ -1,16 +1,16 @@
 import React from 'react';
-import Header from '../component/Header';
-import Footer from '../component/Footer';
-import WebToolbox from '../component/WebToolbox';
-import MobileToolbox from '../component/MobileToolbox';
-import AllPurposeToolbox from '../component/AllPurposeToolbox';
-import BackendToolbox from '../component/BackendToolbox';
+import Header from '../component/templates/Header';
+import Footer from '../component/templates/Footer';
+import WebToolbox from '../component/templates/WebToolbox';
+import MobileToolbox from '../component/templates/MobileToolbox';
+import AllPurposeToolbox from '../component/templates/AllPurposeToolbox';
+import BackendToolbox from '../component/templates/BackendToolbox';
 
 function MySkills() {
   return (
     <div className="w-screen flex flex-col ">
       <Header dark={false} random />
-      <div className="w-full bg-light flex flex-col pt-[10vh]">
+      <div className="w-full bg-light flex flex-col pt-[10vh] mb-8">
         <WebToolbox />
         <MobileToolbox />
         <AllPurposeToolbox />

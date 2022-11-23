@@ -1,11 +1,11 @@
 import React from 'react';
-import Skill from './Skill';
+import Skill from '../atoms/Skill';
 
 function Toolbox() {
   return (
     <div className="w-full flex flex-col ">
       <h2 className="text-4xl font-bold text-center text-dark p-6">Mobile Dev Tools</h2>
-      <div className="grid grid-cols-2 w-screen place-items-stretch">
+      <div className="grid grid-cols-2 w-screen place-items-stretch sm:grid-cols-3 xl:grid-cols-6">
 
         <Skill name="Android" icon="devicon-android-plain colored" color="#8cac1d" />
         <Skill name="Apple" icon="devicon-apple-original text-white" color="#A2AAAD" />

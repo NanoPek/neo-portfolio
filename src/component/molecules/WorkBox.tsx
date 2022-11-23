@@ -6,11 +6,10 @@ function WorkBox(props: { image: string; title: string; link: string; }) {
   function removeHttp(url : string) {
     return url.replace(/^https?:\/\//, '');
   }
-
   return (
-    <div className="bg-white border-[3px] border-dark shadow-[16px_16px_1px_0_rgba(25,11,40,0.8)]">
-      <img src={image} alt="work" />
-      <div className="text-primary text-2xl p-4 ">
+    <div className="bg-white border-[3px] border-dark shadow-[16px_16px_1px_0_rgba(25,11,40,0.8)] w-full flex flex-col max-w-[400px] items-center">
+      <img src={image} alt="work" className="h-1/2" />
+      <div className="text-primary text-2xl p-4 w-full ">
         <div className="text-dark ">
           {title}
         </div>
