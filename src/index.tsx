@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -13,6 +12,29 @@ root.render(
   </React.StrictMode>,
 );
 
-// eslint-disable-next-line no-console
-reportWebVitals(console.log);
-// This will report metrics into a console.
+console.log('    ,__                   __\n'
+    + "    '~~****Nm_    _mZ*****~~\n"
+    + '            _8@mm@K_\n'
+    + "           W~@`  '@~W\n"
+    + '          ][][    ][][\n'
+    + "    gz    'W'W.  ,W`W`    es\n"
+    + '  ,Wf    gZ****MA****Ns    VW.\n'
+    + " gA`   ,Wf     ][     VW.   'Ms\n"
+    + "Wf    ,@`      ][      '@.    VW\n"
+    + "M.    W`  _mm_ ][ _mm_  'W    ,A\n"
+    + "'W   ][  i@@@@i][i@@@@i  ][   W`\n"
+    + ' !b  @   !@@@@!][!@@@@!   @  d!\n'
+    + '  VWmP    ~**~ ][ ~**~    YmWf\n'
+    + '    ][         ][         ][\n'
+    + '  ,mW[         ][         ]Wm.\n'
+    + " ,A` @  ,gms.  ][  ,gms.  @ 'M.\n"
+    + " W`  Yi W@@@W  ][  W@@@W iP  'W\n"
+    + "d!   'W M@@@A  ][  M@@@A W`   !b\n"
+    + "@.    !b'V*f`  ][  'V*f`d!    ,@\n"
+    + "'Ms    VW.     ][     ,Wf    gA`\n"
+    + "  VW.   'Ms.   ][   ,gA`   ,Wf\n"
+    + "   'Ms    'V*mmWWmm*f`    gA`\n\n"
+    + '     Hey there little bug 🐛👋!\n'
+    + '     Are you intrigued by this website?\n'
+    + '     If so, you can take a look at the code behind it on GitHub at https://github.com/nanoPek.\n'
+    + "     Also, don't hesitate to reach out to me on Twitter at https://twitter.com/NanoPekTo or via email at jecarrez.pro@gmail.com ✨.");
