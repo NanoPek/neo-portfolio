@@ -5,7 +5,7 @@ function Toolbox() {
   return (
     <div className="w-full flex flex-col ">
       <h2 className="text-4xl font-bold text-center text-dark p-6">All purpose Tools</h2>
-      <div className="grid grid-cols-2 w-screen place-items-stretch sm:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 w-screen place-items-stretch lg:grid-cols-3 xl:grid-cols-6">
 
         <Skill name="JetBrains" icon="devicon-jetbrains-plain colored" color="#ffdc78" />
         <Skill name="VSCode" icon="devicon-vscode-plain colored" color="#8bbae3" />

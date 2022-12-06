@@ -36,7 +36,7 @@ function Footer(props: { random?: boolean }) {
 
   return (
     <div className="flex flex-col justify-between w-screen h-[65vh] px-[15vw] bg-dark py-6 ">
-      <div className="flex flex-col h-[40%] justify-between">
+      <div className="flex flex-col h-[45%] justify-between">
         <Router title="Home" route="/" color={colors[0]} />
         <Router title="My Work" route="/my-work" color={colors[1]} />
         <Router title="My Skills & Tools" route="/my-skills-&-tools" color={colors[2]} />
@@ -50,7 +50,6 @@ function Footer(props: { random?: boolean }) {
         <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" color={colors[6]} />
       </div>
       <Icons colors={colors.slice(7, colors.length)} />
-
       <div className="flex flex-col justify-between h-[10%] w-full">
         <div className="h-px w-full bg-secondary" />
         <div className="text-accent text-lg ">

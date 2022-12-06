@@ -12,9 +12,9 @@ function MyWork() {
   return (
     <div className="flex flex-col ">
       <Header dark={false} />
-      <div className="bg-light flex flex-col items-center pt-[10vh] mb-6 sm:items-center">
-        <div className="flex flex-col w-5/6 py-6 gap-9 items-center sm:grid sm:grid-cols-3 sm:w-screen sm:px-60 sm:place-items-stretch ">
-          <WorkBox image={moonalisaImage} title="moonalisa App" link="https://moonalisa.co" />
+      <div className="bg-light flex flex-col items-center pt-[10vh] mb-6 2xl:items-center">
+        <div className="flex flex-col w-5/6 py-6 gap-9 items-center lg:grid lg:grid-cols-2 2xl:grid-cols-3 2xl:w-screen 2xl:px-60  ">
+          <WorkBox image={moonalisaImage} title="moonalisa App (private beta)" link="https://moonalisa.co" />
           <WorkBox image={hi7hautImage} title="Coin Game PWA" link="https://pieces.hi7haut.fr/" />
           <WorkBox image={hi7hautWeb} title="BDE Portfolio" link="https://www.hi7haut.fr/" />
           <WorkBox image={portfolio} title="This Portfolio !" link="https://jeremiecarrez.live" />

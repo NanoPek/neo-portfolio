@@ -5,7 +5,7 @@ function WebToolbox() {
   return (
     <div className="w-full flex flex-col ">
       <h2 className="text-4xl font-bold text-center text-dark p-6">Web Dev Tools</h2>
-      <div className="grid grid-cols-2 w-screen place-items-stretch sm:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 w-screen place-items-stretch lg:grid-cols-3 xl:grid-cols-6">
 
         <Skill name="HTML" icon="devicon-html5-plain colored" color="#f98c6b" />
         <Skill name="CSS" icon="devicon-css3-plain colored" color="#67a1d0" />

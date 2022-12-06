@@ -5,7 +5,7 @@ function Toolbox() {
   return (
     <div className="w-full flex flex-col ">
       <h2 className="text-4xl font-bold text-center text-dark p-6">Mobile Dev Tools</h2>
-      <div className="grid grid-cols-2 w-screen place-items-stretch sm:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 w-screen place-items-stretch lg:grid-cols-3 xl:grid-cols-6">
 
         <Skill name="React Native" icon="devicon-react-original colored" color="#a1e7fc" />
         <Skill name="Firebase" icon="devicon-firebase-plain colored " color="#ffd616" />
