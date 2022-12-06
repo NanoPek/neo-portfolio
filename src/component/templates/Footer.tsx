@@ -30,7 +30,7 @@ function Footer(props: { random?: boolean }) {
   useEffect(() => {
     if (random) {
       setAllRandomColors();
-      setInterval(setAllRandomColors, 5000);
+      setInterval(setAllRandomColors, 4000);
     }
   }, [random]);
 

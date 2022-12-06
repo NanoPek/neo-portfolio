@@ -52,8 +52,8 @@ function Header(props: { dark: boolean, random?: boolean }) {
     if (random) {
       setFaceColor(generateRandomColor);
       randomizeText();
-      setInterval(randomizeText, 5000);
-      setInterval(() => setFaceColor(generateRandomColor), 5000);
+      setInterval(randomizeText, 4000);
+      setInterval(() => setFaceColor(generateRandomColor), 4000);
     }
   }, [random]);
 
@@ -68,11 +68,11 @@ function Header(props: { dark: boolean, random?: boolean }) {
     <div className="z-50 absolute sm:right-0 flex flex-row">
       {
         !isToggle ? (
-          <header className="flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-20 sm:h-[18vh] ">
+          <header className="flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-20  ">
             {
               location.pathname !== '/'
                 ? (
-                  <a href="/Users/jerem/WebstormProjects/new-portfolio-ts/public" className={` ${textColor} font-extrabold text-3xl sm:text-5xl`} id="title">
+                  <a href="/" className={` ${textColor} font-extrabold text-3xl sm:text-5xl`} id="title">
                     Nanȯ
                   </a>
                 )
@@ -83,27 +83,27 @@ function Header(props: { dark: boolean, random?: boolean }) {
                 )
             }
             <button type="button" onClick={toggle}>
-              <Face stroke={width < 640 ? faceColor : '#8338EC'} transform={width < 640 ? '' : 'scale(1.5)'} />
+              <Face fill={width < 640 ? faceColor : '#8338EC'} transform={width < 640 ? '' : 'scale(1.5)'} className="animate-pulse hover:animate-ping transition transition-all" />
             </button>
           </header>
         ) : (
           <div className="bg-light flex flex-col  items-center px-4 w-screen h-screen ">
-            <header className=" flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-20 sm:h-[18vh] ">
+            <header className=" flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-20  ">
               {
                 location.pathname !== '/'
                   ? (
-                    <a href="/Users/jerem/WebstormProjects/new-portfolio-ts/public" className={` ${textColor} font-extrabold text-3xl sm:text-5xl`}>
+                    <a href="/Users/jerem/WebstormProjects/new-portfolio-ts/public" className=" text-primary font-extrabold text-3xl sm:text-5xl">
                       Nanȯ
                     </a>
                   )
                   : (
-                    <div className={` ${textColor} font-extrabold text-3xl sm:text-5xl`}>
+                    <div className=" text-primary font-extrabold text-3xl sm:text-5xl">
                       Nanȯ
                     </div>
                   )
               }
               <button type="button" onClick={toggle}>
-                <FaceOpen transform={width < 640 ? '' : 'scale(1.5)'} />
+                <FaceOpen fill="#8338EC" transform={width < 640 ? '' : 'scale(1.5)'} className="animate-pulse hover:animate-ping" />
               </button>
             </header>
             <div className="flex flex-col justify-evenly w-screen px-[15vw] h-[90vh]">
@@ -111,13 +111,13 @@ function Header(props: { dark: boolean, random?: boolean }) {
                 <Router title="Home" route="/" />
                 <Router title="My Work" route="/my-work" />
                 <Router title="My Skills & Tools" route="/my-skills-&-tools" />
-                <Router title="My Résumé" route={pdf} />
+                <Router title="My Résumé" route={pdf} newTab />
               </div>
               <div className="flex flex-col h-[15vh] justify-between">
                 <div className="text-primary text-2xl opacity-50">
                   CONTACT ME
                 </div>
-                <Router title="linkedin" route="https://www.linkedin.com/in/jeremiecarrez/" />
+                <Router title={width < 640 ? 'linkedin' : 'linkedin.com/in/jeremiecarrez'} route="https://www.linkedin.com/in/jeremiecarrez/" newTab />
                 <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" />
               </div>
               <Icons />

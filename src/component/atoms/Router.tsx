@@ -2,8 +2,10 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 // eslint-disable-next-line react/require-default-props
-function Router(props: { title: string, route: string, color?: string }) {
-  const { title, route, color } = props;
+function Router(props: { title: string, route: string, color?: string, newTab?: boolean }) {
+  const {
+    title, route, color, newTab,
+  } = props;
 
   const location = useLocation();
 
@@ -13,7 +15,13 @@ function Router(props: { title: string, route: string, color?: string }) {
       {
         location.pathname !== route
           ? (
-            <a href={route} className="text-primary text-xl border-b-2 border-transparent hover:border-primary transition transition-all" style={color ? { color } : {}}>
+            <a
+              href={route}
+              className="text-primary text-xl border-b-2 border-transparent hover:border-primary transition transition-all"
+              style={color ? { color } : {}}
+              target={newTab ? '_blank' : ''}
+              rel="noopener noreferrer"
+            >
               {title}
             </a>
           )

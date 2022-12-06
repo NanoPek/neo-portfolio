@@ -10,7 +10,7 @@ function MySkills() {
   return (
     <div className="w-screen flex flex-col ">
       <Header dark={false} random />
-      <div className="w-full bg-light flex flex-col pt-[10vh] mb-8">
+      <div className="w-full bg-light flex flex-col pt-[10vh]">
         <WebToolbox />
         <MobileToolbox />
         <AllPurposeToolbox />

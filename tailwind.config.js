@@ -23,12 +23,13 @@ module.exports = {
                     backgroundPosition: '0 0',
                 },
                 '100%': {
-                    backgroundPosition: '-400% 0',
+                    backgroundPosition: '-400% 2000%',
                 },
             }
         },
         animation: {
-            animatedBackground: 'animatedBackground 20s linear infinite',
+            animatedBackground: 'animatedBackground 100s linear infinite',
+            animatedBackgroundMobile: 'animatedBackground 300s linear infinite',
             spinSlow: 'spin 10s linear infinite',
         }
     },
