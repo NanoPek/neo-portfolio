@@ -72,12 +72,12 @@ function Header(props: { dark: boolean, random?: boolean }) {
             {
               location.pathname !== '/'
                 ? (
-                  <a href="/" className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl`} id="title">
+                  <a href="/" className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl `} id="title">
                     Nanȯ
                   </a>
                 )
                 : (
-                  <div className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl`}>
+                  <div className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl cursor-default`}>
                     Nanȯ
                   </div>
                 )
@@ -97,7 +97,7 @@ function Header(props: { dark: boolean, random?: boolean }) {
                     </a>
                   )
                   : (
-                    <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
+                    <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl cursor-default">
                       Nanȯ
                     </div>
                   )
