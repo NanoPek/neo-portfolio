@@ -7,12 +7,13 @@ import pdf from '../../assets/resumeCARREZJeremie.pdf';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import Router from '../atoms/Router';
 import Icons from '../atoms/Icons';
+import MyColors from '../atoms/MyColors';
 
 // eslint-disable-next-line react/require-default-props
 function Header(props: { dark: boolean, random?: boolean }) {
   const { dark, random } = props;
   const [isToggle, setIsToggle] = React.useState(false);
-  const [faceColor, setFaceColor] = React.useState(dark ? '#BEE5BF' : '#8338EC');
+  const [faceColor, setFaceColor] = React.useState(dark ? MyColors.secondary : MyColors.primary);
 
   const textColor = dark ? 'text-secondary' : 'text-primary';
   const { width } = useWindowDimensions();
@@ -83,11 +84,11 @@ function Header(props: { dark: boolean, random?: boolean }) {
                 )
             }
             <button type="button" onClick={toggle}>
-              <Face fill={width < 640 ? faceColor : '#8338EC'} transform={width < 1536 ? '' : 'scale(1.5)'} className="animate-pulse hover:animate-ping transition transition-all" />
+              <Face fill={width < 640 ? faceColor : MyColors.primary} transform={width < 1536 ? '' : 'scale(1.5)'} className="animate-pulse hover:animate-ping transition transition-all" />
             </button>
           </header>
         ) : (
-          <div className="bg-light flex flex-col  items-center px-4 w-screen h-screen ">
+          <div className="bg-secondary flex flex-col  items-center px-4 w-screen h-screen ">
             <header className=" flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
               {
                 location.pathname !== '/'
@@ -103,7 +104,7 @@ function Header(props: { dark: boolean, random?: boolean }) {
                   )
               }
               <button type="button" onClick={toggle}>
-                <FaceOpen fill="#8338EC" transform={width < 1536 ? '' : 'scale(1.5)'} className="animate-pulse hover:animate-ping" />
+                <FaceOpen fill={MyColors.primary} transform={width < 1536 ? '' : 'scale(1.5)'} className="animate-pulse hover:animate-ping" />
               </button>
             </header>
             <div className="flex flex-col justify-evenly w-screen px-[15vw] h-[90vh]">

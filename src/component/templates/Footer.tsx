@@ -3,12 +3,14 @@ import pdf from '../../assets/resumeCARREZJeremie.pdf';
 
 import Router from '../atoms/Router';
 import Icons from '../atoms/Icons';
+import MyColors from '../atoms/MyColors';
 // eslint-disable-next-line react/require-default-props
 function Footer(props: { random?: boolean }) {
   const { random } = props;
 
-  const [colors, setColors] = React.useState(['#FF9505', '#FF9505', '#FF9505', '#FF9505', '#FF9505', '#BEE5BF', '#BEE5BF',
-    '#FF9505', '#FF9505', '#FF9505']);
+  const [colors, setColors] = React.useState([MyColors.accent, MyColors.accent, MyColors.accent,
+    MyColors.accent, MyColors.accent, MyColors.secondary, MyColors.secondary,
+    MyColors.accent, MyColors.accent, MyColors.accent]);
 
   const generateRandomColor = () => {
     const allColors = ['#f98c6b', '#67a1d0', '#007acc', '#f0db4f', '#bcdc77', '#a1e7fc', '#89d0ab', '#7ed9b2', '#d680a9',

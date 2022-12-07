@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: "NeueMachina";
-    src: url("./fonts/NeueMachina-Regular.otf");
+    src: url("assets/fonts/NeueMachina-Regular.otf");
 }
 
 @font-face {
     font-family: "NeueMachina";
-    src: url("./fonts/NeueMachina-Ultrabold.otf");
+    src: url("assets/fonts/NeueMachina-Ultrabold.otf");
     font-weight: bold;
 }
 
@@ -32,7 +32,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #8338EC;
+    /*background: #8338EC;*/
     border-radius: 10px;
 }
 
