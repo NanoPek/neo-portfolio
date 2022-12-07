@@ -31,12 +31,20 @@ const MobileSkills = [
   { name: 'Xcode', icon: 'devicon-xcode-plain colored', color: '#85bcf3' },
 ];
 
-const AllPurposeTools = [
+const OtherTools = [
   { name: 'JetBrains', icon: 'devicon-jetbrains-plain colored', color: '#ffdc78' },
   { name: 'VSCode', icon: 'devicon-vscode-plain colored', color: '#8bbae3' },
-  { name: 'Git', icon: 'devicon-git-plain colored', color: '#ff8f6e' },
+
+  { name: 'Bash', icon: 'devicon-bash-plain colored', color: '#696f74' },
+
   { name: 'ESLint', icon: 'devicon-eslint-original colored', color: '#7253ce' },
-  { name: 'Command Line', icon: 'devicon-bash-plain colored', color: '#696f74' },
+
+  { name: 'Git', icon: 'devicon-git-plain colored', color: '#ff8f6e' },
+  { name: 'Github', icon: 'devicon-github-original colored', color: '#696f74' },
+
+  { name: 'Github Actions', icon: 'devicon-github-original colored', color: '#696f74' },
+
+  { name: 'Retool', icon: 'devicon-codepen-plain text-[#6875d9] ', color: '#8690E0' },
   { name: 'Figma', icon: 'devicon-figma-plain colored', color: '#ff8e68' },
 ];
 
@@ -80,8 +88,8 @@ function MySkills() {
         <div className="flex flex-col items-center" id="checkEmptyDiv">
           <Toolbox title="Web Tools" search={search} skills={WebSkills} />
           <Toolbox title="Mobile Tools" search={search} skills={MobileSkills} />
-          <Toolbox title="All purpose Tools" search={search} skills={AllPurposeTools} />
           <Toolbox title="Backend Tools" search={search} skills={BackendTools} />
+          <Toolbox title="Other Tools" search={search} skills={OtherTools} />
         </div>
         {isEmpty && (
         <div className="flex flex-col items-center justify-center h-[20vh]">

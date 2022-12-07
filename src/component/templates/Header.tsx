@@ -69,7 +69,7 @@ function Header(props: { dark: boolean, random?: boolean }) {
     <div className="z-50 absolute 2xl:right-0 flex flex-row ">
       {
         !isToggle ? (
-          <header className="flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
+          <header className="flex flex-row justify-between items-center px-8 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
             {
               location.pathname !== '/'
                 ? (

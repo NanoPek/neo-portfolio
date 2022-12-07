@@ -9,7 +9,7 @@ function BigScreenRoute(props: { route: string; title: string; newTab?: boolean;
     <a
       href={route}
       className="flex justify-center items-center text-white text-xl border-2 border-white rounded-2xl
-      transition transition-all p-8
+      transition transition-all p-6 2xl:p-8
       hover:border-primary hover:text-primary hover:bg-white hover:text-2xl hover:font-bold w-full max-w-md max-h-2"
       target={newTab ? '_blank' : ''}
       rel="noopener noreferrer"
