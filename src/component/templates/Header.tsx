@@ -118,7 +118,7 @@ function Header(props: { dark: boolean, random?: boolean }) {
                 <div className="text-primary text-2xl opacity-50">
                   CONTACT ME
                 </div>
-                <Router title={width < 640 ? 'linkedin' : 'linkedin.com/in/jeremiecarrez'} route="https://www.linkedin.com/in/jeremiecarrez/" newTab />
+                <Router title={width < 640 ? 'linkedin.com' : 'linkedin.com/in/jeremiecarrez'} route="https://www.linkedin.com/in/jeremiecarrez/" newTab />
                 <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" />
               </div>
               <Icons />

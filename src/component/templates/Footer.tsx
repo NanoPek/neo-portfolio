@@ -48,7 +48,7 @@ function Footer(props: { random?: boolean }) {
         <div className={`text-[${colors[4]}] text-xl`} style={{ color: colors[4] }}>
           CONTACT ME
         </div>
-        <Router title="linkedin" route="https://www.linkedin.com/in/jeremiecarrez/" color={colors[5]} />
+        <Router title="linkedin.com" route="https://www.linkedin.com/in/jeremiecarrez/" color={colors[5]} />
         <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" color={colors[6]} />
       </div>
       <Icons colors={colors.slice(7, colors.length)} />
