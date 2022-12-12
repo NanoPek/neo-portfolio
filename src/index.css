@@ -39,3 +39,13 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
     background: #190B28;
 }
+
+::-moz-selection { /* Code for Firefox */
+    color: #FC5656;
+    background: #FCD757;
+}
+
+::selection {
+    color: #FC5656;
+    background: #FCD757;
+}
