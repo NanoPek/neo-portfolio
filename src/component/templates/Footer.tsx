@@ -10,7 +10,7 @@ function Footer(props: { random?: boolean }) {
 
   const [colors, setColors] = React.useState([MyColors.accent, MyColors.accent, MyColors.accent,
     MyColors.accent, MyColors.accent, MyColors.secondary, MyColors.secondary,
-    MyColors.accent, MyColors.accent, MyColors.accent]);
+    MyColors.accent, MyColors.accent, MyColors.accent, MyColors.accent]);
 
   const generateRandomColor = () => {
     const allColors = ['#f98c6b', '#67a1d0', '#007acc', '#f0db4f', '#bcdc77', '#a1e7fc', '#89d0ab', '#7ed9b2', '#d680a9',
@@ -55,7 +55,11 @@ function Footer(props: { random?: boolean }) {
       <div className="flex flex-col justify-between h-[10%] w-full">
         <div className="h-px w-full bg-secondary" />
         <div className="text-accent text-lg ">
-          © Jérémie Carrez 2022
+          © Jérémie Carrez 2022 - check the repo here :
+          {' '}
+          <a href="https://github.com/NanoPek/neo-portfolio" className="underline">
+            https://github.com/NanoPek/neo-portfolio
+          </a>
         </div>
       </div>
     </div>

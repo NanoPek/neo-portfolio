@@ -21,7 +21,7 @@ function HomePage() {
               I&apos;m a full-stack & mobile developer with a passion for creating innovative
               digital solutions.
             </h2>
-            <div className="flex flex-row justify-between text-xs gap-4 h-full items-end sm:h-fit sm:items-center sm:text-base xl:justify-evenly xl:py-10 xl:w-full xl:gap-20 ">
+            <div className="flex flex-row justify-between text-xs gap-4 h-full items-end sm:h-fit sm:items-center sm:text-base xl:justify-evenly xl:py-10 xl:w-full">
               <span className="xl:w-56">
                 Eager to learn new tech,
                 consistently staying up to date with latest tools & trends in software dev.

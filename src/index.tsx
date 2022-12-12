@@ -36,5 +36,5 @@ console.log('    ,__                   __\n'
     + "   'Ms    'V*mmWWmm*f`    gA`\n\n"
     + '     Hey there little bug 🐛👋!\n'
     + '     Are you intrigued by this website?\n'
-    + '     If so, you can take a look at the code behind it on GitHub at https://github.com/nanoPek.\n'
+    + '     If so, you can take a look at the code behind it on GitHub here : https://github.com/NanoPek/neo-portfolio.\n'
     + "     Also, don't hesitate to reach out to me on Twitter at https://twitter.com/NanoPekTo or via email at jecarrez.pro@gmail.com ✨.");
