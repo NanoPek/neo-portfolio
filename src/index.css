@@ -3,19 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "NeueMachina";
-    src: url("assets/fonts/NeueMachina-Regular.otf");
-}
-
-@font-face {
-    font-family: "NeueMachina";
-    src: url("assets/fonts/NeueMachina-Ultrabold.otf");
-    font-weight: bold;
+    font-family: "Outfit";
+    src: url("assets/fonts/Outfit-VariableFont_wght.ttf");
 }
 
 body {
     background-color: #f7fafc;
-    font-family: NeueMachina;
+    font-family: Outfit, ui-monospace;
     overflow-x: hidden;
     overflow-y: overlay;
 }
@@ -38,14 +32,4 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-thumb:hover {
     background: #190B28;
-}
-
-::-moz-selection { /* Code for Firefox */
-    color: #FC5656;
-    background: #FCD757;
-}
-
-::selection {
-    color: #FC5656;
-    background: #FCD757;
 }

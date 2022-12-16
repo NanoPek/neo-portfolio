@@ -37,7 +37,7 @@ function Footer(props: { random?: boolean }) {
   }, [random]);
 
   return (
-    <div className="flex flex-col justify-between w-screen h-[65vh] px-[15vw] bg-dark py-6 ">
+    <div className="flex flex-col justify-between w-screen min-h-[65vh] sm:h-[65vh] px-[15vw] bg-dark py-6 ">
       <div className="flex flex-col h-[45%] justify-between">
         <Router title="Home" route="/" color={colors[0]} />
         <Router title="My Work" route="/my-work" color={colors[1]} />

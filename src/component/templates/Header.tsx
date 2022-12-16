@@ -74,17 +74,21 @@ function Header(props: { dark: boolean, random?: boolean }) {
               location.pathname !== '/'
                 ? (
                   <a href="/" className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl `} id="title">
-                    Nanȯ
+                    nanö
                   </a>
                 )
                 : (
                   <div className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl cursor-default`}>
-                    Nanȯ
+                    nanö
                   </div>
                 )
             }
             <button type="button" onClick={toggle}>
-              <Face fill={width < 640 ? faceColor : MyColors.primary} transform={width < 1536 ? '' : 'scale(1.5)'} className="animate-pulse hover:animate-ping transition transition-all" />
+              <Face
+                fill={width < 640 ? faceColor : MyColors.primary}
+                transform={width < 1536 ? '' : 'scale(1.5)'}
+                className={width < 1536 ? 'animate-pulse hover:scale-[1.5] hover:animate-none transition-all' : 'animate-pulse hover:scale-[2] hover:animate-none transition-all'}
+              />
             </button>
           </header>
         ) : (
@@ -94,17 +98,21 @@ function Header(props: { dark: boolean, random?: boolean }) {
                 location.pathname !== '/'
                   ? (
                     <a href="/" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
-                      Nanȯ
+                      nanö
                     </a>
                   )
                   : (
                     <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl cursor-default">
-                      Nanȯ
+                      nanö
                     </div>
                   )
               }
               <button type="button" onClick={toggle}>
-                <FaceOpen fill={MyColors.primary} transform={width < 1536 ? '' : 'scale(1.5)'} className="animate-pulse hover:animate-ping" />
+                <FaceOpen
+                  fill={MyColors.primary}
+                  transform={width < 1536 ? '' : 'scale(1.5)'}
+                  className={width < 1536 ? 'animate-pulse hover:scale-[1.5] hover:animate-none transition-all' : 'animate-pulse hover:scale-[2] hover:animate-none transition-all'}
+                />
               </button>
             </header>
             <div className="flex flex-col justify-evenly w-screen px-[15vw] h-[90vh]">
