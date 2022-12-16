@@ -15,7 +15,7 @@ function Header(props: { dark: boolean, random?: boolean }) {
   const [isToggle, setIsToggle] = React.useState(false);
   const [faceColor, setFaceColor] = React.useState(dark ? MyColors.secondary : MyColors.primary);
 
-  const textColor = dark ? 'text-secondary' : 'text-primary';
+  const textColor = dark ? 'text-accent' : 'text-primary';
   const { width } = useWindowDimensions();
 
   const location = useLocation();

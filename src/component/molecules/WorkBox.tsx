@@ -30,16 +30,18 @@ function WorkBox(props: { image: string; title: string; link: string; }) {
     <a
       href={link}
       className="bg-white border-[3px] border-dark shadow-[16px_16px_1px_0_rgba(25,11,40,0.8)]
-        w-full flex flex-col max-w-[400px] hover:animate-pulse overflow-hidden"
+        w-full flex flex-col max-w-[400px] hover:animate-pulse"
       id={`workbox-${title}`}
     >
-      <img
-        src={image}
-        alt="work"
-        className="h-1/2 2xl:h-auto 2xl:aspect-[600/375] 2xl:object-contain 2xl:bg-dark transition-all"
-        id={`workbox-image-${title}`}
-      />
-      <div className="text-primary text-2xl p-4 w-full sm:pt-6 ">
+      <div className="overflow-hidden">
+        <img
+          src={image}
+          alt="work"
+          className="h-1/2 2xl:h-auto 2xl:aspect-[600/375] 2xl:object-contain 2xl:bg-dark transition-all"
+          id={`workbox-image-${title}`}
+        />
+      </div>
+      <div className="text-primary text-2xl p-4 w-full ">
         <div className="text-dark font-bold ">
           {title}
         </div>
