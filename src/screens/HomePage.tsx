@@ -26,7 +26,7 @@ function HomePage() {
             <h3 className="text-md text-white pt-3 sm:py-9 sm:text-xl lg:text-justify xl:text-3xl 2xl:pr-56   ">
               I craft robust, secure, and high-performing applications.
             </h3>
-            <div className="flex flex-row justify-between text-xs leading-5 gap-4 h-full  py-12 sm:h-fit sm:items-center sm:text-base md:justify-evenly xl:py-10 ">
+            <div className="flex flex-row justify-between text-xs leading-5 gap-4 h-full  py-12 sm:h-fit sm:items-center sm:text-base md:justify-around xl:py-10 ">
               <span className="md:w-48 text-justify">
                 Eager to learn new tech,
                 consistently staying up to date with latest tools & trends in software dev.
@@ -37,7 +37,7 @@ function HomePage() {
               </span>
             </div>
             {width >= 640 && (
-              <div className="flex flex-col justify-evenly gap-y-4 pt-8 pb-4 xl:flex-row w-full items-center">
+              <div className="flex flex-col justify-around gap-y-4 pt-8 pb-4 xl:flex-row w-full items-center">
                 <BigScreenRoute title="My Work👨‍💻" route="/my-work" />
                 <BigScreenRoute title="Skills🤹 & Tools🛠️" route="/my-skills-&-tools" />
                 <BigScreenRoute title="My Résumé📄" route={pdf} newTab />

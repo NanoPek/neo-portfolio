@@ -8,7 +8,7 @@ import { ReactComponent as BranchIcon } from '../../assets/branchIcon.svg';
 function Icons(props: { colors?: string[] }) {
   const { colors } = props;
   return (
-    <div className="flex flex-row justify-evenly h-[40px]">
+    <div className="flex flex-row justify-around h-[40px]">
       <a href="https://www.linkedin.com/in/jeremiecarrez/" target="_blank" rel="noreferrer" className="hover:animate-pulse hover:scale-[1.2] transition-all">
         <LinkedinIcon className="fill-current text-accent" style={colors ? { color: colors[0] } : {}} />
       </a>
