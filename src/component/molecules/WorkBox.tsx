@@ -37,7 +37,7 @@ function WorkBox(props: { image: string; title: string; link: string; }) {
         <img
           src={image}
           alt="work"
-          className="h-1/2 2xl:h-auto 2xl:aspect-[600/375] 2xl:object-contain 2xl:bg-dark transition-all"
+          className="h-1/2 object-contain 2xl:h-auto 2xl:aspect-[600/375] 2xl:bg-dark transition-all"
           id={`workbox-image-${title}`}
         />
       </div>
