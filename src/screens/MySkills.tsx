@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Header from '../component/templates/Header';
 import Footer from '../component/templates/Footer';
 import Toolbox from '../component/templates/Toolbox';
+import MyColors from '../component/atoms/MyColors';
 
 const WebSkills = [
   { name: 'HTML', icon: 'devicon-html5-plain colored', color: '#f98c6b' },
@@ -74,12 +75,12 @@ function MySkills() {
 
   return (
     <div className="w-screen flex flex-col ">
-      <Header dark={false} random />
+      <Header textColor={MyColors.secondary} logoColor={MyColors.secondary} random />
       <div className="w-full bg-light flex flex-col pt-[10vh]">
         <div className="flex flex-col items-center">
           <input
             type="text"
-            className="w-[85%] sm:w-96 h-12 rounded-lg border-2 border-dark text-dark text-xl text-center"
+            className="w-[85%] sm:w-96 h-12 rounded border-[3px] border-dark text-dark text-xl text-center"
             placeholder="Search for a specific skill"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

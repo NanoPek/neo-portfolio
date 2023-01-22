@@ -4,6 +4,7 @@ import useWindowDimensions from '../component/hooks/useWindowDimensions';
 import BigScreenRoute from '../component/atoms/BigScreenRoute';
 import pdf from '../assets/resumeCARREZJeremie.pdf';
 import Footer from '../component/templates/Footer';
+import MyColors from '../component/atoms/MyColors';
 
 function HomePage() {
   const { width } = useWindowDimensions();
@@ -11,7 +12,7 @@ function HomePage() {
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-screen min-h-screen flex flex-col sm:flex-row ">
-        <Header dark />
+        <Header textColor="text-accent" logoColor={MyColors.primary} smallLogoColor={MyColors.accent} />
         <div className="w-full min-h-[60vh] bg-primary pt-[10vh] sm:w-2/3 sm:h-auto sm:flex sm:items-center ">
           <div className="flex flex-col bg-primary text-secondary px-12 py-6 2xl:px-32 2xl:py-32 h-full">
             <h1 className="text-4xl font-bold sm:text-6xl xl:text-7xl">

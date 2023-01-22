@@ -9,13 +9,15 @@ import Router from '../atoms/Router';
 import Icons from '../atoms/Icons';
 import MyColors from '../atoms/MyColors';
 
-// eslint-disable-next-line react/require-default-props
-function Header(props: { dark: boolean, random?: boolean }) {
-  const { dark, random } = props;
+function Header(props: {
+  // eslint-disable-next-line react/require-default-props
+  textColor: string, logoColor: string; random?: boolean; smallLogoColor?: string }) {
+  const {
+    textColor, logoColor, random, smallLogoColor,
+  } = props;
   const [isToggle, setIsToggle] = React.useState(false);
-  const [faceColor, setFaceColor] = React.useState(dark ? MyColors.secondary : MyColors.primary);
+  const [faceColor, setFaceColor] = React.useState(logoColor);
 
-  const textColor = dark ? 'text-accent' : 'text-primary';
   const { width } = useWindowDimensions();
 
   const location = useLocation();
@@ -73,19 +75,26 @@ function Header(props: { dark: boolean, random?: boolean }) {
             {
               location.pathname !== '/'
                 ? (
-                  <a href="/" className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl `} id="title">
+                  <a href="/" className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center `} id="title">
+                    { location.pathname === '/my-work' && (
+                    <img
+                      src="https://assets.website-files.com/5e87e737ee7085b9ba02c101/5e87e737ee7085c39c02c107_mac.svg"
+                      alt="CartoonLogo"
+                      className="w-10 2xl:w-14 mr-2"
+                    />
+                    )}
                     nanö
                   </a>
                 )
                 : (
-                  <div className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl cursor-default`}>
+                  <div className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl cursor-default flex flex-row gap-2 items-center`}>
                     nanö
                   </div>
                 )
             }
             <button type="button" onClick={toggle}>
               <Face
-                fill={width < 640 ? faceColor : MyColors.primary}
+                fill={smallLogoColor && width < 640 ? smallLogoColor : faceColor}
                 transform={width < 1536 ? '' : 'scale(1.5)'}
                 className={width < 1536 ? 'animate-pulse hover:scale-[1.5] hover:animate-none transition-all' : 'animate-pulse hover:scale-[2] hover:animate-none transition-all'}
               />

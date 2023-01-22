@@ -7,6 +7,7 @@ const MyColors = {
     light: '#F5F4FC',
     link: '#0D2996',
     dark: '#190B28',
+    grey: '#C8C8C8',
 };
 
 module.exports = {
@@ -19,6 +20,7 @@ module.exports = {
             backgroundImage: {
                 macaronis: "url('./assets/macaronis.svg')",
                 pp: "url('./assets/pp.png')",
+                png: "url('https://assets.website-files.com/5e87e737ee7085b9ba02c101/5e87e737ee7085fccd02c10d_pattern-grey.svg')",
             },
             keyframes: {
                 animatedBackground: {
