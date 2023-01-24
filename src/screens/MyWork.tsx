@@ -12,13 +12,14 @@ function MyWork() {
   return (
     <div className="flex flex-col ">
       <Header textColor="text-black" logoColor="#000" />
-      <div className="bg-light flex flex-col items-center mt-[10vh] pb-6 2xl:items-center bg-png">
+      <div className="bg-light flex flex-col items-center mt-[10vh] pb-6 2xl:items-center bg-png min-h-[90vh]">
         <div className="flex flex-col w-5/6 py-6 gap-9 items-center lg:grid lg:grid-cols-2 2xl:grid-cols-3 2xl:w-screen 2xl:px-60  ">
           <WorkBox
             image={moonalisaImage}
             title="moonalisa App (private beta)"
             description="I am working on the frontend with React Native and the backend with Firebase for the entire app development of a French startup in the health field."
             link="https://moonalisa.co"
+            figma="https://www.figma.com/file/LwTFuqp0aKhcEz62kLsRSc/moonalisa-Sketch?node-id=0%3A1&t=awjlHnumlw3EqMmK-1"
             date={new Date(2022, 9, 15)}
           />
           <WorkBox
