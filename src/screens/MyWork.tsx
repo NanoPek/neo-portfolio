@@ -27,13 +27,14 @@ function MyWork() {
             title="Coin Game PWA"
             description="A simple coin reward web app to build customer loyalty made with VueJS & Strapi. "
             link="https://pieces.hi7haut.fr/"
-            date={new Date(2022, 2, 20)}
+            date={new Date(2022, 4, 1)}
           />
           <WorkBox
             image={hi7hautWeb}
             title="BDE Portfolio"
             description="A portfolio for a french student association made with VueJS."
-            link="https://www.hi7haut.fr/"
+            link="https://github.com/NanoPek/hi7haut-vitrine"
+            github="https://github.com/NanoPek/hi7haut-vitrine"
             date={new Date(2022, 2, 20)}
           />
           <WorkBox
@@ -41,6 +42,7 @@ function MyWork() {
             title="This Portfolio !"
             description="This portfolio is made with ReactJS and TailwindCSS. Wanted to try a neo memphis design, hope you like it :)"
             link="https://jeremiecarrez.live"
+            github="https://github.com/NanoPek/neo-portfolio"
             date={new Date(2023, 0, 1)}
           />
         </div>

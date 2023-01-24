@@ -5,6 +5,8 @@ const MyColors = {
   light: '#F5F4FC',
   link: '#0D2996',
   dark: '#190B28',
+  grey: '#C8C8C8',
+  purple: '#ab7edb',
 };
 
 // Flashy

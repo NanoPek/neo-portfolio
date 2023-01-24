@@ -8,6 +8,7 @@ const MyColors = {
     link: '#0D2996',
     dark: '#190B28',
     grey: '#C8C8C8',
+    purple: '#ab7edb',
 };
 
 module.exports = {

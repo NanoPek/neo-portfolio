@@ -26,7 +26,7 @@ function Router(props: { title: string, route: string, color?: string, newTab?: 
             </a>
           )
           : (
-            <div className="text-accent text-xl " style={color ? { color } : {}}>
+            <div className="text-accent text-xl" style={color ? { color } : {}}>
               {title}
             </div>
           )
