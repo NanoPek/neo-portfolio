@@ -64,7 +64,7 @@ function MyWork() {
             image={portfolio}
             title="This Portfolio !"
             description="This portfolio is made with ReactJS and TailwindCSS. Wanted to try a neo memphis design, hope you like it :)"
-            link="https://jeremiecarrez.live"
+            link="https://jecarrez.tech"
             github="https://github.com/NanoPek/neo-portfolio"
             date={new Date(2023, 0, 1)}
           />
