@@ -21,7 +21,7 @@ function HomePage() {
             <h2 className="text-xl text-white pt-3 sm:pt-9 sm:text-2xl lg:text-justify xl:text-5xl    ">
               Hey, I&apos;m
               {' '}
-              <span className="text-accent font-bold">nanö</span>
+              <span className="text-accent font-bold">Jeremie Carrez</span>
               👋
             </h2>
             <h3 className="text-md text-white pt-3 sm:py-9 sm:text-xl lg:text-justify xl:text-3xl 2xl:pr-56   ">

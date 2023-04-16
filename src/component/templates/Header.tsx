@@ -83,12 +83,12 @@ function Header(props: {
                       className="w-10 2xl:w-14 mr-2"
                     />
                     )}
-                    nanö
+                    jecarrez
                   </a>
                 )
                 : (
                   <div className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl cursor-default flex flex-row gap-2 items-center`}>
-                    nanö
+                    jecarrez
                   </div>
                 )
             }
@@ -107,12 +107,12 @@ function Header(props: {
                 location.pathname !== '/'
                   ? (
                     <a href="/" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
-                      nanö
+                      jecarrez
                     </a>
                   )
                   : (
                     <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl cursor-default">
-                      nanö
+                      jecarrez
                     </div>
                   )
               }

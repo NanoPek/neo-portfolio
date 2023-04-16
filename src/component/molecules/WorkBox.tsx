@@ -1,20 +1,27 @@
 import React, { useEffect } from 'react';
 import MyColors from '../atoms/MyColors';
 
+import appStoreIcon from '../../assets/appStoreIcon.svg';
+
+const deviceWidth = window.innerWidth;
 function WorkBox(props: {
   image: string;
   title: string;
   description: string;
   link: string;
   // eslint-disable-next-line react/require-default-props
+  color?: string;
+  // eslint-disable-next-line react/require-default-props
   date?: Date;
   // eslint-disable-next-line react/require-default-props
   figma?: string;
   // eslint-disable-next-line react/require-default-props
   github?: string;
+  // eslint-disable-next-line react/require-default-props
+  appStore?: string;
 }) {
   const {
-    image, title, link, date, description, figma, github,
+    image, title, link, date, description, figma, github, color, appStore,
   } = props;
 
   useEffect(() => {
@@ -22,36 +29,38 @@ function WorkBox(props: {
     const imageElm = document.getElementById(`workbox-image-${title}`);
     const greyElm = document.getElementById(`workbox-grey-${title}`);
     const buttonElm = document.getElementById(`workbox-button-${title}`);
+    const highlightColor = color || MyColors.purple;
 
     if (divElm) {
       if (imageElm) {
-        divElm.addEventListener('mouseover', () => {
+        if (deviceWidth > 768) {
+          divElm.addEventListener('mouseover', () => {
+            if (imageElm) {
+              imageElm.style.transform = 'scale(1.1)';
+              imageElm.style.transition = 'transform 0.5s cubic-bezier(0.04, 0.3, 0.1, 1)';
+              imageElm.style.filter = 'grayscale(0%)';
+            }
+            if (greyElm) {
+              greyElm.style.backgroundColor = highlightColor;
+            }
+            if (buttonElm) {
+              buttonElm.style.backgroundColor = highlightColor;
+            }
+            divElm.style.boxShadow = '16px 16px 1px 0 rgba(67,49,86,0.8)';
+          });
+        } else {
           if (imageElm) {
             imageElm.style.transform = 'scale(1.1)';
             imageElm.style.transition = 'transform 0.5s cubic-bezier(0.04, 0.3, 0.1, 1)';
             imageElm.style.filter = 'grayscale(0%)';
           }
           if (greyElm) {
-            greyElm.style.backgroundColor = MyColors.purple;
+            greyElm.style.backgroundColor = highlightColor;
           }
           if (buttonElm) {
-            buttonElm.style.backgroundColor = MyColors.purple;
+            buttonElm.style.backgroundColor = highlightColor;
           }
-          divElm.style.boxShadow = '16px 16px 1px 0 rgba(67,49,86,0.8)';
-        });
-        divElm.addEventListener('mouseout', () => {
-          if (imageElm) {
-            imageElm.style.transform = 'scale(1)';
-            imageElm.style.filter = 'grayscale(100%)';
-          }
-          if (greyElm) {
-            greyElm.style.backgroundColor = MyColors.grey;
-          }
-          if (buttonElm) {
-            buttonElm.style.backgroundColor = MyColors.grey;
-          }
-          divElm.style.boxShadow = '16px 16px 1px 0 rgba(25,11,40,0.8)';
-        });
+        }
       }
     }
   }, []);
@@ -105,17 +114,28 @@ function WorkBox(props: {
             id={`workbox-button-${title}`}
             type="button"
             href={link}
+            target="_blank"
+            rel="noreferrer"
           >
             <span className=" text-base font-semibold">View project</span>
           </a>
           {figma && (
-          <a href={figma} className="h-full px-4 flex items-center">
+          <a href={figma} className="h-full px-4 flex items-center " target="_blank" rel="noreferrer">
             <i className="devicon-figma-plain text-[30px] text-dark" />
           </a>
           )}
           {github && (
-          <a href={github} className="h-full px-4 flex items-center">
+          <a href={github} className="h-full px-4 flex items-center" target="_blank" rel="noreferrer">
             <i className="devicon-github-plain text-[30px] text-dark" />
+          </a>
+          )}
+          {appStore && (
+          <a href={appStore} className="h-full px-4 flex items-center" target="_blank" rel="noreferrer">
+            <img
+              src={appStoreIcon}
+              alt="App Store Icon"
+              className="w-[35px] h-[35px]"
+            />
           </a>
           )}
         </div>

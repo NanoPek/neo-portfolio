@@ -22,14 +22,14 @@ const WebSkills = [
 ];
 
 const MobileSkills = [
+  { name: 'Swift', icon: 'devicon-swift-plain colored', color: '#f58f7e' },
+  { name: 'Xcode', icon: 'devicon-xcode-plain colored', color: '#85bcf3' },
+
   { name: 'React Native', icon: 'devicon-react-original colored', color: '#a1e7fc' },
   { name: 'Firebase', icon: 'devicon-firebase-plain colored', color: '#ffd616' },
 
-  { name: 'Android', icon: 'devicon-android-plain colored', color: '#8cac1d' },
   { name: 'Apple', icon: 'devicon-apple-original text-white', color: '#A2AAAD' },
-
-  { name: 'Android Studio', icon: 'devicon-androidstudio-plain colored', color: '#37b2ff' },
-  { name: 'Xcode', icon: 'devicon-xcode-plain colored', color: '#85bcf3' },
+  { name: 'Android', icon: 'devicon-android-plain colored', color: '#8cac1d' },
 ];
 
 const OtherTools = [
@@ -87,8 +87,8 @@ function MySkills() {
           />
         </div>
         <div className="flex flex-col items-center" id="checkEmptyDiv">
-          <Toolbox title="Web Tools" search={search} skills={WebSkills} />
           <Toolbox title="Mobile Tools" search={search} skills={MobileSkills} />
+          <Toolbox title="Web Tools" search={search} skills={WebSkills} />
           <Toolbox title="Backend Tools" search={search} skills={BackendTools} />
           <Toolbox title="Other Tools" search={search} skills={OtherTools} />
         </div>
