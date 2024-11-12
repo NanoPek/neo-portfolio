@@ -105,7 +105,7 @@ function WorkBox(props: {
         <div className="text-dark font-bold ">
           {title}
         </div>
-        <div className="text-dark text-sm flex-1">
+        <div className="text-dark text-sm flex-1" style={{ whiteSpace: 'pre-line' }}>
           {description}
         </div>
         <div className="flex flex-row h-12 items-center">

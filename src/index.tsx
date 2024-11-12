@@ -37,4 +37,4 @@ console.log('    ,__                   __\n'
     + '     Hey there little bug 🐛👋!\n'
     + '     Are you intrigued by this website?\n'
     + '     If so, you can take a look at the code behind it on GitHub here : https://github.com/NanoPek/neo-portfolio.\n'
-    + "     Also, don't hesitate to reach out to me on Twitter at https://twitter.com/NanoPekTo or via email at jecarrez.pro@gmail.com ✨.");
+    + "     Also, don't hesitate to reach out to me on LinkedIn at https://www.linkedin.com/in/jecarrez/ or via email at jecarrez.pro@gmail.com ✨.");
