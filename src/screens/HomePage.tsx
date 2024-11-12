@@ -47,8 +47,8 @@ function HomePage() {
           </div>
         </div>
         <div className="flex justify-center items-center bg-secondary h-[40vh] bg-macaronis bg-center sm:pt-[10vh] sm:w-1/3 sm:h-auto">
-          <div className="h-48 w-48 bg-accent border-4 mb-9 mr-8 absolute border-black z-10 bg-pp bg-cover xl:h-64 xl:w-64 2xl:h-96 2xl:w-96" />
-          <div className="h-48 w-48 bg-dark opacity-60 xl:h-64 xl:w-64 2xl:h-96 2xl:w-96 " />
+          <div className="h-48 w-48 bg-accent border-2 mb-9 mr-8 absolute border-primary z-10 bg-pp bg-cover xl:h-64 xl:w-64 2xl:h-96 2xl:w-96" />
+          <div className="h-48 w-48 bg-accent opacity-90 xl:h-64 xl:w-64 2xl:h-96 2xl:w-96 " />
         </div>
       </div>
       <Footer />

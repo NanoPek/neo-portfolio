@@ -20,7 +20,7 @@ module.exports = {
             colors: MyColors,
             backgroundImage: {
                 macaronis: "url('./assets/macaronis.svg')",
-                pp: "url('./assets/pp.png')",
+                pp: "url('./assets/pp.jpeg')",
                 png: "url('https://assets.website-files.com/5e87e737ee7085b9ba02c101/5e87e737ee7085fccd02c10d_pattern-grey.svg')",
             },
             keyframes: {

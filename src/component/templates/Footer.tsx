@@ -55,7 +55,7 @@ function Footer(props: { random?: boolean }) {
       <div className="flex flex-col justify-between h-[10%] w-full">
         <div className="h-px w-full bg-secondary" />
         <div className="text-accent text-lg ">
-          © Jérémie Carrez 2022 - check the repo here :
+          © Jérémie Carrez 2024 - check the repo here :
           {' '}
           <a href="https://github.com/NanoPek/neo-portfolio" className="underline">
             https://github.com/NanoPek/neo-portfolio
