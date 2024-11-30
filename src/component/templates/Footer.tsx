@@ -4,10 +4,12 @@ import pdf from '../../assets/resumeCARREZJeremie.pdf';
 import Router from '../atoms/Router';
 import Icons from '../atoms/Icons';
 import MyColors from '../atoms/MyColors';
-// eslint-disable-next-line react/require-default-props
-function Footer(props: { random?: boolean }) {
-  const { random } = props;
 
+type FooterProps = {
+  random?: boolean;
+};
+
+function Footer({ random }: FooterProps) {
   const [colors, setColors] = React.useState([MyColors.accent, MyColors.accent, MyColors.accent,
     MyColors.accent, MyColors.accent, MyColors.secondary, MyColors.secondary,
     MyColors.accent, MyColors.accent, MyColors.accent, MyColors.accent]);
@@ -66,4 +68,8 @@ function Footer(props: { random?: boolean }) {
   );
 }
 
-export default Footer;
+Footer.defaultProps = {
+  random: false,
+};
+
+export default React.memo(Footer);

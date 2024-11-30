@@ -4,26 +4,22 @@ import MyColors from '../atoms/MyColors';
 import appStoreIcon from '../../assets/appStoreIcon.svg';
 
 const deviceWidth = window.innerWidth;
-function WorkBox(props: {
+
+type WorkBoxProps = {
   image: string;
   title: string;
   description: string;
   link: string;
-  // eslint-disable-next-line react/require-default-props
   color?: string;
-  // eslint-disable-next-line react/require-default-props
   date?: Date;
-  // eslint-disable-next-line react/require-default-props
   figma?: string;
-  // eslint-disable-next-line react/require-default-props
   github?: string;
-  // eslint-disable-next-line react/require-default-props
   appStore?: string;
-}) {
-  const {
-    image, title, link, date, description, figma, github, color, appStore,
-  } = props;
+};
 
+function WorkBox({
+  image, title, link, date, description, figma, github, color, appStore,
+} : WorkBoxProps) {
   useEffect(() => {
     const divElm = document.getElementById(`workbox-div-${title}`);
     const imageElm = document.getElementById(`workbox-image-${title}`);
@@ -144,4 +140,12 @@ function WorkBox(props: {
   );
 }
 
-export default WorkBox;
+WorkBox.defaultProps = {
+  color: MyColors.purple,
+  date: new Date(),
+  figma: '',
+  github: '',
+  appStore: '',
+};
+
+export default React.memo(WorkBox);

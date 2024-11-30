@@ -8,13 +8,18 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 import Router from '../atoms/Router';
 import Icons from '../atoms/Icons';
 import MyColors from '../atoms/MyColors';
+import LanguageSwitcher from '../molecules/LanguageSwitcher';
 
-function Header(props: {
-  // eslint-disable-next-line react/require-default-props
-  textColor: string, logoColor: string; random?: boolean; smallLogoColor?: string }) {
-  const {
-    textColor, logoColor, random, smallLogoColor,
-  } = props;
+type HeaderProps = {
+  textColor: string;
+  logoColor: string;
+  random?: boolean;
+  smallLogoColor?: string;
+};
+
+function Header({
+  textColor, logoColor, random, smallLogoColor,
+}: HeaderProps) {
   const [isToggle, setIsToggle] = React.useState(false);
   const [faceColor, setFaceColor] = React.useState(logoColor);
 
@@ -116,6 +121,7 @@ function Header(props: {
                     </div>
                   )
               }
+              <LanguageSwitcher />
               <button type="button" onClick={toggle}>
                 <FaceOpen
                   fill={MyColors.primary}
@@ -146,4 +152,10 @@ function Header(props: {
     </div>
   );
 }
-export default Header;
+
+Header.defaultProps = {
+  random: false,
+  smallLogoColor: '',
+};
+
+export default React.memo(Header);

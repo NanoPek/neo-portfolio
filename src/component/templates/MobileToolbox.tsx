@@ -21,4 +21,4 @@ function Toolbox() {
   );
 }
 
-export default Toolbox;
+export default React.memo(Toolbox);

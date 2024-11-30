@@ -1,7 +1,12 @@
 import React from 'react';
 
-function Skill(props: { name: string, icon:string, color: string }) {
-  const { name, icon, color } = props;
+type SkillProps = {
+  name: string;
+  icon: string;
+  color: string;
+};
+
+function Skill({ name, icon, color }: SkillProps) {
   return (
     <div className=" flex flex-col justify-center items-center w-full h-[15vh] " style={{ backgroundColor: color }}>
       <i className={`${icon} text-[60px]`} />
@@ -12,4 +17,4 @@ function Skill(props: { name: string, icon:string, color: string }) {
   );
 }
 
-export default Skill;
+export default React.memo(Skill);
