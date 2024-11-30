@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import MyColors from '../atoms/MyColors';
 
 import appStoreIcon from '../../assets/appStoreIcon.svg';
+import { SkillDetail } from '../atoms/Skills';
+import SkillView from '../atoms/SkillView';
 
 const deviceWidth = window.innerWidth;
 
@@ -10,6 +12,7 @@ type WorkBoxProps = {
   image: string;
   title: string;
   description: string;
+  techs: SkillDetail[];
   extension: string;
   link: string;
   color?: string;
@@ -20,7 +23,7 @@ type WorkBoxProps = {
 };
 
 function WorkBox({
-  image, title, link, date, description, extension, figma, github, color, appStore,
+  image, title, link, date, description, techs, extension, figma, github, color, appStore,
 } : WorkBoxProps) {
   const { t } = useTranslation();
 
@@ -103,6 +106,17 @@ function WorkBox({
       <div className="flex-1 text-primary text-2xl p-4 w-full border-dark border-t-[3px] flex flex-col gap-4  justify-between ">
         <div className="text-dark font-bold ">
           {title}
+        </div>
+        <div className="flex flex-row gap-2">
+          {techs.map((tech) => (
+            <SkillView
+              name={tech.name}
+              icon={tech.icon}
+              color={tech.color}
+              key={tech.icon}
+              isSmall
+            />
+          ))}
         </div>
         <div className="text-dark text-sm flex-1" style={{ whiteSpace: 'pre-line' }}>
           {description}
