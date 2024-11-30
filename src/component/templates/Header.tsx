@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ReactComponent as Face } from '../../assets/Face.svg';
 import { ReactComponent as FaceOpen } from '../../assets/FaceOpen.svg';
 
@@ -25,6 +26,7 @@ function Header({
 
   const { width } = useWindowDimensions();
 
+  const { t } = useTranslation();
   const location = useLocation();
 
   const toggle = () => {
@@ -77,7 +79,8 @@ function Header({
       {
         !isToggle ? (
           <header className="flex flex-row justify-between items-center px-8 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
-            {
+            <div className="flex flex-row items-center gap-2">
+              {
               location.pathname !== '/'
                 ? (
                   <a href="/" className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center `} id="title">
@@ -97,6 +100,8 @@ function Header({
                   </div>
                 )
             }
+              <LanguageSwitcher />
+            </div>
             <button type="button" onClick={toggle}>
               <Face
                 fill={smallLogoColor && width < 640 ? smallLogoColor : faceColor}
@@ -108,20 +113,22 @@ function Header({
         ) : (
           <div className="bg-secondary flex flex-col  items-center px-4 w-screen h-screen ">
             <header className=" flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
-              {
-                location.pathname !== '/'
-                  ? (
-                    <a href="/" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
-                      jecarrez
-                    </a>
-                  )
-                  : (
-                    <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl cursor-default">
-                      jecarrez
-                    </div>
-                  )
-              }
-              <LanguageSwitcher />
+              <div className="flex flex-row items-center gap-2">
+                {
+                  location.pathname !== '/'
+                    ? (
+                      <a href="/" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
+                        jecarrez
+                      </a>
+                    )
+                    : (
+                      <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl cursor-default">
+                        jecarrez
+                      </div>
+                    )
+                }
+                <LanguageSwitcher />
+              </div>
               <button type="button" onClick={toggle}>
                 <FaceOpen
                   fill={MyColors.primary}
@@ -132,16 +139,16 @@ function Header({
             </header>
             <div className="flex flex-col justify-evenly w-screen px-[15vw] h-[90vh]">
               <div className="flex flex-col h-1/3 justify-between">
-                <Router title="Home" route="/" />
-                <Router title="My Work" route="/my-work" />
-                <Router title="My Skills & Tools" route="/my-skills-&-tools" />
-                <Router title="My Résumé" route={pdf} newTab />
+                <Router title={t('Router.home')} route="/" />
+                <Router title={t('Router.myWork')} route="/my-work" />
+                <Router title={t('Router.skillsAndTools')} route="/my-skills-&-tools" />
+                <Router title={t('Router.myResume')} route={pdf} newTab />
               </div>
               <div className="flex flex-col h-1/4 justify-between">
                 <div className="text-primary text-2xl opacity-50">
-                  CONTACT ME
+                  {t('Router.contactMe')}
                 </div>
-                <Router title={width < 640 ? 'linkedin.com' : 'linkedin.com/in/jeremiecarrez'} route="https://www.linkedin.com/in/jecarrez/" newTab />
+                <Router title={width < 640 ? 'linkedin.com' : 'linkedin.com/in/jecarrez'} route="https://www.linkedin.com/in/jecarrez/" newTab />
                 <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" />
               </div>
               <Icons />

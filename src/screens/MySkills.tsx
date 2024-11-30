@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from '../component/templates/Header';
 import Footer from '../component/templates/Footer';
 import Toolbox from '../component/templates/Toolbox';
@@ -62,6 +63,8 @@ function MySkills() {
   const [search, setSearch] = React.useState('');
   const [isEmpty, setIsEmpty] = React.useState(false);
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     const isEmptyDiv = document.getElementById('checkEmptyDiv');
     if (isEmptyDiv) {
@@ -81,20 +84,22 @@ function MySkills() {
           <input
             type="text"
             className="w-[85%] sm:w-96 h-12 rounded border-[3px] border-dark text-dark text-xl text-center"
-            placeholder="Search for a specific skill"
+            placeholder={t('MySkills.search')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
         <div className="flex flex-col items-center" id="checkEmptyDiv">
-          <Toolbox title="Mobile Tools" search={search} skills={MobileSkills} />
-          <Toolbox title="Web Tools" search={search} skills={WebSkills} />
-          <Toolbox title="Backend Tools" search={search} skills={BackendTools} />
-          <Toolbox title="Other Tools" search={search} skills={OtherTools} />
+          <Toolbox title={t('MySkills.categories.mobileTools')} search={search} skills={MobileSkills} />
+          <Toolbox title={t('MySkills.categories.webTools')} search={search} skills={WebSkills} />
+          <Toolbox title={t('MySkills.categories.backendTools')} search={search} skills={BackendTools} />
+          <Toolbox title={t('MySkills.categories.otherTools')} search={search} skills={OtherTools} />
         </div>
         {isEmpty && (
         <div className="flex flex-col items-center justify-center h-[20vh]">
-          <h1 className="text-4xl text-dark font-bold">No skills found</h1>
+          <h1 className="text-4xl text-dark font-bold">
+            {t('MySkills.noSkills')}
+          </h1>
         </div>
         )}
       </div>

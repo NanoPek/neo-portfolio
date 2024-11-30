@@ -10,11 +10,11 @@ function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
   return (
-    <div>
+    <div className="flex flex-row gap-0.5">
       {Object.keys(languages).map((lng) => (
         <button
           key={lng}
-          style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }}
+          className={i18n.resolvedLanguage === lng ? 'font-bold' : 'font-normal'}
           type="button"
           onClick={() => i18n.changeLanguage(lng)}
         >

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import pdf from '../../assets/resumeCARREZJeremie.pdf';
 
 import Router from '../atoms/Router';
@@ -31,6 +32,8 @@ function Footer({ random }: FooterProps) {
     setColors(localColors);
   };
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (random) {
       setAllRandomColors();
@@ -41,14 +44,14 @@ function Footer({ random }: FooterProps) {
   return (
     <div className="flex flex-col justify-between w-screen min-h-[65vh] sm:h-[65vh] px-[15vw] bg-dark py-6 ">
       <div className="flex flex-col h-[45%] justify-between">
-        <Router title="Home" route="/" color={colors[0]} />
-        <Router title="My Work" route="/my-work" color={colors[1]} />
-        <Router title="My Skills & Tools" route="/my-skills-&-tools" color={colors[2]} />
-        <Router title="My Résumé" route={pdf} color={colors[3]} />
+        <Router title={t('Router.home')} route="/" color={colors[0]} />
+        <Router title={t('Router.myWork')} route="/my-work" color={colors[1]} />
+        <Router title={t('Router.skillsAndTools')} route="/my-skills-&-tools" color={colors[2]} />
+        <Router title={t('Router.myResume')} route={pdf} color={colors[3]} />
       </div>
       <div className="flex flex-col h-[20%] justify-between">
         <div className={`text-[${colors[4]}] text-xl`} style={{ color: colors[4] }}>
-          CONTACT ME
+          {t('Router.contactMe')}
         </div>
         <Router title="linkedin.com" route="https://www.linkedin.com/in/jecarrez/" color={colors[5]} />
         <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" color={colors[6]} />
@@ -57,7 +60,7 @@ function Footer({ random }: FooterProps) {
       <div className="flex flex-col justify-between h-[10%] w-full">
         <div className="h-px w-full bg-secondary" />
         <div className="text-accent text-lg ">
-          © Jérémie Carrez 2024 - check the repo here :
+          {t('Footer.copyright')}
           {' '}
           <a href="https://github.com/NanoPek/neo-portfolio" className="underline">
             https://github.com/NanoPek/neo-portfolio

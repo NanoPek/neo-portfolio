@@ -43,9 +43,9 @@ function HomePage() {
             {width >= 640
                 && (
                 <div className="flex flex-col justify-around gap-y-4 pt-8 pb-4 xl:flex-row w-full items-center">
-                  <BigScreenRoute title={t('HomePage.BigScreenRoute.myWork')} route="/my-work" />
-                  <BigScreenRoute title={t('HomePage.BigScreenRoute.skillsAndTools')} route="/my-skills-&-tools" />
-                  <BigScreenRoute title={t('HomePage.BigScreenRoute.myResume')} route={pdf} newTab />
+                  <BigScreenRoute title={t('Router.myWork')} route="/my-work" />
+                  <BigScreenRoute title={t('Router.skillsAndTools')} route="/my-skills-&-tools" />
+                  <BigScreenRoute title={t('Router.myResume')} route={pdf} newTab />
                 </div>
                 )}
           </div>

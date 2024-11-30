@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import MyColors from '../atoms/MyColors';
 
 import appStoreIcon from '../../assets/appStoreIcon.svg';
@@ -9,6 +10,7 @@ type WorkBoxProps = {
   image: string;
   title: string;
   description: string;
+  extension: string;
   link: string;
   color?: string;
   date?: Date;
@@ -18,8 +20,10 @@ type WorkBoxProps = {
 };
 
 function WorkBox({
-  image, title, link, date, description, figma, github, color, appStore,
+  image, title, link, date, description, extension, figma, github, color, appStore,
 } : WorkBoxProps) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const divElm = document.getElementById(`workbox-div-${title}`);
     const imageElm = document.getElementById(`workbox-image-${title}`);
@@ -66,7 +70,7 @@ function WorkBox({
     const year = dateToFormat.getFullYear();
     const month = dateToFormat.getMonth() + 1;
     const day = dateToFormat.getDate();
-    return `${year}-${month}-${day}-project.html`;
+    return `${year}-${month}-${day}-${t('MyWork.project')}.${extension}`;
   };
 
   return (
@@ -84,7 +88,7 @@ function WorkBox({
           <div className="w-[18px] h-[18px] rounded-2xl bg-white border-dark border-[3px]" />
         </div>
         <span className="text-dark text-md font-semibold">
-          {date ? dateFormatter(date) : 'my-project.html'}
+          {date ? dateFormatter(date) : `${t('MyWork.myProject')}.{extension}`}
         </span>
         <div />
       </div>
@@ -112,7 +116,9 @@ function WorkBox({
             target="_blank"
             rel="noreferrer"
           >
-            <span className=" text-base font-semibold">View project</span>
+            <span className=" text-base font-semibold">
+              {t('MyWork.viewProject')}
+            </span>
           </a>
           {figma && (
           <a href={figma} className="h-full px-4 flex items-center " target="_blank" rel="noreferrer" aria-label="Open Figma in a new tab">
