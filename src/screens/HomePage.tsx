@@ -9,6 +9,14 @@ import MyColors from '../component/atoms/MyColors';
 function HomePage() {
   const { width } = useWindowDimensions();
 
+  const RenderBigScreenRoutes = React.useMemo(() => (
+    <div className="flex flex-col justify-around gap-y-4 pt-8 pb-4 xl:flex-row w-full items-center">
+      <BigScreenRoute title="My Work👨‍💻" route="/my-work" />
+      <BigScreenRoute title="Skills🤹 & Tools🛠️" route="/my-skills-&-tools" />
+      <BigScreenRoute title="My Résumé📄" route={pdf} newTab />
+    </div>
+  ), []);
+
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-screen min-h-screen flex flex-col sm:flex-row ">
@@ -37,13 +45,7 @@ function HomePage() {
                 innovating & deploying creative digital solutions.
               </span>
             </div>
-            {width >= 640 && (
-              <div className="flex flex-col justify-around gap-y-4 pt-8 pb-4 xl:flex-row w-full items-center">
-                <BigScreenRoute title="My Work👨‍💻" route="/my-work" />
-                <BigScreenRoute title="Skills🤹 & Tools🛠️" route="/my-skills-&-tools" />
-                <BigScreenRoute title="My Résumé📄" route={pdf} newTab />
-              </div>
-            )}
+            {width >= 640 && RenderBigScreenRoutes}
           </div>
         </div>
         <div className="flex justify-center items-center bg-secondary h-[40vh] bg-macaronis bg-center sm:pt-[10vh] sm:w-1/3 sm:h-auto">
