@@ -79,7 +79,7 @@ function Header({
       {
         !isToggle ? (
           <header className="flex flex-row justify-between items-center px-8 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
-            <div className="flex flex-row items-center gap-2">
+            <div className="flex flex-col md:flex-row items-center gap-2">
               {
               location.pathname !== '/'
                 ? (
@@ -113,7 +113,7 @@ function Header({
         ) : (
           <div className="bg-secondary flex flex-col  items-center px-4 w-screen h-screen ">
             <header className=" flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
-              <div className="flex flex-row items-center gap-2">
+              <div className="flex flex-col md:flex-row items-center gap-2">
                 {
                   location.pathname !== '/'
                     ? (

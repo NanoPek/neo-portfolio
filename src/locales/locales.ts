@@ -81,7 +81,7 @@ const resources = {
           },
           portfolio: {
             title: 'This Portfolio!',
-            description: 'This portfolio is made with ReactJS and TailwindCSS. Wanted to try a neo memphis design, hope you like it :)',
+            description: 'This portfolio is made with ReactJS and TailwindCSS. Wanted to try a neo-memphis design, hope you\'ll like it :)',
           },
           hi7haut: {
             title: 'Coin Game PWA',
@@ -178,7 +178,7 @@ const resources = {
           },
           portfolio: {
             title: 'Ce Portfolio !',
-            description: 'Ce portfolio est créé avec ReactJS et TailwindCSS. J\'ai voulu essayer un design néo-mémoire, j\'espère qu\'il vous plaît :)',
+            description: 'Ce portfolio est créé avec ReactJS et TailwindCSS. J\'ai voulu essayer un design néo-memphis, j\'espère qu\'il vous plaîra :)',
           },
           hi7haut: {
             title: 'Coin Game PWA',
