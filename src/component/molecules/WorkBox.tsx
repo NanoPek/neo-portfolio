@@ -74,11 +74,10 @@ function WorkBox(props: {
   };
 
   return (
-    <a
+    <div
       className="bg-white border-[3px] border-dark shadow-[16px_16px_1px_0_rgba(25,11,40,0.8)]
         w-full flex flex-col max-w-[400px] h-full"
       id={`workbox-div-${title}`}
-      href={link}
     >
       <div
         className="w-full h-12 bg-grey border-dark border-b-[3px] flex flex-row items-center justify-between px-4 hover:bg-purple"
@@ -120,12 +119,12 @@ function WorkBox(props: {
             <span className=" text-base font-semibold">View project</span>
           </a>
           {figma && (
-          <a href={figma} className="h-full px-4 flex items-center " target="_blank" rel="noreferrer">
+          <a href={figma} className="h-full px-4 flex items-center " target="_blank" rel="noreferrer" aria-label="Open Figma in a new tab">
             <i className="devicon-figma-plain text-[30px] text-dark" />
           </a>
           )}
           {github && (
-          <a href={github} className="h-full px-4 flex items-center" target="_blank" rel="noreferrer">
+          <a href={github} className="h-full px-4 flex items-center" target="_blank" rel="noreferrer" aria-label="Open Github in a new tab">
             <i className="devicon-github-plain text-[30px] text-dark" />
           </a>
           )}
@@ -141,7 +140,7 @@ function WorkBox(props: {
         </div>
         <div />
       </div>
-    </a>
+    </div>
   );
 }
 
