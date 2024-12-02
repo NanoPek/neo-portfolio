@@ -5,6 +5,7 @@ import appStoreIcon from '../../assets/appStoreIcon.svg';
 import { SkillDetail } from '../../constants/skillData';
 import SkillView from '../atoms/SkillView';
 import { paletteColors } from '../styles/colors';
+import Width from '../styles/width';
 
 const deviceWidth = window.innerWidth;
 
@@ -39,7 +40,7 @@ function WorkBox({
 
     if (divElm) {
       if (imageElm) {
-        if (deviceWidth > 768) {
+        if (deviceWidth > Width.md) {
           divElm.addEventListener('mouseover', () => {
             if (imageElm) {
               imageElm.style.transform = 'scale(1.1)';

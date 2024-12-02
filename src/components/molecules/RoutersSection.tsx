@@ -4,7 +4,7 @@ import Router from '../atoms/Router';
 type RouterType = {
   title: string;
   route: string;
-  color: string;
+  color?: string;
 };
 
 type HeaderType = {
@@ -15,7 +15,7 @@ type HeaderType = {
 function RoutersSection({ header, routers }: { header: HeaderType; routers: RouterType[] }) {
   return (
     <div className="flex flex-col gap-2">
-      <text className={`text-[${header.color}] text-xl font-medium`} style={{ color: header.color }}>
+      <text className={`text-[${header.color}] text-2xl font-medium`} style={{ color: header.color }}>
         {header.text}
       </text>
       {routers.map((router) => (

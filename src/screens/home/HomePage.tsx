@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../components/organisms/Header';
+import Header from '../../components/organisms/header/Header';
 import Footer from '../../components/organisms/Footer';
 import HomeLeft from './HomeLeft';
 import HomeRight from './HomeRight';
@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-screen min-h-screen flex flex-col sm:flex-row">
-        <Header textColor="text-accent" logoColor={paletteColors.primary} smallLogoColor={paletteColors.accent} />
+        <Header logoColor={paletteColors.primary} smallLogoColor={paletteColors.accent} />
         <HomeLeft />
         <HomeRight />
       </div>

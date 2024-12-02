@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Header from '../components/organisms/Header';
+import Header from '../components/organisms/header/Header';
 import Footer from '../components/organisms/Footer';
 import Toolbox from '../components/organisms/Toolbox';
 import { SkillCategory, SkillsDetails } from '../constants/skillData';
@@ -25,7 +25,7 @@ function MySkills() {
 
   return (
     <div className="w-screen flex flex-col ">
-      <Header textColor={paletteColors.secondary} logoColor={paletteColors.secondary} random />
+      <Header logoColor={paletteColors.secondary} random />
       <div className="w-full bg-light flex flex-col pt-[10vh]">
         <div className="flex flex-col items-center">
           <input

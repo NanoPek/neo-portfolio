@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Header from '../components/organisms/Header';
+import Header from '../components/organisms/header/Header';
 import WorkBox from '../components/molecules/WorkBox';
 import Footer from '../components/organisms/Footer';
 import workBoxes from '../constants/workData';
@@ -10,7 +10,7 @@ function MyWork() {
 
   return (
     <div className="flex flex-col ">
-      <Header textColor="text-black" logoColor="#000" />
+      <Header logoColor="#000" />
       <div className="bg-light flex flex-col items-center mt-[10vh] pb-6 2xl:items-center bg-png min-h-[90vh]">
         <div className="flex flex-col w-5/6 py-6 gap-9 items-center lg:grid lg:grid-cols-2 2xl:grid-cols-3 2xl:w-screen 2xl:px-60  ">
           {workBoxes.map((work) => (
