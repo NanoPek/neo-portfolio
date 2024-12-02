@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Header from '../component/templates/Header';
-import Footer from '../component/templates/Footer';
-import Toolbox from '../component/templates/Toolbox';
-import MyColors from '../component/atoms/MyColors';
-import { SkillCategory, SkillsDetails } from '../component/atoms/Skills';
+import Header from '../components/organisms/Header';
+import Footer from '../components/organisms/Footer';
+import Toolbox from '../components/organisms/Toolbox';
+import MyColors from '../components/atoms/MyColors';
+import { SkillCategory, SkillsDetails } from '../components/atoms/Skills';
 
 function MySkills() {
   const [search, setSearch] = React.useState('');

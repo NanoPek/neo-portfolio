@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Header from '../component/templates/Header';
-import WorkBox from '../component/molecules/WorkBox';
-import Footer from '../component/templates/Footer';
+import Header from '../components/organisms/Header';
+import WorkBox from '../components/molecules/WorkBox';
+import Footer from '../components/organisms/Footer';
 
 import moonalisaImage from '../assets/WorkBoxImages/moonalisa.png';
 import hi7hautImage from '../assets/WorkBoxImages/hi7hautApp.png';
@@ -12,7 +12,7 @@ import kuri from '../assets/WorkBoxImages/kuri.png';
 import tournesol from '../assets/WorkBoxImages/tournesol.png';
 import lunabeeStudio from '../assets/WorkBoxImages/lunabeeStudio.png';
 import N7CLogo from '../assets/WorkBoxImages/N7CLogo.png';
-import { SkillsDetails } from '../component/atoms/Skills';
+import { SkillsDetails } from '../components/atoms/Skills';
 
 function MyWork() {
   const { t } = useTranslation();

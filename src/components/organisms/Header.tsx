@@ -75,6 +75,7 @@ function Header({
       document.body.classList.remove('overflow-hidden');
     }
   }, [isToggle]);
+
   return (
     <div className="z-50 absolute 2xl:right-0 flex flex-row ">
       {
@@ -84,7 +85,7 @@ function Header({
               {
               location.pathname !== '/'
                 ? (
-                  <a href="/" className="font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center" id="title">
+                  <a href="/public" className="font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center" id="title">
                     { location.pathname === '/my-work' && (
                     <img
                       src="https://assets.website-files.com/5e87e737ee7085b9ba02c101/5e87e737ee7085c39c02c107_mac.svg"
@@ -118,7 +119,7 @@ function Header({
                 {
                   location.pathname !== '/'
                     ? (
-                      <a href="/" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
+                      <a href="/public" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
                         jecarrez
                       </a>
                     )

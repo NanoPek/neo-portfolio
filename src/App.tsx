@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
-import HomePage from './screens/HomePage';
+import HomePage from './screens/home/HomePage';
 import MyWork from './screens/MyWork';
 import MySkills from './screens/MySkills';
 
