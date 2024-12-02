@@ -3,9 +3,11 @@ import { ReactComponent as LinkedinIcon } from '../../assets/linkedinIcon.svg';
 import { ReactComponent as GithubIcon } from '../../assets/githubIcon.svg';
 import { ReactComponent as BranchIcon } from '../../assets/branchIcon.svg';
 
-// eslint-disable-next-line react/require-default-props
-function Icons(props: { colors?: string[] }) {
-  const { colors } = props;
+type IconsProps = {
+  colors?: string[];
+};
+
+function Icons({ colors }: IconsProps) {
   return (
     <div className="flex flex-row justify-around h-[40px]">
       <a href="https://www.linkedin.com/in/jecarrez/" target="_blank" rel="noreferrer" className="hover:animate-pulse hover:scale-[1.2] transition-all">
@@ -21,4 +23,4 @@ function Icons(props: { colors?: string[] }) {
   );
 }
 
-export default Icons;
+export default React.memo(Icons);

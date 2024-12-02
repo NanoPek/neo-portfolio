@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ReactComponent as Face } from '../../assets/Face.svg';
 import { ReactComponent as FaceOpen } from '../../assets/FaceOpen.svg';
 
@@ -8,18 +9,24 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 import Router from '../atoms/Router';
 import Icons from '../atoms/Icons';
 import MyColors from '../atoms/MyColors';
+import LanguageSwitcher from '../molecules/LanguageSwitcher';
 
-function Header(props: {
-  // eslint-disable-next-line react/require-default-props
-  textColor: string, logoColor: string; random?: boolean; smallLogoColor?: string }) {
-  const {
-    textColor, logoColor, random, smallLogoColor,
-  } = props;
+type HeaderProps = {
+  textColor: string;
+  logoColor: string;
+  random?: boolean;
+  smallLogoColor?: string;
+};
+
+function Header({
+  textColor, logoColor, random, smallLogoColor,
+}: HeaderProps) {
   const [isToggle, setIsToggle] = React.useState(false);
   const [faceColor, setFaceColor] = React.useState(logoColor);
 
   const { width } = useWindowDimensions();
 
+  const { t } = useTranslation();
   const location = useLocation();
 
   const toggle = () => {
@@ -40,15 +47,16 @@ function Header(props: {
 
   function randomizeText() {
     const elem = document.getElementById('title');
-    if (elem) {
-      elem.style.color = generateRandomColor();
+    if (!elem) return;
 
-      elem.innerHTML = spanIt(elem.innerText);
-      // now each letter
-      const spans = elem.querySelectorAll('span');
-      // eslint-disable-next-line no-return-assign,no-param-reassign
-      spans.forEach((span) => span.style.color = generateRandomColor());
-    }
+    elem.style.color = generateRandomColor();
+    elem.innerHTML = spanIt(elem.innerText);
+
+    const spans = elem.querySelectorAll('span');
+    spans.forEach((span) => {
+      // eslint-disable-next-line no-param-reassign
+      span.style.color = generateRandomColor();
+    });
   }
 
   useEffect(() => {
@@ -72,10 +80,11 @@ function Header(props: {
       {
         !isToggle ? (
           <header className="flex flex-row justify-between items-center px-8 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
-            {
+            <div className={` ${textColor} flex flex-col md:flex-row items-center gap-2`}>
+              {
               location.pathname !== '/'
                 ? (
-                  <a href="/" className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center `} id="title">
+                  <a href="/" className="font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center" id="title">
                     { location.pathname === '/my-work' && (
                     <img
                       src="https://assets.website-files.com/5e87e737ee7085b9ba02c101/5e87e737ee7085c39c02c107_mac.svg"
@@ -87,11 +96,13 @@ function Header(props: {
                   </a>
                 )
                 : (
-                  <div className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl cursor-default flex flex-row gap-2 items-center`}>
+                  <div className="font-extrabold text-3xl 2xl:text-5xl cursor-default flex flex-row gap-2 items-center">
                     jecarrez
                   </div>
                 )
             }
+              <LanguageSwitcher />
+            </div>
             <button type="button" onClick={toggle}>
               <Face
                 fill={smallLogoColor && width < 640 ? smallLogoColor : faceColor}
@@ -103,19 +114,22 @@ function Header(props: {
         ) : (
           <div className="bg-secondary flex flex-col  items-center px-4 w-screen h-screen ">
             <header className=" flex flex-row justify-between items-center px-4 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
-              {
-                location.pathname !== '/'
-                  ? (
-                    <a href="/" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
-                      jecarrez
-                    </a>
-                  )
-                  : (
-                    <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl cursor-default">
-                      jecarrez
-                    </div>
-                  )
-              }
+              <div className="flex flex-col md:flex-row items-center gap-2">
+                {
+                  location.pathname !== '/'
+                    ? (
+                      <a href="/" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
+                        jecarrez
+                      </a>
+                    )
+                    : (
+                      <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl cursor-default">
+                        jecarrez
+                      </div>
+                    )
+                }
+                <LanguageSwitcher />
+              </div>
               <button type="button" onClick={toggle}>
                 <FaceOpen
                   fill={MyColors.primary}
@@ -126,16 +140,16 @@ function Header(props: {
             </header>
             <div className="flex flex-col justify-evenly w-screen px-[15vw] h-[90vh]">
               <div className="flex flex-col h-1/3 justify-between">
-                <Router title="Home" route="/" />
-                <Router title="My Work" route="/my-work" />
-                <Router title="My Skills & Tools" route="/my-skills-&-tools" />
-                <Router title="My Résumé" route={pdf} newTab />
+                <Router title={t('Router.home')} route="/" />
+                <Router title={t('Router.myWork')} route="/my-work" />
+                <Router title={t('Router.skillsAndTools')} route="/my-skills-&-tools" />
+                <Router title={t('Router.myResume')} route={pdf} newTab />
               </div>
               <div className="flex flex-col h-1/4 justify-between">
                 <div className="text-primary text-2xl opacity-50">
-                  CONTACT ME
+                  {t('Router.contactMe')}
                 </div>
-                <Router title={width < 640 ? 'linkedin.com' : 'linkedin.com/in/jeremiecarrez'} route="https://www.linkedin.com/in/jecarrez/" newTab />
+                <Router title={width < 640 ? 'linkedin.com' : 'linkedin.com/in/jecarrez'} route="https://www.linkedin.com/in/jecarrez/" newTab />
                 <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" />
               </div>
               <Icons />
@@ -146,4 +160,5 @@ function Header(props: {
     </div>
   );
 }
-export default Header;
+
+export default React.memo(Header);

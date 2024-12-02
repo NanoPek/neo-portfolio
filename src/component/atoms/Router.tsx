@@ -1,16 +1,19 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-// eslint-disable-next-line react/require-default-props
-function Router(props: { title: string, route: string, color?: string, newTab?: boolean }) {
-  const {
-    title, route, color, newTab,
-  } = props;
+type RouterProps = {
+  title: string;
+  route: string;
+  color?: string;
+  newTab?: boolean;
+};
 
+function Router({
+  title, route, color, newTab,
+}: RouterProps) {
   const location = useLocation();
 
   return (
-  // eslint-disable-next-line react/jsx-no-useless-fragment
     <div>
       {
         location.pathname !== route
@@ -35,4 +38,4 @@ function Router(props: { title: string, route: string, color?: string, newTab?: 
   );
 }
 
-export default Router;
+export default React.memo(Router);

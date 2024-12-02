@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from '../component/templates/Header';
 import WorkBox from '../component/molecules/WorkBox';
 import Footer from '../component/templates/Footer';
@@ -11,8 +12,11 @@ import kuri from '../assets/WorkBoxImages/kuri.png';
 import tournesol from '../assets/WorkBoxImages/tournesol.png';
 import lunabeeStudio from '../assets/WorkBoxImages/lunabeeStudio.png';
 import N7CLogo from '../assets/WorkBoxImages/N7CLogo.png';
+import { SkillsDetails } from '../component/atoms/Skills';
 
 function MyWork() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col ">
       <Header textColor="text-black" logoColor="#000" />
@@ -20,93 +24,110 @@ function MyWork() {
         <div className="flex flex-col w-5/6 py-6 gap-9 items-center lg:grid lg:grid-cols-2 2xl:grid-cols-3 2xl:w-screen 2xl:px-60  ">
           <WorkBox
             image={tournesol}
-            title="Tournesol Nano 🌻"
-            description={`My first own app! Tournesol Nano is an iOS application for the open-source and collaborative Tournesol project.
-            You can search for and watch recommended videos directly in the app (ad-free) or via the YouTube app, and then compare them right within the app!
-            
-            You can also:
-            - View each video’s score across all criteria 🌻
-            - Filter videos by release date, language, and favorite criteria 🌎
-            - Access and edit your “Compare Later” list 👀
-            - View your recommendation history 📖`}
+            title={t('MyWork.workBoxes.tournesol.title')}
+            description={t('MyWork.workBoxes.tournesol.description')}
+            techs={[SkillsDetails.Apple, SkillsDetails.Swift]}
+            extension="swift"
             link="https://tournesol.app/"
-            appStore="https://apps.apple.com/fr/app/tournesol-nano/id6737498377"
-            github="https://github.com/NanoPek/Tournesol-Nano-iOS"
-            date={new Date(2024, 10, 4)}
+            appStore={['https://apps.apple.com/fr/app/tournesol-nano/id6737498377']}
+            github="https://github.com/NanoPek/tournesol-nano"
+            startDate={new Date(2024, 4, 4)}
             color="#FFE259"
           />
           <WorkBox
             image={lunabeeStudio}
-            title="iOS Developer @ Lunabee Studio"
-            description={`Participation in the development of iOS applications:
-             - 🏃RunMotion (SwiftUI, UIKit) | Running Coach App
-             - Development of the new version
-             - Refactoring of the existing codebase, transitioning to clean architecture + data structures
-             - Migration from UIKit navigation to SwiftUI for iOS 16+
-             
-             - 🎮 Karmine Corp, 🧑‍🎓ISIC France, 🏨 B&B Hotels
-             - Development of Widgets using WidgetKit
-             - Integration of Kotlin Multiplatform
-             -Bug fixes & various features
-             Agile teamwork: PRs, ticketing, participation in tech meetings...`}
+            title={t('MyWork.workBoxes.lunabeeStudio.title')}
+            description={t('MyWork.workBoxes.lunabeeStudio.description')}
+            techs={[
+              SkillsDetails.Apple,
+              SkillsDetails.Swift,
+              SkillsDetails.KMP,
+              SkillsDetails.Firebase,
+            ]}
+            extension="swift"
             link="https://www.lunabee.studio/"
-            appStore="https://apps.apple.com/fr/app/runmotion-coach-running/id1370327708"
-            date={new Date(2024, 7, 31)}
+            appStore={[
+              'https://apps.apple.com/fr/app/runmotion-coach-running/id1370327708',
+              'https://apps.apple.com/fr/app/onesafe-6/id1593282910',
+              'https://apps.apple.com/fr/app/karmine-corp/id6477527559',
+            ]}
+            startDate={new Date(2023, 5, 6)}
+            endDate={new Date(2024, 7, 31)}
             color="#8E69D8"
           />
           <WorkBox
             image={N7CLogo}
-            title="Mobile freelancer for N7 Consulting"
-            description={`Development of a mobile application for an electric vehicle rental company, for internal use.
-            - 🚗🔋Design and implementation of the database to manage vehicles, charging stations, and users.
-            - 🤖⛽️Development of advanced algorithms for optimizing electric vehicle charging, taking into account vehicle specifications and the capacities of AC/DC charging stations.
-            - 📲Development of a functional mobile interface in React Native for internal use by the teams.`}
+            title={t('MyWork.workBoxes.N7C.title')}
+            description={t('MyWork.workBoxes.N7C.description')}
+            techs={[SkillsDetails['React Native'], SkillsDetails.Python]}
+            extension="tsx"
             link="https://n7consulting.fr/"
-            date={new Date(2024, 1, 10)}
+            startDate={new Date(2023, 6, 10)}
+            endDate={new Date(2024, 1, 20)}
             color="#4488CA"
           />
           <WorkBox
             image={kuri}
-            title="Kuri App"
-            description="Climate-friendly recipes, personalized to your cooking level, diet and lifestyle!
-            Kuri makes it incredibly easy to eat more seasonal, more local meals."
+            title={t('MyWork.workBoxes.kuri.title')}
+            description={t('MyWork.workBoxes.kuri.description')}
+            techs={[SkillsDetails.Apple, SkillsDetails.Swift, SkillsDetails.Firebase]}
+            extension="swift"
             link="https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870"
-            appStore="https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870"
-            date={new Date(2023, 2, 20)}
+            appStore={['https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870']}
+            startDate={new Date(2023, 0, 20)}
+            endDate={new Date(2023, 3, 20)}
             color="#9ad2ac"
           />
           <WorkBox
             image={moonalisaImage}
-            title="moonalisa App (private beta)"
-            description="I am working on the frontend with React Native and the backend with Firebase for the entire app development of a French startup in the health field."
-            link="https://moonalisa.co"
+            title={t('MyWork.workBoxes.moonalisa.title')}
+            description={t('MyWork.workBoxes.moonalisa.description')}
+            techs={[
+              SkillsDetails['React Native'],
+              SkillsDetails.Firebase,
+              SkillsDetails.Retool,
+            ]}
+            extension="tsx"
+            link="https://moona.health"
             figma="https://www.figma.com/file/LwTFuqp0aKhcEz62kLsRSc/moonalisa-Sketch?node-id=0%3A1&t=awjlHnumlw3EqMmK-1"
-            date={new Date(2023, 0, 1)}
+            startDate={new Date(2022, 5, 3)}
+            endDate={new Date(2023, 7, 31)}
             color="#ff7644"
           />
           <WorkBox
             image={portfolio}
-            title="This Portfolio !"
-            description="This portfolio is made with ReactJS and TailwindCSS. Wanted to try a neo memphis design, hope you like it :)"
-            link="https://jecarrez.tech"
+            title={t('MyWork.workBoxes.portfolio.title')}
+            description={t('MyWork.workBoxes.portfolio.description')}
+            techs={[SkillsDetails['React.js'], SkillsDetails.TailwindCSS]}
+            extension="tsx"
+            link="https://jecarrez.vercel.app/"
             github="https://github.com/NanoPek/neo-portfolio"
-            date={new Date(2023, 0, 1)}
+            startDate={new Date(2022, 12, 10)}
           />
           <WorkBox
             image={hi7hautImage}
-            title="Coin Game PWA"
-            description="A simple coin reward web app to build customer loyalty made with VueJS & Strapi. "
+            title={t('MyWork.workBoxes.hi7haut.title')}
+            description={t('MyWork.workBoxes.hi7haut.description')}
+            techs={[
+              SkillsDetails.VueJS,
+              SkillsDetails.TailwindCSS,
+            ]}
+            extension="tsx"
             link="https://pieces.hi7haut.fr/"
-            date={new Date(2022, 4, 1)}
+            startDate={new Date(2021, 11, 20)}
+            endDate={new Date(2022, 1, 20)}
             color="#FFE259"
           />
           <WorkBox
             image={hi7hautWeb}
-            title="BDE Portfolio"
-            description="A portfolio for a french student association made with VueJS."
-            link="https://github.com/NanoPek/hi7haut-vitrine"
+            title={t('MyWork.workBoxes.hi7hautWeb.title')}
+            description={t('MyWork.workBoxes.hi7hautWeb.description')}
+            techs={[SkillsDetails.VueJS, SkillsDetails.TailwindCSS]}
+            extension="vue"
+            link="https://hi7haut.fr/"
             github="https://github.com/NanoPek/hi7haut-vitrine"
-            date={new Date(2022, 2, 20)}
+            startDate={new Date(2021, 11, 20)}
+            endDate={new Date(2022, 1, 20)}
           />
         </div>
       </div>
@@ -114,4 +135,5 @@ function MyWork() {
     </div>
   );
 }
+
 export default MyWork;

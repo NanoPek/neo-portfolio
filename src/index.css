@@ -11,25 +11,4 @@ body {
     background-color: #f7fafc;
     font-family: Outfit, ui-monospace;
     overflow-x: hidden;
-    overflow-y: overlay;
-}
-
-
-body::-webkit-scrollbar {
-    width: 10px; /* Mostly for vertical scrollbars */
-
-}
-
-/* Track */
-body::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-    /*background: #8338EC;*/
-    border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background: #190B28;
 }
