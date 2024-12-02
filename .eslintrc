@@ -2,16 +2,21 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "react"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "airbnb",
-    "airbnb-typescript"
+    "airbnb-typescript",
+    "plugin:react/recommended"
   ],
   "parserOptions": {
     "project": ["tsconfig.json"]
+  },
+  "rules": {
+    "react/require-default-props": "off"
   }
 }

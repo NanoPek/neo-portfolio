@@ -161,9 +161,4 @@ function Header({
   );
 }
 
-Header.defaultProps = {
-  random: false,
-  smallLogoColor: '',
-};
-
 export default React.memo(Header);

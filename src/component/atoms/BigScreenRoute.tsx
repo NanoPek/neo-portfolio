@@ -22,8 +22,4 @@ function BigScreenRoute({ route, title, newTab }: BigScreenRouteProps) {
   );
 }
 
-BigScreenRoute.defaultProps = {
-  newTab: false,
-};
-
 export default React.memo(BigScreenRoute);

@@ -71,8 +71,4 @@ function Footer({ random }: FooterProps) {
   );
 }
 
-Footer.defaultProps = {
-  random: false,
-};
-
 export default React.memo(Footer);

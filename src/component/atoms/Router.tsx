@@ -38,9 +38,4 @@ function Router({
   );
 }
 
-Router.defaultProps = {
-  color: '',
-  newTab: false,
-};
-
 export default React.memo(Router);

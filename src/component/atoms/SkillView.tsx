@@ -27,8 +27,4 @@ function SkillView({
   );
 }
 
-SkillView.defaultProps = {
-  isSmall: false,
-};
-
 export default React.memo(SkillView);

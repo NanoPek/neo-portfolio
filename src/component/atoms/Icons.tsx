@@ -23,8 +23,4 @@ function Icons({ colors }: IconsProps) {
   );
 }
 
-Icons.defaultProps = {
-  colors: [],
-};
-
 export default React.memo(Icons);

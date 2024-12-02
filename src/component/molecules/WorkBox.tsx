@@ -189,11 +189,4 @@ function WorkBox({
   );
 }
 
-WorkBox.defaultProps = {
-  color: MyColors.purple,
-  figma: '',
-  github: '',
-  appStore: [],
-};
-
 export default React.memo(WorkBox);
