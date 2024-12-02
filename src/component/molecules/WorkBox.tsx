@@ -99,7 +99,7 @@ function WorkBox({
         <img
           src={image}
           alt="work"
-          className=" object-contain h-auto aspect-[600/375] bg-dark transition-all grayscale transition-all duration-500 "
+          className=" object-contain h-auto aspect-[600/375] bg-dark grayscale transition-all duration-500 "
           id={`workbox-image-${title}`}
         />
       </div>
