@@ -19,7 +19,7 @@ type WorkBoxProps = {
   date?: Date;
   figma?: string;
   github?: string;
-  appStore?: string;
+  appStore?: string[];
 };
 
 function WorkBox({
@@ -135,24 +135,45 @@ function WorkBox({
             </span>
           </a>
           {figma && (
-          <a href={figma} className="h-full px-4 flex items-center " target="_blank" rel="noreferrer" aria-label="Open Figma in a new tab">
+          <a
+            href={figma}
+            className="h-full px-4 flex items-center "
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Figma in a new tab"
+          >
             <i className="devicon-figma-plain text-[30px] text-dark" />
           </a>
           )}
           {github && (
-          <a href={github} className="h-full px-4 flex items-center" target="_blank" rel="noreferrer" aria-label="Open Github in a new tab">
+          <a
+            href={github}
+            className="h-full px-4 flex items-center"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Github in a new tab"
+          >
             <i className="devicon-github-plain text-[30px] text-dark" />
           </a>
           )}
-          {appStore && (
-          <a href={appStore} className="h-full px-4 flex items-center" target="_blank" rel="noreferrer">
-            <img
-              src={appStoreIcon}
-              alt="App Store Icon"
-              className="w-[35px] h-[35px]"
-            />
-          </a>
-          )}
+          <ul className="list-none flex flex-row">
+            {appStore && appStore.map((appStoreLink) => (
+              <li key={appStoreLink} className="mb-2">
+                <a
+                  href={appStoreLink}
+                  className="flex items-center h-full px-4"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={appStoreIcon}
+                    alt="App Store Icon"
+                    className="w-[35px] h-[35px]"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
         <div />
       </div>
@@ -165,7 +186,7 @@ WorkBox.defaultProps = {
   date: new Date(),
   figma: '',
   github: '',
-  appStore: '',
+  appStore: [],
 };
 
 export default React.memo(WorkBox);

@@ -29,7 +29,7 @@ function MyWork() {
             techs={[SkillsDetails.Apple, SkillsDetails.Swift]}
             extension="swift"
             link="https://tournesol.app/"
-            appStore="https://apps.apple.com/fr/app/tournesol-nano/id6737498377"
+            appStore={['https://apps.apple.com/fr/app/tournesol-nano/id6737498377']}
             github="https://github.com/NanoPek/tournesol-nano"
             date={new Date(2024, 10, 4)}
             color="#FFE259"
@@ -46,7 +46,11 @@ function MyWork() {
             ]}
             extension="swift"
             link="https://www.lunabee.studio/"
-            appStore="https://apps.apple.com/fr/app/runmotion-coach-running/id1370327708"
+            appStore={[
+              'https://apps.apple.com/fr/app/runmotion-coach-running/id1370327708',
+              'https://apps.apple.com/fr/app/onesafe-6/id1593282910',
+              'https://apps.apple.com/fr/app/karmine-corp/id6477527559',
+            ]}
             date={new Date(2024, 7, 31)}
             color="#8E69D8"
           />
@@ -54,7 +58,7 @@ function MyWork() {
             image={N7CLogo}
             title={t('MyWork.workBoxes.N7C.title')}
             description={t('MyWork.workBoxes.N7C.description')}
-            techs={[SkillsDetails['React Native']]}
+            techs={[SkillsDetails['React Native'], SkillsDetails.Python]}
             extension="tsx"
             link="https://n7consulting.fr/"
             date={new Date(2024, 1, 10)}
@@ -67,7 +71,7 @@ function MyWork() {
             techs={[SkillsDetails.Apple, SkillsDetails.Swift, SkillsDetails.Firebase]}
             extension="swift"
             link="https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870"
-            appStore="https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870"
+            appStore={['https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870']}
             date={new Date(2023, 2, 20)}
             color="#9ad2ac"
           />
