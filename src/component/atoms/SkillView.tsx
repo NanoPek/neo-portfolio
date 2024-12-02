@@ -11,11 +11,18 @@ function SkillView({
   name, icon, color, isSmall,
 }: SkillProps) {
   return (
-    <div className={`flex flex-col justify-center items-center w-full h-[${isSmall ? '10vh' : '15vh'}]`} style={{ backgroundColor: color }}>
-      <i className={`${icon} text-[${isSmall ? '30px' : '60px'}]`} />
-      <div className="text-center text-white text-xl ">
-        {name}
-      </div>
+    <div
+      className={`flex flex-col justify-center items-center w-full ${isSmall ? 'h-[10vh]' : 'h-[15vh]'}`}
+      style={{ backgroundColor: color }}
+    >
+      <i className={`${icon} ${isSmall ? 'text-[30px]' : 'text-[60px]'}`} />
+      {
+        !isSmall && (
+        <div className="text-center text-white text-xl ">
+          {name}
+        </div>
+        )
+}
     </div>
   );
 }
