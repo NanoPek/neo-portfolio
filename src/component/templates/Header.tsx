@@ -79,11 +79,11 @@ function Header({
       {
         !isToggle ? (
           <header className="flex flex-row justify-between items-center px-8 w-screen h-[10vh] sm:px-8 2xl:px-20  ">
-            <div className="flex flex-col md:flex-row items-center gap-2">
+            <div className={` ${textColor} flex flex-col md:flex-row items-center gap-2`}>
               {
               location.pathname !== '/'
                 ? (
-                  <a href="/" className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center `} id="title">
+                  <a href="/" className="font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center" id="title">
                     { location.pathname === '/my-work' && (
                     <img
                       src="https://assets.website-files.com/5e87e737ee7085b9ba02c101/5e87e737ee7085c39c02c107_mac.svg"
@@ -95,7 +95,7 @@ function Header({
                   </a>
                 )
                 : (
-                  <div className={` ${textColor} font-extrabold text-3xl 2xl:text-5xl cursor-default flex flex-row gap-2 items-center`}>
+                  <div className="font-extrabold text-3xl 2xl:text-5xl cursor-default flex flex-row gap-2 items-center">
                     jecarrez
                   </div>
                 )
