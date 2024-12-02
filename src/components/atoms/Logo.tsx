@@ -36,12 +36,12 @@ function Logo({ random, generateRandomColor }: LogoProps) {
       randomizeText();
       setInterval(randomizeText, 4000);
     }
-  }, [random]);
+  }, [random, generateRandomColor]);
 
   return (
     <div>
       { location.pathname !== '/' ? (
-        <a href="/" className="flex flex-row text-primary font-extrabold text-3xl 2xl:text-5xl">
+        <a href="/" className="flex flex-row font-extrabold text-3xl 2xl:text-5xl" id="title">
           {location.pathname === '/my-work' && (
             <img
               src="https://assets.website-files.com/5e87e737ee7085b9ba02c101/5e87e737ee7085c39c02c107_mac.svg"
@@ -52,7 +52,7 @@ function Logo({ random, generateRandomColor }: LogoProps) {
           jecarrez
         </a>
       ) : (
-        <div className=" text-primary font-extrabold text-3xl 2xl:text-5xl cursor-default">
+        <div className="font-extrabold text-3xl 2xl:text-5xl cursor-default">
           jecarrez
         </div>
       )}
@@ -60,4 +60,4 @@ function Logo({ random, generateRandomColor }: LogoProps) {
   );
 }
 
-export default Logo;
+export default React.memo(Logo);

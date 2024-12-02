@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-screen min-h-screen flex flex-col sm:flex-row">
-        <Header logoColor={paletteColors.primary} smallLogoColor={paletteColors.accent} />
+        <Header textColor="text-accent" logoColor={paletteColors.primary} smallLogoColor={paletteColors.accent} />
         <HomeLeft />
         <HomeRight />
       </div>

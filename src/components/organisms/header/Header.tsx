@@ -5,15 +5,16 @@ import ToggledHeader from './ToggledHeader';
 
 type HeaderProps = {
   logoColor: string;
+  textColor?: string;
   random?: boolean;
   smallLogoColor?: string;
 };
 
 function Header({
-  logoColor, random, smallLogoColor,
+  logoColor, textColor, random, smallLogoColor,
 }: HeaderProps) {
   const [isToggle, setIsToggle] = React.useState(false);
-  const [faceColor, setFaceColor] = React.useState(logoColor);
+  const [faceColor, setFaceColor] = React.useState(smallLogoColor ?? logoColor);
 
   const toggle = () => {
     setIsToggle(!isToggle);
@@ -45,6 +46,7 @@ function Header({
         <UntoggledHeader
           faceColor={faceColor}
           toggle={toggle}
+          textColor={textColor}
           smallLogoColor={smallLogoColor}
           random={random}
           generateRandomColor={generateRandomColor}

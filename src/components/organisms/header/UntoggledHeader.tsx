@@ -6,21 +6,22 @@ import { ReactComponent as Face } from '../../../assets/Face.svg';
 import Logo from '../../atoms/Logo';
 
 type UntoggledHeaderProps = {
-  smallLogoColor?: string;
   faceColor: string;
   toggle: () => void;
+  textColor?: string;
+  smallLogoColor?: string;
   random?: boolean;
   generateRandomColor?: () => string;
 };
 
 function UntoggledHeader({
-  smallLogoColor, faceColor, toggle, random, generateRandomColor,
+  faceColor, toggle, textColor, smallLogoColor, random, generateRandomColor,
 }: UntoggledHeaderProps) {
   const { width } = useWindowDimensions();
 
   return (
     <header className="w-screen h-[10vh] flex flex-row justify-between items-center px-8 sm:px-8 2xl:px-20">
-      <div className="flex flex-col md:flex-row items-center gap-2">
+      <div className={`${textColor} flex flex-col md:flex-row items-center gap-2`}>
         <Logo random={random} generateRandomColor={generateRandomColor} />
         <LanguageSwitcher />
       </div>
