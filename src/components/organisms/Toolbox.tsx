@@ -1,5 +1,5 @@
 import React from 'react';
-import { SkillDetail } from '../atoms/Skills';
+import { SkillDetail } from '../../constants/skillData';
 import SkillView from '../atoms/SkillView';
 
 function Toolbox(props: {

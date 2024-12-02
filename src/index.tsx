@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './i18n';
 import App from './App';
+import LINKS from './constants/links';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -37,5 +38,6 @@ console.log('    ,__                   __\n'
     + "   'Ms    'V*mmWWmm*f`    gA`\n\n"
     + '     Hey there little bug 🐛👋!\n'
     + '     Are you intrigued by this website?\n'
-    + '     If so, you can take a look at the code behind it on GitHub here : https://github.com/NanoPek/neo-portfolio.\n'
-    + "     Also, don't hesitate to reach out to me on LinkedIn at https://www.linkedin.com/in/jecarrez/ or via email at jecarrez.pro@gmail.com ✨.");
+    + `     If so, you can take a look at the code behind it on GitHub here : ${LINKS.GITHUB_PORTFOLIO}.
+`
+    + `     Also, don't hesitate to reach out to me on LinkedIn at ${LINKS.LINKEDIN} or via email at ${LINKS.EMAIL} ✨.`);

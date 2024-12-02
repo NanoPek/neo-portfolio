@@ -6,6 +6,7 @@ const resources = {
         myWork: 'My Work 👨‍💻',
         skillsAndTools: 'Skills 🤹 & Tools 🛠️',
         myResume: 'My Résumé 📄',
+        navigation: 'NAVIGATION',
         contactMe: 'CONTACT ME',
       },
       Footer: {
@@ -109,6 +110,7 @@ const resources = {
         myWork: 'Mon Travail 👨‍💻',
         skillsAndTools: 'Compétences 🤹 & Outils 🛠️',
         myResume: 'Mon CV 📄',
+        navigation: 'NAVIGATION',
         contactMe: 'ME CONTACTER',
       },
       Footer: {
@@ -213,6 +215,7 @@ const resources = {
         myWork: '내 작업 👨‍💻',
         skillsAndTools: '기술 🤹 & 도구 🛠️',
         myResume: '내 이력서 📄',
+        navigation: '네비게이션',
         contactMe: '문의하기',
       },
       Footer: {

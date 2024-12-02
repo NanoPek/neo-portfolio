@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Header from '../component/templates/Header';
-import Footer from '../component/templates/Footer';
-import Toolbox from '../component/templates/Toolbox';
-import MyColors from '../component/atoms/MyColors';
-import { SkillCategory, SkillsDetails } from '../component/atoms/Skills';
+import Header from '../components/organisms/header/Header';
+import Footer from '../components/organisms/Footer';
+import Toolbox from '../components/organisms/Toolbox';
+import { SkillCategory, SkillsDetails } from '../constants/skillData';
+import { paletteColors } from '../components/styles/colors';
 
 function MySkills() {
   const [search, setSearch] = React.useState('');
@@ -24,18 +24,16 @@ function MySkills() {
   }, [search]);
 
   return (
-    <div className="w-screen flex flex-col ">
-      <Header textColor={MyColors.secondary} logoColor={MyColors.secondary} random />
-      <div className="w-full bg-light flex flex-col pt-[10vh]">
-        <div className="flex flex-col items-center">
-          <input
-            type="text"
-            className="w-[85%] sm:w-96 h-12 rounded border-[3px] border-dark text-dark text-xl text-center"
-            placeholder={t('MySkills.search')}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+    <div className="w-screen flex flex-col">
+      <Header logoColor={paletteColors.secondary} random />
+      <div className="w-full flex flex-col items-center pt-[10vh] bg-light">
+        <input
+          type="text"
+          className="w-10/12 sm:w-96 h-12 rounded border-[3px] border-dark text-dark text-xl text-center"
+          placeholder={t('MySkills.search')}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
         <div className="flex flex-col items-center" id="checkEmptyDiv">
           <Toolbox
             title={t('MySkills.categories.mobileTools')}
@@ -79,11 +77,9 @@ function MySkills() {
           />
         </div>
         {isEmpty && (
-        <div className="flex flex-col items-center justify-center h-[20vh]">
-          <h1 className="text-4xl text-dark font-bold">
+          <h1 className="flex flex-col items-center justify-center p-6 text-4xl text-dark font-bold">
             {t('MySkills.noSkills')}
           </h1>
-        </div>
         )}
       </div>
       <Footer random />
