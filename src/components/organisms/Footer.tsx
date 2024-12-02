@@ -2,37 +2,33 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import pdf from '../../assets/resumeCARREZJeremie.pdf';
 
-import Router from '../atoms/Router';
-import Icons from '../atoms/Icons';
-import MyColors from '../atoms/MyColors';
+import Icons from '../molecules/Icons';
+import RoutersSection from '../molecules/RoutersSection';
+import LINKS from '../../constants/links';
+import { paletteColors, skillsColors } from '../styles/colors';
+import Copyright from '../atoms/Copyright';
+import Divider from '../atoms/Divider';
 
 type FooterProps = {
   random?: boolean;
 };
 
 function Footer({ random }: FooterProps) {
-  const [colors, setColors] = React.useState([MyColors.accent, MyColors.accent, MyColors.accent,
-    MyColors.accent, MyColors.accent, MyColors.secondary, MyColors.secondary,
-    MyColors.accent, MyColors.accent, MyColors.accent, MyColors.accent]);
+  const { t } = useTranslation();
 
-  const generateRandomColor = () => {
-    const allColors = ['#f98c6b', '#67a1d0', '#007acc', '#f0db4f', '#bcdc77', '#a1e7fc', '#89d0ab', '#7ed9b2', '#d680a9',
-      '#85bcd1', '#8cac1d', '#A2AAAD', '#37b2ff', '#85bcf3', '#92a7d4', '#ffd616', '#ffdc78', '#8bbae3', '#ff8f6e',
-      '#7253ce', '#ff8f6e', '#fd806f', '#ff8f6e', '#336d9c', '#4972ac', '#c56876', '#ffaf67'];
-    const randomNumber = Math.floor(Math.random() * allColors.length);
-    return allColors[randomNumber];
-  };
+  const [colors, setColors] = React.useState([paletteColors.accent, paletteColors.secondary,
+    paletteColors.secondary, paletteColors.secondary, paletteColors.secondary, paletteColors.accent,
+    paletteColors.secondary, paletteColors.secondary, paletteColors.accent, paletteColors.accent,
+    paletteColors.accent, paletteColors.accent]);
 
-  const setAllRandomColors = () => {
+  function setAllRandomColors() {
     const localColors = [];
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < colors.length; i++) {
-      localColors.push(generateRandomColor());
+    for (let i = 0; i < colors.length; i += 1) {
+      const randomNumber = Math.floor(Math.random() * skillsColors.length);
+      localColors.push(skillsColors[randomNumber]);
     }
     setColors(localColors);
-  };
-
-  const { t } = useTranslation();
+  }
 
   useEffect(() => {
     if (random) {
@@ -41,32 +37,37 @@ function Footer({ random }: FooterProps) {
     }
   }, [random]);
 
+  const colorSections = [
+    {
+      text: t('Router.navigation'),
+      routers: [
+        { title: t('Router.home'), route: '/', color: colors[1] },
+        { title: t('Router.myWork'), route: '/my-work', color: colors[2] },
+        { title: t('Router.skillsAndTools'), route: '/my-skills-&-tools', color: colors[3] },
+        { title: t('Router.myResume'), route: pdf, color: colors[4] },
+      ],
+    },
+    {
+      text: t('Router.contactMe'),
+      routers: [
+        { title: LINKS.LINKEDIN_SHORT, route: LINKS.LINKEDIN, color: colors[6] },
+        { title: LINKS.EMAIL, route: LINKS.MAIL_TO, color: colors[7] },
+      ],
+    },
+  ];
+
   return (
-    <div className="flex flex-col justify-between w-screen min-h-[65vh] sm:h-[65vh] px-[15vw] bg-dark py-6 ">
-      <div className="flex flex-col h-[45%] justify-between">
-        <Router title={t('Router.home')} route="/" color={colors[0]} />
-        <Router title={t('Router.myWork')} route="/my-work" color={colors[1]} />
-        <Router title={t('Router.skillsAndTools')} route="/my-skills-&-tools" color={colors[2]} />
-        <Router title={t('Router.myResume')} route={pdf} color={colors[3]} />
-      </div>
-      <div className="flex flex-col h-[20%] justify-between">
-        <div className={`text-[${colors[4]}] text-xl`} style={{ color: colors[4] }}>
-          {t('Router.contactMe')}
-        </div>
-        <Router title="linkedin.com" route="https://www.linkedin.com/in/jecarrez/" color={colors[5]} />
-        <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" color={colors[6]} />
-      </div>
-      <Icons colors={colors.slice(7, colors.length)} />
-      <div className="flex flex-col justify-between h-[10%] w-full">
-        <div className="h-px w-full bg-secondary" />
-        <div className="text-accent text-lg ">
-          {t('Footer.copyright')}
-          {' '}
-          <a href="https://github.com/NanoPek/neo-portfolio" className="underline">
-            https://github.com/NanoPek/neo-portfolio
-          </a>
-        </div>
-      </div>
+    <div className="p-8 sm:px-16 md:px-32 flex flex-col w-screen gap-4 bg-dark">
+      {colorSections.map((section, index) => (
+        <RoutersSection
+          key={section.text}
+          header={{ text: section.text, color: colors[index * 5] }}
+          routers={section.routers}
+        />
+      ))}
+      <Icons colors={colors.slice(8, colors.length)} />
+      <Divider />
+      <Copyright />
     </div>
   );
 }

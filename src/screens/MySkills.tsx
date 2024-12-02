@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import Header from '../components/organisms/Header';
 import Footer from '../components/organisms/Footer';
 import Toolbox from '../components/organisms/Toolbox';
-import MyColors from '../components/atoms/MyColors';
-import { SkillCategory, SkillsDetails } from '../components/atoms/Skills';
+import { SkillCategory, SkillsDetails } from '../constants/skillData';
+import { paletteColors } from '../components/styles/colors';
 
 function MySkills() {
   const [search, setSearch] = React.useState('');
@@ -25,7 +25,7 @@ function MySkills() {
 
   return (
     <div className="w-screen flex flex-col ">
-      <Header textColor={MyColors.secondary} logoColor={MyColors.secondary} random />
+      <Header textColor={paletteColors.secondary} logoColor={paletteColors.secondary} random />
       <div className="w-full bg-light flex flex-col pt-[10vh]">
         <div className="flex flex-col items-center">
           <input

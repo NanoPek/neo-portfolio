@@ -13,27 +13,26 @@ function Router({
 }: RouterProps) {
   const location = useLocation();
 
+  const isActiveRoute = location.pathname === route;
+  const linkStyles = color ? { color } : {};
+
   return (
-    <div>
-      {
-        location.pathname !== route
-          ? (
-            <a
-              href={route}
-              className="text-primary text-xl border-b-2 border-transparent hover:border-primary transition transition-all"
-              style={color ? { color } : {}}
-              target={newTab ? '_blank' : ''}
-              rel="noopener noreferrer"
-            >
-              {title}
-            </a>
-          )
-          : (
-            <div className="text-accent text-xl" style={color ? { color } : {}}>
-              {title}
-            </div>
-          )
-    }
+    <div className="text-xl transition-all">
+      {isActiveRoute ? (
+        <span className="text-accent font-bold" style={linkStyles}>
+          {title}
+        </span>
+      ) : (
+        <a
+          href={route}
+          className="text-primary border-b-2 border-transparent hover:border-primary"
+          style={linkStyles}
+          target={newTab ? '_blank' : ''}
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>
+      )}
     </div>
   );
 }

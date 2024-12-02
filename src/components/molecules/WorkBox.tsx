@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import MyColors from '../atoms/MyColors';
 
 import appStoreIcon from '../../assets/appStoreIcon.svg';
-import { SkillDetail } from '../atoms/Skills';
+import { SkillDetail } from '../../constants/skillData';
 import SkillView from '../atoms/SkillView';
+import { paletteColors } from '../styles/colors';
 
 const deviceWidth = window.innerWidth;
 
@@ -35,7 +35,7 @@ function WorkBox({
     const imageElm = document.getElementById(`workbox-image-${title}`);
     const greyElm = document.getElementById(`workbox-grey-${title}`);
     const buttonElm = document.getElementById(`workbox-button-${title}`);
-    const highlightColor = color || MyColors.purple;
+    const highlightColor = color || paletteColors.purple;
 
     if (divElm) {
       if (imageElm) {

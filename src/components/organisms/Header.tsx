@@ -7,9 +7,10 @@ import { ReactComponent as FaceOpen } from '../../assets/FaceOpen.svg';
 import pdf from '../../assets/resumeCARREZJeremie.pdf';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import Router from '../atoms/Router';
-import Icons from '../atoms/Icons';
-import MyColors from '../atoms/MyColors';
+import Icons from '../molecules/Icons';
 import LanguageSwitcher from '../molecules/LanguageSwitcher';
+import { paletteColors, skillsColors } from '../styles/colors';
+import LINKS from '../../constants/links';
 
 type HeaderProps = {
   textColor: string;
@@ -34,11 +35,8 @@ function Header({
   };
 
   const generateRandomColor = () => {
-    const colors = ['#f98c6b', '#67a1d0', '#007acc', '#f0db4f', '#bcdc77', '#a1e7fc', '#89d0ab', '#7ed9b2', '#d680a9',
-      '#85bcd1', '#8cac1d', '#A2AAAD', '#37b2ff', '#85bcf3', '#92a7d4', '#ffd616', '#ffdc78', '#8bbae3', '#ff8f6e',
-      '#7253ce', '#696f74', '#ff8f6e', '#fd806f', '#ff8f6e', '#336d9c', '#4972ac', '#c56876', '#ffaf67', '#000'];
-    const randomNumber = Math.floor(Math.random() * colors.length);
-    return colors[randomNumber];
+    const randomNumber = Math.floor(Math.random() * skillsColors.length);
+    return skillsColors[randomNumber];
   };
 
   function spanIt(str: string) {
@@ -85,7 +83,7 @@ function Header({
               {
               location.pathname !== '/'
                 ? (
-                  <a href="/public" className="font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center" id="title">
+                  <a href="/" className="font-extrabold text-3xl 2xl:text-5xl flex flex-row items-center" id="title">
                     { location.pathname === '/my-work' && (
                     <img
                       src="https://assets.website-files.com/5e87e737ee7085b9ba02c101/5e87e737ee7085c39c02c107_mac.svg"
@@ -119,7 +117,7 @@ function Header({
                 {
                   location.pathname !== '/'
                     ? (
-                      <a href="/public" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
+                      <a href="/" className=" text-primary font-extrabold text-3xl 2xl:text-5xl">
                         jecarrez
                       </a>
                     )
@@ -133,7 +131,7 @@ function Header({
               </div>
               <button type="button" onClick={toggle}>
                 <FaceOpen
-                  fill={MyColors.primary}
+                  fill={paletteColors.primary}
                   transform={width < 1536 ? '' : 'scale(1.5)'}
                   className={width < 1536 ? 'animate-pulse hover:scale-[1.5] hover:animate-none transition-all' : 'animate-pulse hover:scale-[2] hover:animate-none transition-all'}
                 />
@@ -150,8 +148,8 @@ function Header({
                 <div className="text-primary text-2xl opacity-50">
                   {t('Router.contactMe')}
                 </div>
-                <Router title={width < 640 ? 'linkedin.com' : 'linkedin.com/in/jecarrez'} route="https://www.linkedin.com/in/jecarrez/" newTab />
-                <Router title="jecarrez.pro@gmail.com" route="mailto:jecarrez.pro@gmail.com" />
+                <Router title={LINKS.LINKEDIN_SHORT} route={LINKS.LINKEDIN} newTab />
+                <Router title={LINKS.EMAIL} route={LINKS.MAIL_TO} />
               </div>
               <Icons />
             </div>
