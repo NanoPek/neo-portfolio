@@ -47,15 +47,16 @@ function Header({
 
   function randomizeText() {
     const elem = document.getElementById('title');
-    if (elem) {
-      elem.style.color = generateRandomColor();
+    if (!elem) return;
 
-      elem.innerHTML = spanIt(elem.innerText);
-      // now each letter
-      const spans = elem.querySelectorAll('span');
-      // eslint-disable-next-line no-return-assign,no-param-reassign
-      spans.forEach((span) => span.style.color = generateRandomColor());
-    }
+    elem.style.color = generateRandomColor();
+    elem.innerHTML = spanIt(elem.innerText);
+
+    const spans = elem.querySelectorAll('span');
+    spans.forEach((span) => {
+      // eslint-disable-next-line no-param-reassign
+      span.style.color = generateRandomColor();
+    });
   }
 
   useEffect(() => {
