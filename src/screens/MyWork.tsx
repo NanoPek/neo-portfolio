@@ -31,7 +31,7 @@ function MyWork() {
             link="https://tournesol.app/"
             appStore={['https://apps.apple.com/fr/app/tournesol-nano/id6737498377']}
             github="https://github.com/NanoPek/tournesol-nano"
-            date={new Date(2024, 10, 4)}
+            startDate={new Date(2024, 4, 4)}
             color="#FFE259"
           />
           <WorkBox
@@ -51,7 +51,8 @@ function MyWork() {
               'https://apps.apple.com/fr/app/onesafe-6/id1593282910',
               'https://apps.apple.com/fr/app/karmine-corp/id6477527559',
             ]}
-            date={new Date(2024, 7, 31)}
+            startDate={new Date(2023, 5, 6)}
+            endDate={new Date(2024, 7, 31)}
             color="#8E69D8"
           />
           <WorkBox
@@ -61,7 +62,8 @@ function MyWork() {
             techs={[SkillsDetails['React Native'], SkillsDetails.Python]}
             extension="tsx"
             link="https://n7consulting.fr/"
-            date={new Date(2024, 1, 10)}
+            startDate={new Date(2023, 6, 10)}
+            endDate={new Date(2024, 1, 20)}
             color="#4488CA"
           />
           <WorkBox
@@ -72,7 +74,8 @@ function MyWork() {
             extension="swift"
             link="https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870"
             appStore={['https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870']}
-            date={new Date(2023, 2, 20)}
+            startDate={new Date(2023, 0, 20)}
+            endDate={new Date(2023, 3, 20)}
             color="#9ad2ac"
           />
           <WorkBox
@@ -87,7 +90,8 @@ function MyWork() {
             extension="tsx"
             link="https://moona.health"
             figma="https://www.figma.com/file/LwTFuqp0aKhcEz62kLsRSc/moonalisa-Sketch?node-id=0%3A1&t=awjlHnumlw3EqMmK-1"
-            date={new Date(2023, 0, 1)}
+            startDate={new Date(2022, 5, 3)}
+            endDate={new Date(2023, 7, 31)}
             color="#ff7644"
           />
           <WorkBox
@@ -98,7 +102,7 @@ function MyWork() {
             extension="tsx"
             link="https://jecarrez.vercel.app/"
             github="https://github.com/NanoPek/neo-portfolio"
-            date={new Date(2023, 0, 1)}
+            startDate={new Date(2022, 12, 10)}
           />
           <WorkBox
             image={hi7hautImage}
@@ -110,7 +114,8 @@ function MyWork() {
             ]}
             extension="tsx"
             link="https://pieces.hi7haut.fr/"
-            date={new Date(2022, 4, 1)}
+            startDate={new Date(2021, 11, 20)}
+            endDate={new Date(2022, 1, 20)}
             color="#FFE259"
           />
           <WorkBox
@@ -121,7 +126,8 @@ function MyWork() {
             extension="vue"
             link="https://hi7haut.fr/"
             github="https://github.com/NanoPek/hi7haut-vitrine"
-            date={new Date(2022, 2, 20)}
+            startDate={new Date(2021, 11, 20)}
+            endDate={new Date(2022, 1, 20)}
           />
         </div>
       </div>

@@ -16,14 +16,17 @@ type WorkBoxProps = {
   extension: string;
   link: string;
   color?: string;
-  date?: Date;
+  startDate: Date;
+  // eslint-disable-next-line react/require-default-props
+  endDate?: Date;
   figma?: string;
   github?: string;
   appStore?: string[];
 };
 
 function WorkBox({
-  image, title, link, date, description, techs, extension, figma, github, color, appStore,
+  image, title, link, startDate, endDate, description,
+  techs, extension, figma, github, color, appStore,
 } : WorkBoxProps) {
   const { t } = useTranslation();
 
@@ -69,11 +72,9 @@ function WorkBox({
   }, []);
 
   const dateFormatter = (dateToFormat: Date) => {
-    // Format a date to a string, format ex : 2022-04-08-project.html
     const year = dateToFormat.getFullYear();
-    const month = dateToFormat.getMonth() + 1;
-    const day = dateToFormat.getDate();
-    return `${year}-${month}-${day}-${t('MyWork.project')}.${extension}`;
+    const month = (dateToFormat.getMonth() + 1).toString().padStart(2, '0');
+    return `${year}-${month}`;
   };
 
   return (
@@ -91,7 +92,14 @@ function WorkBox({
           <div className="w-[18px] h-[18px] rounded-2xl bg-white border-dark border-[3px]" />
         </div>
         <span className="text-dark text-md font-semibold">
-          {date ? dateFormatter(date) : `${t('MyWork.myProject')}.{extension}`}
+          {endDate ? t('MyWork.project', {
+            startDate: dateFormatter(startDate),
+            endDate: dateFormatter(endDate),
+            extension,
+          }) : t('MyWork.ongoing', {
+            startDate: dateFormatter(startDate),
+            extension,
+          })}
         </span>
         <div />
       </div>
@@ -183,7 +191,6 @@ function WorkBox({
 
 WorkBox.defaultProps = {
   color: MyColors.purple,
-  date: new Date(),
   figma: '',
   github: '',
   appStore: [],

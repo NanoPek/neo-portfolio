@@ -32,8 +32,8 @@ const resources = {
         },
       },
       MyWork: {
-        project: 'project',
-        myProject: 'my-project',
+        project: 'from-{{startDate}}-to-{{endDate}}-project.{{extension}}',
+        ongoing: 'from-{{startDate}}-ongoing.{{extension}}',
         viewProject: 'View Project',
         workBoxes: {
           tournesol: {
@@ -45,7 +45,10 @@ const resources = {
                 - View each video’s score across all criteria 🌻
                 - Filter videos by release date, language, and favorite criteria 🌎
                 - Access and edit your “Compare Later” list 👀
-                - View your recommendation history 📖`,
+                - View your recommendation history 📖
+                
+                Check it out and let me know what you think!
+                I’d love to hear your feedback!`,
           },
           lunabeeStudio: {
             title: 'iOS Developer @ Lunabee Studio',
@@ -54,6 +57,10 @@ const resources = {
               - Development of the new version
               - Refactoring of the existing codebase, transitioning to clean architecture + data structures
               - Migration from UIKit navigation to SwiftUI for iOS 16+
+              
+              - 🔐OneSafe (SwiftUI) | Password Manager
+              - Development of new features
+              - Introduction to cryptography technologies using Swift CryptoKit
               
               - 🎮 Karmine Corp, 🧑‍🎓ISIC France, 🏨 B&B Hotels
               - Development of Widgets using WidgetKit
@@ -129,8 +136,8 @@ const resources = {
         },
       },
       MyWork: {
-        project: 'projet',
-        myProject: 'mon-projet',
+        project: 'du-{{startDate}}-au-{{endDate}}-projet.{{extension}}',
+        ongoing: 'du-{{startDate}}-en-cours-projet.{{extension}}',
         viewProject: 'Voir le Projet',
         workBoxes: {
           tournesol: {
@@ -142,7 +149,10 @@ const resources = {
           - Voir le score de chaque vidéo sur tous les critères 🌻
           - Filtrer les vidéos par date de sortie, langue et critères favoris 🌎
           - Accéder et modifier votre liste « Comparer plus tard » 👀
-          - Voir votre historique de recommandations 📖`,
+          - Voir votre historique de recommandations 📖
+          
+          Jetez-y un œil et dites-moi ce que vous en pensez !
+          J’adorerais avoir vos retours !`,
           },
           lunabeeStudio: {
             title: 'Développeur iOS @ Lunabee Studio',
@@ -151,6 +161,10 @@ const resources = {
         - Développement de la nouvelle version
         - Refactorisation de la base de code existante, passage à une architecture propre + structures de données
         - Migration de la navigation UIKit à SwiftUI pour iOS 16+
+        
+        - 🔐OneSafe (SwiftUI) | Gestionnaire de mots de passe
+        - Développement de nouvelles fonctionnalités
+        - Introduction aux technologies de cryptographie avec Swift CryptoKit
         
         - 🎮 Karmine Corp, 🧑‍🎓ISIC France, 🏨 B&B Hotels
         - Développement de widgets avec WidgetKit
@@ -187,6 +201,109 @@ const resources = {
           hi7hautWeb: {
             title: 'Portfolio du BDE',
             description: 'Un portfolio pour une association étudiante française réalisé avec VueJS.',
+          },
+        },
+      },
+    },
+  },
+  ko: {
+    translation: {
+      Router: {
+        home: '홈',
+        myWork: '내 작업 👨‍💻',
+        skillsAndTools: '기술 🤹 & 도구 🛠️',
+        myResume: '내 이력서 📄',
+        contactMe: '문의하기',
+      },
+      Footer: {
+        copyright: '© Jérémie Carrez 2024 - 여기서 저장소를 확인하세요:',
+      },
+      HomePage: {
+        title: '풀스택 및 모바일 개발자.',
+        hi: '안녕하세요, 저는',
+        name: '제레미 카레즈입니다',
+        description: '견고하고, 안전하며 고성능 애플리케이션을 만듭니다.',
+        quotes: {
+          1: '새로운 기술을 배우고, 소프트웨어 개발의 최신 도구와 트렌드를 꾸준히 업데이트합니다.',
+          2: '디자인과 개발, 혁신 및 창의적인 디지털 솔루션 배포에 열정이 있습니다.',
+        },
+      },
+      MySkills: {
+        search: '특정 기술 검색',
+        noSkills: '기술을 찾을 수 없습니다',
+        categories: {
+          mobileTools: '모바일 도구',
+          webTools: '웹 도구',
+          backendTools: '백엔드 도구',
+          otherTools: '기타 도구',
+        },
+      },
+      MyWork: {
+        project: '{{startDate}}에서-{{endDate}}까지-프로젝트.{{extension}}',
+        ongoing: '{{startDate}}부터-진행-중-프로젝트.{{extension}}',
+        viewProject: '프로젝트 보기',
+        workBoxes: {
+          tournesol: {
+            title: 'Tournesol Nano 🌻',
+            description: `저의 첫 번째 자체 앱! Tournesol Nano는 오픈 소스 및 협업 Tournesol 프로젝트를 위한 iOS 애플리케이션입니다.
+                앱에서 바로 추천 동영상을 검색하고 시청하거나 YouTube 앱을 통해 보고 앱에서 바로 비교할 수 있습니다!
+                
+                또한:
+                - 모든 기준에서 각 동영상의 점수 확인 🌻
+                - 출시일, 언어 및 선호 기준으로 동영상 필터링 🌎
+                - "나중에 비교하기" 목록에 액세스하고 편집 👀
+                - 추천 기록 보기 📖
+                
+                한번 확인해보시고 어떤지 알려주세요!
+                피드백을 듣고 싶습니다!`,
+          },
+          lunabeeStudio: {
+            title: 'iOS 개발자 @ Lunabee Studio',
+            description: `iOS 애플리케이션 개발 참여:
+              - 🏃RunMotion (SwiftUI, UIKit) | 러닝 코치 앱
+              - 새로운 버전 개발
+              - 기존 코드베이스 리팩토링, 클린 아키텍처 및 데이터 구조로 전환
+              - iOS 16+를 위한 UIKit 네비게이션에서 SwiftUI로 마이그레이션
+              
+              - 🔐OneSafe (SwiftUI) | 비밀번호 관리자
+              - 새로운 기능 개발
+              - Swift CryptoKit을 사용한 암호화 기술 소개
+              
+              - 🎮 Karmine Corp, 🧑‍🎓ISIC France, 🏨 B&B Hotels
+              - WidgetKit을 사용한 위젯 개발
+              - Kotlin Multiplatform 통합
+              - 버그 수정 및 다양한 기능
+              Agile 팀워크: PR, 티켓 관리, 기술 회의 참여...`,
+          },
+          N7C: {
+            title: 'N7 Consulting',
+            description: `전기차 렌탈 회사를 위한 내부용 모바일 애플리케이션 개발.
+              - 🚗🔋차량, 충전소, 사용자를 관리하기 위한 데이터베이스 설계 및 구현.
+              - 🤖⛽️차량 사양과 AC/DC 충전소 용량을 고려한 전기차 충전 최적화를 위한 고급 알고리즘 개발.
+              - 📲팀 내부에서 사용할 수 있는 React Native로 기능적인 모바일 인터페이스 개발.`,
+          },
+          kuri: {
+            title: 'Kuri App',
+            description: `요리 수준, 식단 및 라이프스타일에 맞춘 친환경 요리법!
+                Kuri는 더 계절적이고 지역적인 식사를 쉽게 준비할 수 있도록 도와줍니다.`,
+          },
+          moonalisa: {
+            title: 'moona.health 앱 (구 moonalisa)',
+            description: `ReactNative를 사용하여 Android 및 iOS 앱 전체 개발
+                Firebase를 사용한 백엔드 구현, Retool을 사용한 관리자 패널 구현.
+                CI/CD.`,
+          },
+          portfolio: {
+            title: '이 포트폴리오!',
+            description: '이 포트폴리오는 ReactJS와 TailwindCSS로 제작되었습니다. 네오 멤피스 디자인을 시도해 보았습니다. 마음에 드셨으면 좋겠습니다 :)',
+          },
+          hi7haut: {
+            title: '코인 게임 PWA',
+            description: 'VueJS 및 Strapi로 제작된 고객 충성도를 구축하기 위한 간단한 코인 보상 웹 애플리케이션.',
+          },
+          hi7hautWeb: {
+            title: '학생회 포트폴리오',
+            description: 'VueJS로 제작된 프랑스 학생회용 포트폴리오.',
           },
         },
       },
