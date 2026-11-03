@@ -17,4 +17,4 @@ React 18, TypeScript, Vite, Tailwind CSS, i18next (English, French, Korean), luc
 | `npm run build` | Typechecks and builds to `build/` |
 | `npm run preview` | Serves the production build |
 | `npm run lint` | Runs ESLint on `src/` |
-| `npm run assets` | Regenerates the favicon, app icons, OG image and the Gena card image from the theme tokens |
+| `npm run assets` | Regenerates the favicon, app icons and OG image from the theme tokens (`-- --gena` also redraws the Gena placeholder card) |

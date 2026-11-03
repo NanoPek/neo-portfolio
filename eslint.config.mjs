@@ -23,8 +23,6 @@ export default tseslint.config(
     },
     rules: {
       'no-console': 'warn',
-      // Intentional here: one-off initial random colour, DOM read in MySkills.
-      'react-hooks/set-state-in-effect': 'warn',
       // Same checks as react-hooks above; keep one copy.
       '@eslint-react/exhaustive-deps': 'off',
       '@eslint-react/set-state-in-effect': 'off',

@@ -2,7 +2,7 @@
 // theme tokens and src/assets/Face.svg, so they never drift from the site.
 // Text is drawn as vector paths from the repo's Outfit font, so the output is the
 // same on every OS (sharp's text renderer ignores custom fonts on macOS).
-// Run: npm run assets
+// Run: npm run assets (add -- --gena to also redraw the Gena.co placeholder card)
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import * as fontkit from 'fontkit';
@@ -89,11 +89,12 @@ await png(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
   ${text('jecarrez.vercel.app', { size: 30, weight: 500, color: accent, x: 80, y: 530 })}
 </svg>`, 'public/og.png');
 
-// Gena.co card image: the company and product name on ink, no claims baked in
-await png(`<svg xmlns="http://www.w3.org/2000/svg" width="1848" height="1300">
+// Gena.co card image: a placeholder until a real product screenshot replaces it,
+// so it is only redrawn on request and never overwrites a real image by accident
+if (process.argv.includes('--gena')) await png(`<svg xmlns="http://www.w3.org/2000/svg" width="1848" height="1300">
   <rect width="1848" height="1300" fill="${ink}"/>
   ${text('Gena.co', { size: 240, weight: 500, color: paper, x: 924, y: 680, anchor: 'middle' })}
   ${text('GenaSQL', { size: 96, color: onAccentSecondary, x: 924, y: 820, anchor: 'middle' })}
 </svg>`, 'src/assets/WorkBoxImages/gena.png');
 
-console.log('Generated favicon.svg, favicon.ico, apple-touch-icon.png, logo192/512.png, og.png and gena.png');
+console.log(`Generated favicon.svg, favicon.ico, apple-touch-icon.png, logo192/512.png, og.png${process.argv.includes('--gena') ? ' and gena.png' : ''}`);

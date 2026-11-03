@@ -9,6 +9,8 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
+    // React already escapes rendered text; escaping here too shows &amp; for a search like c&c
+    interpolation: { escapeValue: false },
   });
 
 export default i18n;
