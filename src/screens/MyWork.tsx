@@ -19,6 +19,7 @@ function MyWork() {
               image={work.image}
               title={t(work.titleKey)}
               description={t(work.descriptionKey)}
+              location={'location' in work && work.location ? t(work.location) : undefined}
               techs={work.techs}
               extension={work.extension}
               link={work.link}

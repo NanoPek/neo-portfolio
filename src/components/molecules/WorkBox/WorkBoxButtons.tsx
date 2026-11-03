@@ -5,7 +5,7 @@ import IconButton from '../../atoms/IconButton';
 
 type WorkBoxButtonsProps = {
   title: string;
-  link: string;
+  link?: string;
   figma?: string;
   github?: string;
   appStore?: string[];
@@ -18,16 +18,18 @@ function WorkBoxButtons({
 
   return (
     <ul className="h-12 flex flex-row items-center gap-3 list-none">
-      <li
-        className="h-full"
-      >
-        <IconButton
-          id={`workbox-button-${title}`}
-          href={link}
-          label={t('MyWork.viewProject')}
-          className="h-full w-32 bg-grey border-dark border-[3px] text-dark hover:bg-black hover:text-white"
-        />
-      </li>
+      {link && (
+        <li
+          className="h-full"
+        >
+          <IconButton
+            id={`workbox-button-${title}`}
+            href={link}
+            label={t('MyWork.viewProject')}
+            className="h-full w-32 bg-grey border-dark border-[3px] text-dark hover:bg-black hover:text-white"
+          />
+        </li>
+      )}
       {figma && (
         <li>
           <IconButton

@@ -7,8 +7,22 @@ import kuri from '../assets/WorkBoxImages/kuri.png';
 import tournesol from '../assets/WorkBoxImages/tournesol.png';
 import lunabeeStudio from '../assets/WorkBoxImages/lunabeeStudio.png';
 import N7CLogo from '../assets/WorkBoxImages/N7CLogo.png';
+import learning360 from '../assets/WorkBoxImages/360learning.png';
+import gena from '../assets/WorkBoxImages/gena.png';
 
 const workBoxes = [
+  {
+    image: learning360,
+    titleKey: 'MyWork.workBoxes.learning360.title',
+    descriptionKey: 'MyWork.workBoxes.learning360.description',
+    location: 'MyWork.locations.remoteFrance',
+    techs: [SkillsDetails.KMP, SkillsDetails.Apple, SkillsDetails.Android, SkillsDetails.Swift],
+    extension: 'kt',
+    link: 'https://360learning.com/',
+    appStore: ['https://apps.apple.com/fr/app/360learning/id1080374585'],
+    startDate: new Date(2025, 7, 1),
+    color: '#4AC994',
+  },
   {
     image: tournesol,
     titleKey: 'MyWork.workBoxes.tournesol.title',
@@ -22,9 +36,21 @@ const workBoxes = [
     color: '#FFE259',
   },
   {
+    image: gena,
+    titleKey: 'MyWork.workBoxes.gena.title',
+    descriptionKey: 'MyWork.workBoxes.gena.description',
+    location: 'MyWork.locations.seoul',
+    techs: [SkillsDetails['React.js'], SkillsDetails.TypeScript, SkillsDetails.TailwindCSS],
+    extension: 'tsx',
+    startDate: new Date(2024, 11, 1),
+    endDate: new Date(2025, 2, 31),
+    color: '#AB7EDB',
+  },
+  {
     image: lunabeeStudio,
     titleKey: 'MyWork.workBoxes.lunabeeStudio.title',
     descriptionKey: 'MyWork.workBoxes.lunabeeStudio.description',
+    location: 'MyWork.locations.lyon',
     techs: [SkillsDetails.Apple, SkillsDetails.Swift, SkillsDetails.KMP, SkillsDetails.Firebase],
     extension: 'swift',
     link: 'https://www.lunabee.studio/',
@@ -41,6 +67,7 @@ const workBoxes = [
     image: N7CLogo,
     titleKey: 'MyWork.workBoxes.N7C.title',
     descriptionKey: 'MyWork.workBoxes.N7C.description',
+    location: 'MyWork.locations.remoteFrance',
     techs: [SkillsDetails['React Native'], SkillsDetails.Python],
     extension: 'tsx',
     link: 'https://n7consulting.fr/',
@@ -64,6 +91,7 @@ const workBoxes = [
     image: moonalisaImage,
     titleKey: 'MyWork.workBoxes.moonalisa.title',
     descriptionKey: 'MyWork.workBoxes.moonalisa.description',
+    location: 'MyWork.locations.paris',
     techs: [SkillsDetails['React Native'], SkillsDetails.Firebase, SkillsDetails.Retool],
     extension: 'tsx',
     link: 'https://moona.health',
@@ -76,7 +104,7 @@ const workBoxes = [
     image: portfolio,
     titleKey: 'MyWork.workBoxes.portfolio.title',
     descriptionKey: 'MyWork.workBoxes.portfolio.description',
-    techs: [SkillsDetails['React.js'], SkillsDetails.TailwindCSS],
+    techs: [SkillsDetails['React.js'], SkillsDetails.TypeScript, SkillsDetails.TailwindCSS],
     extension: 'tsx',
     link: 'https://jecarrez.vercel.app/',
     github: 'https://github.com/NanoPek/neo-portfolio',

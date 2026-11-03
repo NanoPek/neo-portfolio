@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import pdf from '../../assets/resumeCARREZJeremie.pdf';
 
 import Icons from '../molecules/Icons';
 import RoutersSection from '../molecules/RoutersSection';
@@ -44,7 +43,7 @@ function Footer({ random }: FooterProps) {
         { title: t('Router.home'), route: '/', color: colors[1] },
         { title: t('Router.myWork'), route: '/my-work', color: colors[2] },
         { title: t('Router.skillsAndTools'), route: '/my-skills-&-tools', color: colors[3] },
-        { title: t('Router.myResume'), route: pdf, color: colors[4] },
+        { title: t('Router.myLinkedin'), route: LINKS.LINKEDIN, color: colors[4] },
       ],
     },
     {
