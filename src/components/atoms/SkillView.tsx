@@ -1,8 +1,9 @@
 import React from 'react';
+import type { LucideIcon } from 'lucide-react';
 
 type SkillProps = {
   name: string;
-  icon: string;
+  icon: string | LucideIcon;
   isSmall?: boolean;
   sticker?: string;
 };
@@ -19,7 +20,9 @@ function SkillView({
           {sticker}
         </span>
       )}
-      <i className={`${icon} ${isSmall ? 'text-[30px]' : 'text-[60px]'}`} />
+      {typeof icon === 'string'
+        ? <i className={`${icon} ${isSmall ? 'text-[30px]' : 'text-[60px]'}`} aria-hidden />
+        : React.createElement(icon, { size: isSmall ? 30 : 60, strokeWidth: 1.5, 'aria-hidden': true })}
       {
         !isSmall && (
           <div className="text-center text-fg text-xl">

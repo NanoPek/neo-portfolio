@@ -5,10 +5,14 @@ enum SkillCategory {
   otherTools = 'Other Tools',
 }
 
+import type { LucideIcon } from 'lucide-react';
+import { LayoutDashboard } from 'lucide-react';
+
 interface SkillDetail {
   name: Skill;
   category: SkillCategory;
-  icon: string;
+  /** devicon class, or a lucide icon for tools devicon does not cover */
+  icon: string | LucideIcon;
   color: string;
 }
 
@@ -126,7 +130,7 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
     name: Skill.GithubActions, category: SkillCategory.otherTools, icon: 'devicon-githubactions-plain colored', color: '#696f74',
   },
   [Skill.Retool]: {
-    name: Skill.Retool, category: SkillCategory.otherTools, icon: 'devicon-codepen-plain text-[#6875d9]', color: '#8690E0',
+    name: Skill.Retool, category: SkillCategory.otherTools, icon: LayoutDashboard, color: '#8690E0',
   },
   [Skill.Figma]: {
     name: Skill.Figma, category: SkillCategory.otherTools, icon: 'devicon-figma-plain colored', color: '#ff8e68',

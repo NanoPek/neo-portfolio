@@ -1,4 +1,5 @@
 import React from 'react';
+import { MapPin } from 'lucide-react';
 import SkillView from '../../atoms/SkillView';
 import { SkillDetail } from '../../../constants/skillData';
 import WorkBoxButtons from './WorkBoxButtons';
@@ -24,9 +25,8 @@ function WorkBoxDescription({
           {title}
         </span>
         {location && (
-          <span className="rounded-full border-2 border-ink bg-paper px-3 py-0.5 text-sm font-semibold text-fg">
-            📍
-            {' '}
+          <span className="inline-flex items-center gap-1.5 rounded-md border-2 border-ink bg-raised px-2.5 py-1 text-sm font-medium text-fg">
+            <MapPin size={16} strokeWidth={1.5} aria-hidden />
             {location}
           </span>
         )}

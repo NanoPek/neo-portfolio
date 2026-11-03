@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Search } from 'lucide-react';
 import Header from '../components/organisms/header/Header';
 import Footer from '../components/organisms/Footer';
 import Toolbox from '../components/organisms/Toolbox';
@@ -29,13 +30,17 @@ function MySkills() {
       <Header />
       <div className="w-full flex flex-col items-center pt-[10vh] bg-paper">
         <PromptTerminal aiMode={aiMode} onToggle={setAiMode} />
-        <input
-          type="text"
-          className="w-10/12 sm:w-96 h-12 rounded border-3 border-ink bg-surface text-fg text-xl text-center"
-          placeholder={t('MySkills.search')}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <label className="relative w-10/12 sm:w-96">
+          <span className="sr-only">{t('MySkills.search')}</span>
+          <Search size={18} strokeWidth={1.5} className="absolute left-4 top-1/2 -translate-y-1/2 text-fg-muted" aria-hidden />
+          <input
+            type="search"
+            className="w-full h-12 rounded-lg border-3 border-ink bg-surface pl-11 pr-4 text-fg text-base placeholder:text-fg-muted"
+            placeholder={t('MySkills.search')}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </label>
         <div className="flex flex-col items-center" id="checkEmptyDiv">
           <Toolbox
             title={t('MySkills.categories.mobileTools')}
