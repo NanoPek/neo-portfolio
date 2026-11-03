@@ -2,12 +2,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import LINKS from '../../constants/links';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 function Copyright() {
   const { t } = useTranslation();
 
   return (
     <div className="text-accent text-lg">
-      {t('Footer.copyright')}
+      {t('Footer.copyright', { year: CURRENT_YEAR })}
       {' '}
       <a href={LINKS.GITHUB_PORTFOLIO} className="underline">
         {LINKS.GITHUB_PORTFOLIO}

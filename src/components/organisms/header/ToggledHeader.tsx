@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../molecules/LanguageSwitcher';
 import { paletteColors } from '../../styles/colors';
-import pdf from '../../../assets/resumeCARREZJeremie.pdf';
 import LINKS from '../../../constants/links';
 import Icons from '../../molecules/Icons';
 import FaceOpen from '../../../assets/FaceOpen.svg?react';
@@ -26,7 +25,7 @@ function ToggledHeader({ toggle }: ToggledHeaderProps) {
         { title: t('Router.home'), route: '/' },
         { title: t('Router.myWork'), route: '/my-work' },
         { title: t('Router.skillsAndTools'), route: '/my-skills-&-tools' },
-        { title: t('Router.myResume'), route: pdf },
+        { title: t('Router.myLinkedin'), route: LINKS.LINKEDIN },
       ],
     },
     {

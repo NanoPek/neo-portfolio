@@ -6,21 +6,31 @@ import WorkBoxButtons from './WorkBoxButtons';
 type WorkBoxDescriptionProps = {
   title: string;
   description: string;
+  location?: string;
   techs: SkillDetail[];
-  link: string;
+  link?: string;
   figma?: string;
   github?: string;
   appStore?: string[];
 };
 
 function WorkBoxDescription({
-  title, description, techs, link, figma, github, appStore,
+  title, description, location, techs, link, figma, github, appStore,
 }: WorkBoxDescriptionProps) {
   return (
     <div className="w-full flex flex-col justify-between gap-4 p-4 text-primary text-2xl border-dark border-t-[3px]">
-      <span className="text-dark font-bold ">
-        {title}
-      </span>
+      <div className="flex flex-col items-start gap-2">
+        <span className="text-dark font-bold ">
+          {title}
+        </span>
+        {location && (
+          <span className="rounded-full border-2 border-dark bg-light px-3 py-0.5 text-sm font-semibold text-dark">
+            📍
+            {' '}
+            {location}
+          </span>
+        )}
+      </div>
       <div className="flex flex-row gap-2">
         {techs.map((tech) => (
           <SkillView

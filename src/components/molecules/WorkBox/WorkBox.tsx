@@ -14,7 +14,8 @@ type WorkBoxProps = {
   description: string;
   techs: SkillDetail[];
   extension: string;
-  link: string;
+  link?: string;
+  location?: string;
   color?: string;
   startDate: Date;
   endDate?: Date;
@@ -24,7 +25,7 @@ type WorkBoxProps = {
 };
 
 function WorkBox({
-  image, title, link, startDate, endDate, description,
+  image, title, link, location, startDate, endDate, description,
   techs, extension, figma, github, color, appStore,
 } : WorkBoxProps) {
   useEffect(() => {
@@ -81,6 +82,7 @@ function WorkBox({
       <WorkBoxDescription
         title={title}
         description={description}
+        location={location}
         techs={techs}
         link={link}
         figma={figma}

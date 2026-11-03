@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 import Header from '../components/organisms/header/Header';
 import Footer from '../components/organisms/Footer';
 import Toolbox from '../components/organisms/Toolbox';
+import PromptTerminal from '../components/organisms/PromptTerminal';
 import { SkillCategory, SkillsDetails } from '../constants/skillData';
 import { paletteColors } from '../components/styles/colors';
 
 function MySkills() {
   const [search, setSearch] = React.useState('');
   const [isEmpty, setIsEmpty] = React.useState(false);
+  const [aiMode, setAiMode] = React.useState(true);
 
   const { t } = useTranslation();
 
@@ -27,6 +29,7 @@ function MySkills() {
     <div className="w-screen flex flex-col">
       <Header logoColor={paletteColors.secondary} random />
       <div className="w-full flex flex-col items-center pt-[10vh] bg-light">
+        <PromptTerminal aiMode={aiMode} onToggle={setAiMode} />
         <input
           type="text"
           className="w-10/12 sm:w-96 h-12 rounded border-[3px] border-dark text-dark text-xl text-center"
@@ -38,6 +41,7 @@ function MySkills() {
           <Toolbox
             title={t('MySkills.categories.mobileTools')}
             search={search}
+            sticker={aiMode ? t('MySkills.ai.stamp') : undefined}
             skills={
               Object
                 .entries(SkillsDetails)
@@ -48,6 +52,7 @@ function MySkills() {
           <Toolbox
             title={t('MySkills.categories.webTools')}
             search={search}
+            sticker={aiMode ? t('MySkills.ai.stamp') : undefined}
             skills={
               Object
                 .entries(SkillsDetails)
@@ -58,6 +63,7 @@ function MySkills() {
           <Toolbox
             title={t('MySkills.categories.backendTools')}
             search={search}
+            sticker={aiMode ? t('MySkills.ai.stamp') : undefined}
             skills={
               Object
                 .entries(SkillsDetails)
@@ -68,6 +74,7 @@ function MySkills() {
           <Toolbox
             title={t('MySkills.categories.otherTools')}
             search={search}
+            sticker={aiMode ? t('MySkills.ai.stamp') : undefined}
             skills={
               Object
                 .entries(SkillsDetails)

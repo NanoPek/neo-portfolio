@@ -5,15 +5,15 @@ const resources = {
         home: 'Home',
         myWork: 'My Work 👨‍💻',
         skillsAndTools: 'Skills 🤹 & Tools 🛠️',
-        myResume: 'My Résumé 📄',
+        myLinkedin: 'My LinkedIn 💼',
         navigation: 'NAVIGATION',
         contactMe: 'CONTACT ME',
       },
       Footer: {
-        copyright: '© Jérémie Carrez 2024 - check the repo here :',
+        copyright: '© Jérémie Carrez {{year}} - check the repo here :',
       },
       HomePage: {
-        title: 'Full Stack and Mobile Developer.',
+        title: 'Mobile Software Engineer.',
         hi: "Hi, I'm",
         name: 'Jeremie Carrez',
         description: 'I craft robust, secure, and high-performing applications.',
@@ -24,6 +24,20 @@ const resources = {
       },
       MySkills: {
         search: 'Search for a specific skill',
+        ai: {
+          lines: {
+            prompt: 'claude "add my new job to my portfolio, make it neat ✨"',
+            working: '✻ Reading 42 files… writing code… running tests… ✓',
+            bug: '✻ Done! Also fixed a bug that was stacking your timers 🐛',
+            push: 'git push   # my main skill in 2026 💪',
+          },
+          toggleLabel: 'Who writes the code?',
+          past: '2022 · me 👨‍💻',
+          now: '2026 · Claude 🤖',
+          stamp: '🤖 by Claude',
+          captionNow: 'I prompt, review & ship. Claude types everything below 👇',
+          captionPast: 'Hand-typed, one semicolon at a time ⌨️',
+        },
         noSkills: 'No skills found',
         categories: {
           mobileTools: 'Mobile Tools',
@@ -36,7 +50,21 @@ const resources = {
         project: 'from-{{startDate}}-to-{{endDate}}-project.{{extension}}',
         ongoing: 'from-{{startDate}}-ongoing.{{extension}}',
         viewProject: 'View Project',
+        locations: {
+          remoteFrance: 'Remote · France 🇫🇷',
+          seoul: 'Seoul, South Korea 🇰🇷',
+          lyon: 'Lyon, France 🇫🇷',
+          paris: 'Paris, France 🇫🇷',
+        },
         workBoxes: {
+          learning360: {
+            title: 'Mobile Software Engineer @ 360Learning',
+            description: `Development of 360Learning's iOS and Android apps, full remote from France (and sometimes South Korea 🇰🇷) 🌍
+                - 🧩 Kotlin Multiplatform (KMP) to share core logic across both platforms, with native UIs
+                - 📱 One shared codebase shipped as ~100 white-label apps for 360Learning's customers
+                - ✅ Unit, snapshot and end-to-end tests, code reviews and releases with a cross-functional team
+                - 🤖 Leading AI-assisted development in the mobile team: tooling, workflows and usage guidelines`,
+          },
           tournesol: {
             title: 'Tournesol Nano 🌻',
             description: `My first own app! Tournesol Nano is an iOS application for the open-source and collaborative Tournesol project.
@@ -50,6 +78,15 @@ const resources = {
                 
                 Check it out and let me know what you think!
                 I’d love to hear your feedback!`,
+          },
+          gena: {
+            title: 'Full Stack Engineer @ Gena.co',
+            description: `Full stack engineer building Gena's AI-powered product websites
+                - 🌐 GenaSQL: designed and built the interactive product website and demo
+                - 🤖 Integrated the AI models seamlessly into the product
+                - ⚡ Optimized UI/UX for performance and accessibility
+                - 🤝 Worked closely with the backend engineer for a smooth integration
+                - 🛠 Next.js, TypeScript, TailwindCSS`,
           },
           lunabeeStudio: {
             title: 'iOS Developer @ Lunabee Studio',
@@ -109,15 +146,15 @@ const resources = {
         home: 'Accueil',
         myWork: 'Mon Travail 👨‍💻',
         skillsAndTools: 'Compétences 🤹 & Outils 🛠️',
-        myResume: 'Mon CV 📄',
+        myLinkedin: 'Mon LinkedIn 💼',
         navigation: 'NAVIGATION',
         contactMe: 'ME CONTACTER',
       },
       Footer: {
-        copyright: '© Jérémie Carrez 2024 - jetez un oeil au repo ici 👀 :',
+        copyright: '© Jérémie Carrez {{year}} - jetez un oeil au repo ici 👀 :',
       },
       HomePage: {
-        title: 'Développeur Full Stack et Mobile.',
+        title: 'Ingénieur logiciel mobile.',
         hi: 'Salut, je suis',
         name: 'Jérémie Carrez',
         description: 'Je crée des applications robustes, sécurisées et performantes.',
@@ -129,6 +166,20 @@ const resources = {
       MySkills: {
         title: 'Compétences & Outils',
         search: 'Rechercher une compétence spécifique',
+        ai: {
+          lines: {
+            prompt: 'claude "ajoute mon nouveau job à mon portfolio, fais ça proprement ✨"',
+            working: '✻ Lecture de 42 fichiers… écriture du code… lancement des tests… ✓',
+            bug: "✻ Terminé ! J'ai aussi corrigé un bug qui empilait tes timers 🐛",
+            push: 'git push   # ma compétence n°1 en 2026 💪',
+          },
+          toggleLabel: 'Qui écrit le code ?',
+          past: '2022 · moi 👨‍💻',
+          now: '2026 · Claude 🤖',
+          stamp: '🤖 par Claude',
+          captionNow: 'Je prompte, je relis et je livre. Claude tape tout ce qui suit 👇',
+          captionPast: 'Tapé à la main, un point-virgule à la fois ⌨️',
+        },
         noSkills: 'Aucune compétence trouvée',
         categories: {
           mobileTools: 'Outils Mobiles',
@@ -141,7 +192,21 @@ const resources = {
         project: 'du-{{startDate}}-au-{{endDate}}-projet.{{extension}}',
         ongoing: 'du-{{startDate}}-en-cours-projet.{{extension}}',
         viewProject: 'Voir le Projet',
+        locations: {
+          remoteFrance: 'Télétravail · France 🇫🇷',
+          seoul: 'Séoul, Corée du Sud 🇰🇷',
+          lyon: 'Lyon, France 🇫🇷',
+          paris: 'Paris, France 🇫🇷',
+        },
         workBoxes: {
+          learning360: {
+            title: 'Ingénieur logiciel mobile @ 360Learning',
+            description: `Développement des applications iOS et Android de 360Learning, en full remote depuis la France (et parfois la Corée du Sud 🇰🇷) 🌍
+          - 🧩 Kotlin Multiplatform (KMP) pour partager la logique métier entre les deux plateformes, avec des UI natives
+          - 📱 Une base de code commune déclinée en ~100 applications en marque blanche pour les clients de 360Learning
+          - ✅ Tests unitaires, snapshot et end-to-end, revues de code et mises en production avec une équipe pluridisciplinaire
+          - 🤖 Pilotage de l'usage de l'IA dans l'équipe mobile : outils, workflows et bonnes pratiques`,
+          },
           tournesol: {
             title: 'Tournesol Nano 🌻',
             description: `Mon application personnelle ! Tournesol Nano est une application iOS pour le projet open-source et collaboratif Tournesol.
@@ -155,6 +220,15 @@ const resources = {
           
           Jetez-y un œil et dites-moi ce que vous en pensez !
           J’adorerais avoir vos retours !`,
+          },
+          gena: {
+            title: 'Ingénieur Full Stack @ Gena.co',
+            description: `Ingénieur full stack, développement des sites produits de Gena propulsés par l'IA
+          - 🌐 GenaSQL : conception et développement du site produit interactif et de la démo
+          - 🤖 Intégration fluide des modèles d'IA dans le produit
+          - ⚡ Optimisation de l'UI/UX pour la performance et l'accessibilité
+          - 🤝 Travail en étroite collaboration avec l'ingénieur backend pour une intégration fluide
+          - 🛠 Next.js, TypeScript, TailwindCSS`,
           },
           lunabeeStudio: {
             title: 'Développeur iOS @ Lunabee Studio',
@@ -214,15 +288,15 @@ const resources = {
         home: '홈',
         myWork: '내 작업 👨‍💻',
         skillsAndTools: '기술 🤹 & 도구 🛠️',
-        myResume: '내 이력서 📄',
+        myLinkedin: '내 LinkedIn 💼',
         navigation: '네비게이션',
         contactMe: '문의하기',
       },
       Footer: {
-        copyright: '© Jérémie Carrez 2024 - 여기서 저장소를 확인하세요:',
+        copyright: '© Jérémie Carrez {{year}} - 여기서 저장소를 확인하세요:',
       },
       HomePage: {
-        title: '풀스택 및 모바일 개발자.',
+        title: '모바일 소프트웨어 엔지니어.',
         hi: '안녕하세요, 저는',
         name: '제레미 카레즈입니다',
         description: '견고하고, 안전하며 고성능 애플리케이션을 만듭니다.',
@@ -233,6 +307,20 @@ const resources = {
       },
       MySkills: {
         search: '특정 기술 검색',
+        ai: {
+          lines: {
+            prompt: 'claude "내 포트폴리오에 새 직장 추가해줘, 깔끔하게 ✨"',
+            working: '✻ 파일 42개 읽는 중… 코드 작성 중… 테스트 실행 중… ✓',
+            bug: '✻ 완료! 타이머가 쌓이던 버그도 고쳤어요 🐛',
+            push: 'git push   # 2026년 나의 주력 스킬 💪',
+          },
+          toggleLabel: '코드는 누가 쓰나요?',
+          past: '2022 · 나 👨‍💻',
+          now: '2026 · Claude 🤖',
+          stamp: '🤖 Claude 작성',
+          captionNow: '저는 프롬프트하고, 리뷰하고, 배포합니다. 아래는 전부 Claude가 타이핑 👇',
+          captionPast: '세미콜론 하나하나 직접 타이핑 ⌨️',
+        },
         noSkills: '기술을 찾을 수 없습니다',
         categories: {
           mobileTools: '모바일 도구',
@@ -245,7 +333,21 @@ const resources = {
         project: '{{startDate}}에서-{{endDate}}까지-프로젝트.{{extension}}',
         ongoing: '{{startDate}}부터-진행-중-프로젝트.{{extension}}',
         viewProject: '프로젝트 보기',
+        locations: {
+          remoteFrance: '원격 근무 · 프랑스 🇫🇷',
+          seoul: '대한민국 서울 🇰🇷',
+          lyon: '프랑스 리옹 🇫🇷',
+          paris: '프랑스 파리 🇫🇷',
+        },
         workBoxes: {
+          learning360: {
+            title: '모바일 소프트웨어 엔지니어 @ 360Learning',
+            description: `프랑스(그리고 가끔은 한국 🇰🇷)에서 풀 리모트로 360Learning의 iOS 및 Android 앱 개발 🌍
+                - 🧩 Kotlin Multiplatform(KMP)으로 두 플랫폼 간 핵심 로직 공유, UI는 네이티브로 구현
+                - 📱 하나의 공통 코드베이스로 360Learning 고객사를 위한 약 100개의 화이트 라벨 앱 배포
+                - ✅ 크로스펑셔널 팀과 함께 단위·스냅샷·E2E 테스트, 코드 리뷰 및 릴리스 진행
+                - 🤖 모바일 팀의 AI 활용 주도: 도구, 워크플로 및 사용 가이드라인 수립`,
+          },
           tournesol: {
             title: 'Tournesol Nano 🌻',
             description: `저의 첫 번째 자체 앱! Tournesol Nano는 오픈 소스 및 협업 Tournesol 프로젝트를 위한 iOS 애플리케이션입니다.
@@ -259,6 +361,15 @@ const resources = {
                 
                 한번 확인해보시고 어떤지 알려주세요!
                 피드백을 듣고 싶습니다!`,
+          },
+          gena: {
+            title: '풀스택 엔지니어 @ Gena.co',
+            description: `풀스택 엔지니어로 Gena의 AI 기반 제품 웹사이트 개발
+                - 🌐 GenaSQL: 인터랙티브 제품 웹사이트 및 데모 설계·개발
+                - 🤖 AI 모델을 제품에 자연스럽게 통합
+                - ⚡ 성능과 접근성을 위한 UI/UX 최적화
+                - 🤝 백엔드 엔지니어와 긴밀히 협업하여 원활한 통합
+                - 🛠 Next.js, TypeScript, TailwindCSS`,
           },
           lunabeeStudio: {
             title: 'iOS 개발자 @ Lunabee Studio',
