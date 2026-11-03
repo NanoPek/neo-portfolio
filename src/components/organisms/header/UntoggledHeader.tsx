@@ -2,7 +2,7 @@ import React from 'react';
 import LanguageSwitcher from '../../molecules/LanguageSwitcher';
 import Width from '../../styles/width';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
-import { ReactComponent as Face } from '../../../assets/Face.svg';
+import Face from '../../../assets/Face.svg?react';
 import Logo from '../../atoms/Logo';
 
 type UntoggledHeaderProps = {

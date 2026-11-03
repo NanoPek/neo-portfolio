@@ -17,7 +17,6 @@ type WorkBoxProps = {
   link: string;
   color?: string;
   startDate: Date;
-  // eslint-disable-next-line react/require-default-props
   endDate?: Date;
   figma?: string;
   github?: string;
@@ -38,7 +37,7 @@ function WorkBox({
     if (divElm) {
       if (imageElm) {
         if (deviceWidth > Width.md) {
-          divElm.addEventListener('mouseover', () => {
+          const onMouseOver = () => {
             if (imageElm) {
               imageElm.style.transform = 'scale(1.1)';
               imageElm.style.transition = 'transform 0.5s cubic-bezier(0.04, 0.3, 0.1, 1)';
@@ -51,7 +50,9 @@ function WorkBox({
               buttonElm.style.backgroundColor = highlightColor;
             }
             divElm.style.boxShadow = '16px 16px 1px 0 rgba(67,49,86,0.8)';
-          });
+          };
+          divElm.addEventListener('mouseover', onMouseOver);
+          return () => divElm.removeEventListener('mouseover', onMouseOver);
         } else {
           if (imageElm) {
             imageElm.style.transform = 'scale(1.1)';
@@ -67,6 +68,7 @@ function WorkBox({
         }
       }
     }
+    return undefined;
   }, []);
 
   return (

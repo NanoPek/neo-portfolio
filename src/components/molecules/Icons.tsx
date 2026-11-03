@@ -1,7 +1,7 @@
 import React from 'react';
-import { ReactComponent as LinkedinIcon } from '../../assets/linkedinIcon.svg';
-import { ReactComponent as GithubIcon } from '../../assets/githubIcon.svg';
-import { ReactComponent as BranchIcon } from '../../assets/branchIcon.svg';
+import LinkedinIcon from '../../assets/linkedinIcon.svg?react';
+import GithubIcon from '../../assets/githubIcon.svg?react';
+import BranchIcon from '../../assets/branchIcon.svg?react';
 import LINKS from '../../constants/links';
 import Icon from '../atoms/Icon';
 
