@@ -26,10 +26,10 @@ function Header({
   };
 
   useEffect(() => {
-    if (random) {
-      setFaceColor(generateRandomColor);
-      setInterval(() => setFaceColor(generateRandomColor), 4000);
-    }
+    if (!random) return undefined;
+    setFaceColor(generateRandomColor);
+    const interval = setInterval(() => setFaceColor(generateRandomColor), 4000);
+    return () => clearInterval(interval);
   }, [random]);
 
   useEffect(() => {

@@ -18,11 +18,11 @@ function SkillView({
       <i className={`${icon} ${isSmall ? 'text-[30px]' : 'text-[60px]'}`} />
       {
         !isSmall && (
-        <div className="text-center text-white text-xl ">
-          {name}
-        </div>
+          <div className="text-center text-white text-xl ">
+            {name}
+          </div>
         )
-}
+      }
     </div>
   );
 }

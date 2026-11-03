@@ -31,10 +31,10 @@ function Footer({ random }: FooterProps) {
   }
 
   useEffect(() => {
-    if (random) {
-      setAllRandomColors();
-      setInterval(setAllRandomColors, 4000);
-    }
+    if (!random) return undefined;
+    setAllRandomColors();
+    const interval = setInterval(setAllRandomColors, 4000);
+    return () => clearInterval(interval);
   }, [random]);
 
   const colorSections = [

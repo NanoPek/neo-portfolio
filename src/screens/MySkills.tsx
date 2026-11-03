@@ -39,11 +39,11 @@ function MySkills() {
             title={t('MySkills.categories.mobileTools')}
             search={search}
             skills={
-            Object
-              .entries(SkillsDetails)
-              .filter((skill) => skill[1].category === SkillCategory.mobileTools)
-              .map((skill) => skill[1])
-          }
+              Object
+                .entries(SkillsDetails)
+                .filter((skill) => skill[1].category === SkillCategory.mobileTools)
+                .map((skill) => skill[1])
+            }
           />
           <Toolbox
             title={t('MySkills.categories.webTools')}

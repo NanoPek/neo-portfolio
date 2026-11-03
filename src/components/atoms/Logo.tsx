@@ -25,17 +25,16 @@ function Logo({ random, generateRandomColor }: LogoProps) {
     const spans = elem.querySelectorAll('span');
     spans.forEach((span) => {
       if (generateRandomColor) {
-        // eslint-disable-next-line no-param-reassign
         span.style.color = generateRandomColor();
       }
     });
   }
 
   useEffect(() => {
-    if (random) {
-      randomizeText();
-      setInterval(randomizeText, 4000);
-    }
+    if (!random) return undefined;
+    randomizeText();
+    const interval = setInterval(randomizeText, 4000);
+    return () => clearInterval(interval);
   }, [random, generateRandomColor]);
 
   return (
