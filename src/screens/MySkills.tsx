@@ -5,7 +5,6 @@ import Footer from '../components/organisms/Footer';
 import Toolbox from '../components/organisms/Toolbox';
 import PromptTerminal from '../components/organisms/PromptTerminal';
 import { SkillCategory, SkillsDetails } from '../constants/skillData';
-import { paletteColors } from '../components/styles/colors';
 
 function MySkills() {
   const [search, setSearch] = React.useState('');
@@ -27,12 +26,12 @@ function MySkills() {
 
   return (
     <div className="w-screen flex flex-col">
-      <Header logoColor={paletteColors.secondary} random />
-      <div className="w-full flex flex-col items-center pt-[10vh] bg-light">
+      <Header />
+      <div className="w-full flex flex-col items-center pt-[10vh] bg-paper">
         <PromptTerminal aiMode={aiMode} onToggle={setAiMode} />
         <input
           type="text"
-          className="w-10/12 sm:w-96 h-12 rounded border-[3px] border-dark text-dark text-xl text-center"
+          className="w-10/12 sm:w-96 h-12 rounded border-3 border-ink bg-surface text-fg text-xl text-center"
           placeholder={t('MySkills.search')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -84,12 +83,12 @@ function MySkills() {
           />
         </div>
         {isEmpty && (
-          <h1 className="flex flex-col items-center justify-center p-6 text-4xl text-dark font-bold">
+          <h1 className="flex flex-col items-center justify-center p-6 text-4xl text-fg font-bold">
             {t('MySkills.noSkills')}
           </h1>
         )}
       </div>
-      <Footer random />
+      <Footer />
     </div>
   );
 }

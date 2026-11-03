@@ -8,7 +8,7 @@ function Copyright() {
   const { t } = useTranslation();
 
   return (
-    <div className="text-accent text-lg">
+    <div className="text-on-ink-muted text-lg">
       {t('Footer.copyright', { year: CURRENT_YEAR })}
       {' '}
       <a href={LINKS.GITHUB_PORTFOLIO} className="underline">

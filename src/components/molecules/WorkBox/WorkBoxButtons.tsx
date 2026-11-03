@@ -4,7 +4,6 @@ import appStoreIcon from '../../../assets/appStoreIcon.svg';
 import IconButton from '../../atoms/IconButton';
 
 type WorkBoxButtonsProps = {
-  title: string;
   link?: string;
   figma?: string;
   github?: string;
@@ -12,7 +11,7 @@ type WorkBoxButtonsProps = {
 };
 
 function WorkBoxButtons({
-  title, link, figma, github, appStore,
+  link, figma, github, appStore,
 }: WorkBoxButtonsProps) {
   const { t } = useTranslation();
 
@@ -23,10 +22,9 @@ function WorkBoxButtons({
           className="h-full"
         >
           <IconButton
-            id={`workbox-button-${title}`}
             href={link}
             label={t('MyWork.viewProject')}
-            className="h-full w-32 bg-grey border-dark border-[3px] text-dark hover:bg-black hover:text-white"
+            className="h-full w-32 bg-raised border-ink border-3 text-fg hover:bg-ink hover:text-on-ink"
           />
         </li>
       )}
@@ -35,7 +33,7 @@ function WorkBoxButtons({
           <IconButton
             href={figma}
             ariaLabel="Open Figma in a new tab"
-            icon={<i className="devicon-figma-plain text-3xl text-dark" />}
+            icon={<i className="devicon-figma-plain text-3xl text-fg" />}
           />
         </li>
       )}
@@ -44,7 +42,7 @@ function WorkBoxButtons({
           <IconButton
             href={github}
             ariaLabel="Open Github in a new tab"
-            icon={<i className="devicon-github-plain text-3xl text-dark" />}
+            icon={<i className="devicon-github-plain text-3xl text-fg" />}
           />
         </li>
       )}

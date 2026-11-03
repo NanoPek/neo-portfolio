@@ -6,28 +6,22 @@ import Face from '../../../assets/Face.svg?react';
 import Logo from '../../atoms/Logo';
 
 type UntoggledHeaderProps = {
-  faceColor: string;
   toggle: () => void;
-  textColor?: string;
-  smallLogoColor?: string;
-  random?: boolean;
-  generateRandomColor?: () => string;
+  onAccent?: boolean;
 };
 
-function UntoggledHeader({
-  faceColor, toggle, textColor, smallLogoColor, random, generateRandomColor,
-}: UntoggledHeaderProps) {
+function UntoggledHeader({ toggle, onAccent }: UntoggledHeaderProps) {
   const { width } = useWindowDimensions();
 
   return (
     <header className="w-screen h-[10vh] flex flex-row justify-between items-center px-8 sm:px-8 2xl:px-20">
-      <div className={`${textColor} flex flex-col md:flex-row items-center gap-2`}>
-        <Logo random={random} generateRandomColor={generateRandomColor} />
+      <div className={`${onAccent ? 'text-on-accent' : 'text-fg'} flex flex-col md:flex-row items-center gap-2`}>
+        <Logo />
         <LanguageSwitcher />
       </div>
-      <button type="button" onClick={toggle}>
+      <button type="button" onClick={toggle} className={onAccent ? 'text-on-accent sm:text-fg' : 'text-fg'}>
         <Face
-          fill={smallLogoColor && width < Width.sm ? smallLogoColor : faceColor}
+          fill="currentColor"
           transform={width < Width.lg ? '' : 'scale(1.5)'}
           className={width < Width.lg ? 'animate-pulse hover:scale-[1.5] hover:animate-none transition-all' : 'animate-pulse hover:scale-[2] hover:animate-none transition-all'}
         />

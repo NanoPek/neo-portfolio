@@ -1,36 +1,17 @@
 import React, { useEffect } from 'react';
-import { skillsColors } from '../../styles/colors';
 import UntoggledHeader from './UntoggledHeader';
 import ToggledHeader from './ToggledHeader';
 
 type HeaderProps = {
-  logoColor: string;
-  textColor?: string;
-  random?: boolean;
-  smallLogoColor?: string;
+  onAccent?: boolean;
 };
 
-function Header({
-  logoColor, textColor, random, smallLogoColor,
-}: HeaderProps) {
+function Header({ onAccent }: HeaderProps) {
   const [isToggle, setIsToggle] = React.useState(false);
-  const [faceColor, setFaceColor] = React.useState(smallLogoColor ?? logoColor);
 
   const toggle = () => {
     setIsToggle(!isToggle);
   };
-
-  const generateRandomColor = () => {
-    const randomNumber = Math.floor(Math.random() * skillsColors.length);
-    return skillsColors[randomNumber];
-  };
-
-  useEffect(() => {
-    if (!random) return undefined;
-    setFaceColor(generateRandomColor);
-    const interval = setInterval(() => setFaceColor(generateRandomColor), 4000);
-    return () => clearInterval(interval);
-  }, [random]);
 
   useEffect(() => {
     if (isToggle) {
@@ -43,14 +24,7 @@ function Header({
   return (
     <div className="z-50 absolute 2xl:right-0 flex flex-row ">
       { !isToggle ? (
-        <UntoggledHeader
-          faceColor={faceColor}
-          toggle={toggle}
-          textColor={textColor}
-          smallLogoColor={smallLogoColor}
-          random={random}
-          generateRandomColor={generateRandomColor}
-        />
+        <UntoggledHeader toggle={toggle} onAccent={onAccent} />
       ) : (
         <ToggledHeader toggle={toggle} />
       )}

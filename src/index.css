@@ -3,12 +3,19 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Outfit";
-    src: url("assets/fonts/Outfit-VariableFont_wght.ttf");
+  font-family: "Outfit";
+  src: url("assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
 }
 
-body {
-    background-color: #f7fafc;
-    font-family: Outfit, ui-monospace;
+@layer base {
+  body {
+    @apply bg-paper font-sans text-fg antialiased;
     overflow-x: hidden;
+  }
+
+  :focus-visible {
+    @apply outline outline-[3px] outline-offset-2 outline-accent;
+  }
 }

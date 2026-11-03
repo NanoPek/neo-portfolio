@@ -21,7 +21,6 @@ const workBoxes = [
     link: 'https://360learning.com/',
     appStore: ['https://apps.apple.com/fr/app/360learning/id1080374585'],
     startDate: new Date(2025, 7, 1),
-    color: '#4AC994',
   },
   {
     image: tournesol,
@@ -33,7 +32,6 @@ const workBoxes = [
     appStore: ['https://apps.apple.com/fr/app/tournesol-nano/id6737498377'],
     github: 'https://github.com/NanoPek/tournesol-nano',
     startDate: new Date(2024, 4, 4),
-    color: '#FFE259',
   },
   {
     image: gena,
@@ -44,7 +42,6 @@ const workBoxes = [
     extension: 'tsx',
     startDate: new Date(2024, 11, 1),
     endDate: new Date(2025, 2, 31),
-    color: '#AB7EDB',
   },
   {
     image: lunabeeStudio,
@@ -61,7 +58,6 @@ const workBoxes = [
     ],
     startDate: new Date(2023, 5, 6),
     endDate: new Date(2024, 7, 31),
-    color: '#8E69D8',
   },
   {
     image: N7CLogo,
@@ -73,7 +69,6 @@ const workBoxes = [
     link: 'https://n7consulting.fr/',
     startDate: new Date(2023, 6, 10),
     endDate: new Date(2024, 1, 20),
-    color: '#4488CA',
   },
   {
     image: kuri,
@@ -85,7 +80,6 @@ const workBoxes = [
     appStore: ['https://apps.apple.com/us/app/kuri-recipes-meal-planning/id1510387870'],
     startDate: new Date(2023, 0, 20),
     endDate: new Date(2023, 3, 20),
-    color: '#9ad2ac',
   },
   {
     image: moonalisaImage,
@@ -98,7 +92,6 @@ const workBoxes = [
     figma: 'https://www.figma.com/file/LwTFuqp0aKhcEz62kLsRSc/moonalisa-Sketch?node-id=0%3A1&t=awjlHnumlw3EqMmK-1',
     startDate: new Date(2022, 5, 3),
     endDate: new Date(2023, 7, 31),
-    color: '#ff7644',
   },
   {
     image: portfolio,
@@ -119,7 +112,6 @@ const workBoxes = [
     link: 'https://pieces.hi7haut.fr/',
     startDate: new Date(2021, 11, 20),
     endDate: new Date(2022, 1, 20),
-    color: '#FFE259',
   },
   {
     image: hi7hautWeb,

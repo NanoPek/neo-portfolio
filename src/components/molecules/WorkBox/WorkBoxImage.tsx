@@ -10,9 +10,8 @@ function workBoxImage({ title, image }: WorkBoxImageProps) {
     <div className="overflow-hidden">
       <img
         src={image}
-        alt="work"
-        className="h-auto object-contain  aspect-[600/375] bg-dark grayscale transition-all duration-500"
-        id={`workbox-image-${title}`}
+        alt={title}
+        className="h-auto object-contain  aspect-[600/375] bg-ink"
       />
     </div>
   );

@@ -1,13 +1,15 @@
 import React from 'react';
+import portrait from '../../assets/pp.jpeg';
 
 function ProfilePicture() {
   return (
-    <>
-      <div
-        className="h-48 w-48 bg-accent border-2 mb-9 mr-8 absolute border-primary z-10 bg-pp bg-cover xl:h-64 xl:w-64 2xl:h-96 2xl:w-96"
-      />
-      <div className="h-48 w-48 bg-accent opacity-90 xl:h-64 xl:w-64 2xl:h-96 2xl:w-96 " />
-    </>
+    <img
+      src={portrait}
+      alt="Jérémie Carrez"
+      width={800}
+      height={800}
+      className="h-48 w-48 border-3 border-ink shadow-block object-cover xl:h-64 xl:w-64 2xl:h-96 2xl:w-96"
+    />
   );
 }
 

@@ -3,14 +3,13 @@ import { useTranslation } from 'react-i18next';
 import MacOSButtons from '../../atoms/MacOSButtons';
 
 type WorkBoxHeaderProps = {
-  title: string;
   startDate: Date;
   endDate?: Date;
   extension: string;
 };
 
 function WorkBoxHeader({
-  title, startDate, endDate, extension,
+  startDate, endDate, extension,
 }: WorkBoxHeaderProps) {
   const { t } = useTranslation();
 
@@ -22,11 +21,10 @@ function WorkBoxHeader({
 
   return (
     <div
-      className="w-full h-12 flex flex-row items-center justify-between px-4 bg-grey border-dark border-b-[3px] hover:bg-purple"
-      id={`workbox-grey-${title}`}
+      className="w-full h-12 flex flex-row items-center justify-between px-4 bg-raised border-ink border-b-3"
     >
       <MacOSButtons />
-      <span className="text-dark text-md font-semibold">
+      <span className="text-fg text-md font-semibold">
         {endDate ? t('MyWork.project', {
           startDate: dateFormatter(startDate),
           endDate: dateFormatter(endDate),

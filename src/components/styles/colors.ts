@@ -1,16 +1,8 @@
-import { SkillsDetails } from '../../constants/skillData';
-
-const paletteColors = {
-  primary: '#004E89',
-  secondary: '#FCD757',
-  accent: '#FC5656',
-  light: '#F5F4FC',
-  link: '#0D2996',
-  dark: '#190B28',
-  grey: '#C8C8C8',
-  purple: '#ab7edb',
+// Mirrors the theme tokens in tailwind.config.js for the few places that need a raw value.
+const tokens = {
+  paper: '#F6F5F8',
+  ink: '#190B28',
+  accent: '#004E89',
 };
 
-const skillsColors = Object.values(SkillsDetails).map((skill) => skill.color);
-
-export { paletteColors, skillsColors };
+export default tokens;

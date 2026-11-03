@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../molecules/LanguageSwitcher';
-import { paletteColors } from '../../styles/colors';
 import LINKS from '../../../constants/links';
 import Icons from '../../molecules/Icons';
 import FaceOpen from '../../../assets/FaceOpen.svg?react';
@@ -38,7 +37,7 @@ function ToggledHeader({ toggle }: ToggledHeaderProps) {
   ];
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center px-4 bg-secondary">
+    <div className="w-screen h-screen flex flex-col items-center px-4 bg-paper text-fg">
       <header className="w-screen h-[10vh] flex flex-row justify-between items-center px-4 sm:px-8 2xl:px-20">
         <div className="flex flex-col md:flex-row items-center gap-2">
           <Logo />
@@ -46,7 +45,7 @@ function ToggledHeader({ toggle }: ToggledHeaderProps) {
         </div>
         <button type="button" onClick={toggle}>
           <FaceOpen
-            fill={paletteColors.primary}
+            fill="currentColor"
             transform={width < Width.lg ? '' : 'scale(1.5)'}
             className={width < Width.lg ? 'animate-pulse hover:scale-[1.5] hover:animate-none transition-all' : 'animate-pulse hover:scale-[2] hover:animate-none transition-all'}
           />
@@ -56,7 +55,7 @@ function ToggledHeader({ toggle }: ToggledHeaderProps) {
         {navSections.map((section) => (
           <RoutersSection
             key={section.text}
-            header={{ text: section.text, color: paletteColors.accent }}
+            header={{ text: section.text }}
             routers={section.routers}
           />
         ))}

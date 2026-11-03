@@ -4,10 +4,9 @@ import React from 'react';
 type IconProps = {
   href: string;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
-  color?: string;
 };
 
-function Icon({ href, icon: IconComponent, color }: IconProps) {
+function Icon({ href, icon: IconComponent }: IconProps) {
   return (
     <a
       href={href}
@@ -16,8 +15,7 @@ function Icon({ href, icon: IconComponent, color }: IconProps) {
       className="hover:animate-pulse hover:scale-[1.2] transition-all"
     >
       <IconComponent
-        className="fill-current text-accent"
-        style={color ? { color } : {}}
+        className="fill-current"
       />
     </a>
   );
