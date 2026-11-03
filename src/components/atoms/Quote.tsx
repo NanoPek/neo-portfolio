@@ -1,10 +1,11 @@
 import React from 'react';
 
-function Quote({ text }: { text: string }) {
+function Quote({ label, text }: { label: string; text: string }) {
   return (
-    <span className="md:w-60 xl:w-72 2xl:w-96 text-xs sm:text-base xl:text-2xl 2xl:text-3xl text-justify leading-5">
+    <p className="flex flex-col gap-1 md:w-60 xl:w-72 2xl:w-96 text-sm sm:text-base xl:text-2xl">
+      <span className="font-mono text-xs sm:text-sm text-on-accent-secondary">{label}</span>
       {text}
-    </span>
+    </p>
   );
 }
 

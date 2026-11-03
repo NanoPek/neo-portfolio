@@ -89,7 +89,7 @@ function MySkills() {
         </div>
         {isEmpty && (
           <h1 className="flex flex-col items-center justify-center p-6 text-4xl text-fg font-bold">
-            {t('MySkills.noSkills')}
+            {t('MySkills.noSkills', { query: search })}
           </h1>
         )}
       </div>

@@ -9,18 +9,9 @@ function HomeIntroduction() {
       <h1 className="text-4xl font-bold sm:text-6xl xl:text-7xl">
         {t('HomePage.title')}
       </h1>
-      <h2 className="text-xl pt-3 sm:pt-9 sm:text-2xl lg:text-justify xl:text-5xl text-on-accent">
-        {t('HomePage.hi')}
-        {' '}
-        <span className="font-bold">
-          {t('HomePage.name')}
-        </span>
-        {' '}
-        👋
-      </h2>
-      <h3 className="text-md pt-3 sm:py-9 sm:text-xl lg:text-justify xl:text-3xl 2xl:pr-56 text-on-accent-secondary">
-        {t('HomePage.description')}
-      </h3>
+      <p className="text-md pt-3 sm:py-9 sm:text-xl xl:text-3xl 2xl:pr-56 text-on-accent-secondary">
+        {t('HomePage.intro')}
+      </p>
     </div>
   );
 }

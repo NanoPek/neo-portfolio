@@ -9,8 +9,8 @@ function HomeQuoteSection() {
     <div
       className="flex flex-row w-full gap-4 justify-between md:justify-around"
     >
-      <Quote text={t('HomePage.quotes.1')} />
-      <Quote text={t('HomePage.quotes.2')} />
+      <Quote label={t('HomePage.facts.nowLabel')} text={t('HomePage.facts.now')} />
+      <Quote label={t('HomePage.facts.beforeLabel')} text={t('HomePage.facts.before')} />
     </div>
   );
 }

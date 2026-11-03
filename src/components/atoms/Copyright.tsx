@@ -10,9 +10,9 @@ function Copyright() {
   return (
     <div className="text-on-ink-muted text-lg">
       {t('Footer.copyright', { year: CURRENT_YEAR })}
-      {' '}
+      {' · '}
       <a href={LINKS.GITHUB_PORTFOLIO} className="underline">
-        {LINKS.GITHUB_PORTFOLIO}
+        {t('Footer.source')}
       </a>
     </div>
   );

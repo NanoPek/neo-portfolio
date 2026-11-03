@@ -101,7 +101,7 @@ const workBoxes = [
     extension: 'tsx',
     link: 'https://jecarrez.vercel.app/',
     github: 'https://github.com/NanoPek/neo-portfolio',
-    startDate: new Date(2022, 12, 10),
+    startDate: new Date(2022, 11, 10),
   },
   {
     image: hi7hautImage,
