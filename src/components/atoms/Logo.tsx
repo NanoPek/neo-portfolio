@@ -3,20 +3,11 @@ import { useLocation } from 'react-router-dom';
 
 function Logo() {
   const location = useLocation();
+  const className = 'text-xl font-semibold tracking-tight text-fg';
 
-  return (
-    <div>
-      { location.pathname !== '/' ? (
-        <a href="/" className="flex flex-row font-extrabold text-3xl 2xl:text-5xl">
-          jecarrez
-        </a>
-      ) : (
-        <div className="font-extrabold text-3xl 2xl:text-5xl cursor-default">
-          jecarrez
-        </div>
-      )}
-    </div>
-  );
+  return location.pathname !== '/'
+    ? <a href="/" className={`${className} transition-colors hover:text-accent`}>jecarrez</a>
+    : <span className={className}>jecarrez</span>;
 }
 
 export default React.memo(Logo);

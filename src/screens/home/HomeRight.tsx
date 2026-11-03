@@ -3,9 +3,9 @@ import ProfilePicture from '../../components/atoms/ProfilePicture';
 
 function HomeRight() {
   return (
-    <div className="sm:w-1/3 h-[40vh] sm:h-auto flex justify-center items-center sm:pt-[10vh] bg-paper">
+    <section className="flex items-center justify-center bg-paper px-6 py-16 sm:w-2/5 lg:w-1/3">
       <ProfilePicture />
-    </div>
+    </section>
   );
 }
 

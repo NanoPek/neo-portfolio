@@ -1,19 +1,13 @@
 import React from 'react';
-import useWindowDimensions from '../../components/hooks/useWindowDimensions';
 import BigScreenRoutes from '../../components/molecules/BigScreenRoutes';
 import HomeIntroduction from './HomeIntroduction';
-import HomeQuoteSection from './HomeQuoteSection';
-import Width from '../../components/styles/width';
 
 function HomeLeft() {
-  const { width } = useWindowDimensions();
-
   return (
-    <div className="w-full sm:w-2/3 min-h-[60vh] sm:h-auto bg-accent flex flex-col gap-8 justify-around text-on-accent p-8 sm:p-12 pt-[10vh] 2xl:p-32">
+    <section className="flex flex-col justify-center gap-10 bg-accent px-6 py-16 text-on-accent sm:w-3/5 sm:px-12 lg:w-2/3 lg:px-16 xl:px-24">
       <HomeIntroduction />
-      <HomeQuoteSection />
-      { width >= Width.sm && <BigScreenRoutes /> }
-    </div>
+      <BigScreenRoutes />
+    </section>
   );
 }
 

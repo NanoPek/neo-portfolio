@@ -1,7 +1,7 @@
 import React from 'react';
 import { SkillDetail } from '../../../constants/skillData';
-import WorkBoxHeader from './WorkBoxHeader';
-import WorkBoxImage from './WorkBoxImage';
+import Window from '../Window';
+import useWorkFileName from './useWorkFileName';
 import WorkBoxDescription from './WorkBoxDescription';
 
 type WorkBoxProps = {
@@ -23,21 +23,29 @@ function WorkBox({
   image, title, link, location, startDate, endDate, description,
   techs, extension, figma, github, appStore,
 } : WorkBoxProps) {
+  const fileName = useWorkFileName(startDate, endDate, extension);
+
   return (
-    <div className="w-full max-w-[400px] h-full flex flex-col bg-surface border-3 border-ink shadow-block">
-      <WorkBoxHeader startDate={startDate} endDate={endDate} extension={extension} />
-      <WorkBoxImage image={image} title={title} />
-      <WorkBoxDescription
-        title={title}
-        description={description}
-        location={location}
-        techs={techs}
-        link={link}
-        figma={figma}
-        github={github}
-        appStore={appStore}
-      />
-    </div>
+    <article className="h-full min-w-0">
+      <Window title={fileName} className="h-full">
+        <img
+          src={image}
+          alt=""
+          loading="lazy"
+          className="aspect-[16/10] w-full border-b-3 border-ink bg-ink object-contain"
+        />
+        <WorkBoxDescription
+          title={title}
+          description={description}
+          location={location}
+          techs={techs}
+          link={link}
+          figma={figma}
+          github={github}
+          appStore={appStore}
+        />
+      </Window>
+    </article>
   );
 }
 

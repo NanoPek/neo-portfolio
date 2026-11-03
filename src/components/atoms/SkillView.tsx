@@ -1,35 +1,22 @@
 import React from 'react';
-import type { LucideIcon } from 'lucide-react';
+import { SkillDetail } from '../../constants/skillData';
+import SkillIcon from './SkillIcon';
 
 type SkillProps = {
-  name: string;
-  icon: string | LucideIcon;
-  isSmall?: boolean;
+  skill: SkillDetail;
   sticker?: string;
 };
 
-function SkillView({
-  name, icon, isSmall, sticker,
-}: SkillProps) {
+function SkillView({ skill, sticker }: SkillProps) {
   return (
-    <div
-      className={`relative flex flex-col justify-center items-center w-full bg-surface ${isSmall ? 'h-[10vh]' : 'h-[15vh]'}`}
-    >
+    <div className="relative flex h-32 flex-col items-center justify-center gap-3 rounded-lg pt-4 sm:h-36 border-3 border-ink bg-surface px-3 sm:h-32">
       {sticker && (
-        <span className="absolute top-1 right-1 sm:top-2 sm:right-2 rotate-6 rounded-full border-2 border-ink bg-paper px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-bold text-fg shadow-[3px_3px_0_0_rgba(25,11,40,0.8)]">
+        <span className="absolute right-2 top-2 rounded bg-raised px-1.5 py-0.5 font-mono text-xs text-fg-muted">
           {sticker}
         </span>
       )}
-      {typeof icon === 'string'
-        ? <i className={`${icon} ${isSmall ? 'text-[30px]' : 'text-[60px]'}`} aria-hidden />
-        : React.createElement(icon, { size: isSmall ? 30 : 60, strokeWidth: 1.5, 'aria-hidden': true })}
-      {
-        !isSmall && (
-          <div className="text-center text-fg text-xl">
-            {name}
-          </div>
-        )
-      }
+      <SkillIcon icon={skill.icon} size={40} />
+      <span className="text-center text-[15px] text-fg-secondary">{skill.name}</span>
     </div>
   );
 }

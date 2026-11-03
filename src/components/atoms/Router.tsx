@@ -4,33 +4,29 @@ import { useLocation } from 'react-router-dom';
 type RouterProps = {
   title: string;
   route: string;
-  newTab?: boolean;
+  className: string;
+  activeClassName: string;
 };
 
 function Router({
-  title, route, newTab,
+  title, route, className, activeClassName,
 }: RouterProps) {
   const location = useLocation();
-
-  const isActiveRoute = location.pathname === route;
+  const isActive = location.pathname === route;
+  const isExternal = /^(https?:|mailto:)/.test(route);
 
   return (
-    <div className="text-xl transition-all">
-      {isActiveRoute ? (
-        <span className="font-bold underline decoration-2 underline-offset-4">
-          {title}
-        </span>
-      ) : (
-        <a
-          href={route}
-          className="border-b-2 border-transparent hover:border-current"
-          target={newTab ? '_blank' : ''}
-          rel="noopener noreferrer"
-        >
-          {title}
-        </a>
-      )}
-    </div>
+    <li>
+      <a
+        href={route}
+        aria-current={isActive ? 'page' : undefined}
+        className={`transition-colors ${isActive ? activeClassName : className}`}
+        target={isExternal && !route.startsWith('mailto:') ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+      >
+        {title}
+      </a>
+    </li>
   );
 }
 

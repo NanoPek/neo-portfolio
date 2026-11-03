@@ -6,12 +6,12 @@ import HomeRight from './HomeRight';
 
 function HomePage() {
   return (
-    <div className="w-full h-full flex flex-col">
-      <div className="w-screen min-h-screen flex flex-col sm:flex-row">
-        <Header onAccent />
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex min-h-[calc(100svh-4rem)] flex-col sm:flex-row">
         <HomeLeft />
         <HomeRight />
-      </div>
+      </main>
       <Footer />
     </div>
   );
