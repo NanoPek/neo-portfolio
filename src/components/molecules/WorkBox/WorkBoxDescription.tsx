@@ -37,7 +37,7 @@ function WorkBoxDescription({
             name={tech.name}
             icon={tech.icon}
             color={tech.color}
-            key={tech.icon}
+            key={tech.name}
             isSmall
           />
         ))}

@@ -15,9 +15,9 @@ type HeaderType = {
 function RoutersSection({ header, routers }: { header: HeaderType; routers: RouterType[] }) {
   return (
     <div className="flex flex-col gap-2">
-      <text className={`text-[${header.color}] text-2xl font-medium`} style={{ color: header.color }}>
+      <span className="text-2xl font-medium" style={{ color: header.color }}>
         {header.text}
-      </text>
+      </span>
       {routers.map((router) => (
         <Router
           key={router.route}

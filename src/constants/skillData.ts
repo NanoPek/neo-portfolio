@@ -56,10 +56,10 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
     name: Skill.CSS, category: SkillCategory.webTools, icon: 'devicon-css3-plain colored', color: '#67a1d0',
   },
   [Skill.JavaScript]: {
-    name: Skill.JavaScript, category: SkillCategory.webTools, icon: 'devicon-javascript-plain colored', color: '#007acc',
+    name: Skill.JavaScript, category: SkillCategory.webTools, icon: 'devicon-javascript-plain colored', color: '#f0db4f',
   },
   [Skill.TypeScript]: {
-    name: Skill.TypeScript, category: SkillCategory.webTools, icon: 'devicon-typescript-plain colored', color: '#f0db4f',
+    name: Skill.TypeScript, category: SkillCategory.webTools, icon: 'devicon-typescript-plain colored', color: '#007acc',
   },
   [Skill.NodeJS]: {
     name: Skill.NodeJS, category: SkillCategory.webTools, icon: 'devicon-nodejs-plain colored', color: '#bcdc77',
@@ -77,7 +77,7 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
     name: Skill.SASS_SCSS, category: SkillCategory.webTools, icon: 'devicon-sass-original colored', color: '#d680a9',
   },
   [Skill.TailwindCSS]: {
-    name: Skill.TailwindCSS, category: SkillCategory.webTools, icon: 'devicon-tailwindcss-original-wordmark colored', color: '#85bcd1',
+    name: Skill.TailwindCSS, category: SkillCategory.webTools, icon: 'devicon-tailwindcss-original colored', color: '#85bcd1',
   },
 
   // Mobile Skills
@@ -114,7 +114,7 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
     name: Skill.Bash, category: SkillCategory.otherTools, icon: 'devicon-bash-plain colored', color: '#696f74',
   },
   [Skill.ESLint]: {
-    name: Skill.ESLint, category: SkillCategory.otherTools, icon: 'devicon-eslint-original colored', color: '#7253ce',
+    name: Skill.ESLint, category: SkillCategory.otherTools, icon: 'devicon-eslint-plain colored', color: '#7253ce',
   },
   [Skill.Git]: {
     name: Skill.Git, category: SkillCategory.otherTools, icon: 'devicon-git-plain colored', color: '#ff8f6e',
@@ -123,7 +123,7 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
     name: Skill.Github, category: SkillCategory.otherTools, icon: 'devicon-github-original colored', color: '#696f74',
   },
   [Skill.GithubActions]: {
-    name: Skill.GithubActions, category: SkillCategory.otherTools, icon: 'devicon-github-original colored', color: '#696f74',
+    name: Skill.GithubActions, category: SkillCategory.otherTools, icon: 'devicon-githubactions-plain colored', color: '#696f74',
   },
   [Skill.Retool]: {
     name: Skill.Retool, category: SkillCategory.otherTools, icon: 'devicon-codepen-plain text-[#6875d9]', color: '#8690E0',
