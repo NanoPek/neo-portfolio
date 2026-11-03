@@ -1,7 +1,6 @@
 enum SkillCategory {
   mobileTools = 'Mobile Tools',
   webTools = 'Web Tools',
-  backendTools = 'Backend Tools',
   otherTools = 'Other Tools',
 }
 
@@ -10,7 +9,8 @@ import { LayoutDashboard } from 'lucide-react';
 
 interface SkillDetail {
   name: Skill;
-  category: SkillCategory;
+  /** Section on the Skills page; skills without one only show as tech chips on work cards */
+  category?: SkillCategory;
   /** devicon class, or a lucide icon for tools devicon does not cover */
   icon: string | LucideIcon;
 }
@@ -33,21 +33,14 @@ enum Skill {
   Firebase = 'Firebase',
   Apple = 'Apple',
   Android = 'Android',
-  JetBrains = 'JetBrains',
-  VSCode = 'VSCode',
   Bash = 'Bash',
-  ESLint = 'ESLint',
   Git = 'Git',
   Github = 'Github',
   GithubActions = 'Github Actions',
   Retool = 'Retool',
   Figma = 'Figma',
-  Java = 'Java',
   Python = 'Python',
-  C = 'C',
-  CPlusPlus = 'C++',
   OCaml = 'OCaml',
-  Linux = 'Linux',
 }
 
 const SkillsDetails: Record<Skill, SkillDetail> = {
@@ -93,9 +86,6 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
   [Skill.Xcode]: {
     name: Skill.Xcode, category: SkillCategory.mobileTools, icon: 'devicon-xcode-plain colored',
   },
-  [Skill.ReactNative]: {
-    name: Skill.ReactNative, category: SkillCategory.mobileTools, icon: 'devicon-react-original colored',
-  },
   [Skill.Firebase]: {
     name: Skill.Firebase, category: SkillCategory.mobileTools, icon: 'devicon-firebase-plain colored',
   },
@@ -105,19 +95,13 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
   [Skill.Android]: {
     name: Skill.Android, category: SkillCategory.mobileTools, icon: 'devicon-android-plain colored',
   },
+  [Skill.ReactNative]: {
+    name: Skill.ReactNative, category: SkillCategory.mobileTools, icon: 'devicon-react-original colored',
+  },
 
   // Other Tools
-  [Skill.JetBrains]: {
-    name: Skill.JetBrains, category: SkillCategory.otherTools, icon: 'devicon-jetbrains-plain colored',
-  },
-  [Skill.VSCode]: {
-    name: Skill.VSCode, category: SkillCategory.otherTools, icon: 'devicon-vscode-plain colored',
-  },
   [Skill.Bash]: {
     name: Skill.Bash, category: SkillCategory.otherTools, icon: 'devicon-bash-plain colored',
-  },
-  [Skill.ESLint]: {
-    name: Skill.ESLint, category: SkillCategory.otherTools, icon: 'devicon-eslint-plain colored',
   },
   [Skill.Git]: {
     name: Skill.Git, category: SkillCategory.otherTools, icon: 'devicon-git-plain colored',
@@ -128,31 +112,19 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
   [Skill.GithubActions]: {
     name: Skill.GithubActions, category: SkillCategory.otherTools, icon: 'devicon-githubactions-plain colored',
   },
-  [Skill.Retool]: {
-    name: Skill.Retool, category: SkillCategory.otherTools, icon: LayoutDashboard,
-  },
   [Skill.Figma]: {
     name: Skill.Figma, category: SkillCategory.otherTools, icon: 'devicon-figma-plain colored',
   },
+  [Skill.OCaml]: {
+    name: Skill.OCaml, category: SkillCategory.otherTools, icon: 'devicon-ocaml-plain colored',
+  },
 
-  // Backend Tools
-  [Skill.Java]: {
-    name: Skill.Java, category: SkillCategory.backendTools, icon: 'devicon-java-plain colored',
+  // Only used as tech chips on work cards
+  [Skill.Retool]: {
+    name: Skill.Retool, icon: LayoutDashboard,
   },
   [Skill.Python]: {
-    name: Skill.Python, category: SkillCategory.backendTools, icon: 'devicon-python-plain colored',
-  },
-  [Skill.C]: {
-    name: Skill.C, category: SkillCategory.backendTools, icon: 'devicon-c-plain colored',
-  },
-  [Skill.CPlusPlus]: {
-    name: Skill.CPlusPlus, category: SkillCategory.backendTools, icon: 'devicon-cplusplus-plain colored',
-  },
-  [Skill.OCaml]: {
-    name: Skill.OCaml, category: SkillCategory.backendTools, icon: 'devicon-ocaml-plain colored',
-  },
-  [Skill.Linux]: {
-    name: Skill.Linux, category: SkillCategory.backendTools, icon: 'devicon-linux-plain colored',
+    name: Skill.Python, icon: 'devicon-python-plain colored',
   },
 };
 

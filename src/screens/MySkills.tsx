@@ -10,7 +10,6 @@ import { SkillCategory, SkillsDetails } from '../constants/skillData';
 const CATEGORIES = [
   { category: SkillCategory.mobileTools, titleKey: 'MySkills.categories.mobileTools' },
   { category: SkillCategory.webTools, titleKey: 'MySkills.categories.webTools' },
-  { category: SkillCategory.backendTools, titleKey: 'MySkills.categories.backendTools' },
   { category: SkillCategory.otherTools, titleKey: 'MySkills.categories.otherTools' },
 ];
 

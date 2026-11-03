@@ -46,7 +46,6 @@ const resources = {
         categories: {
           mobileTools: 'Mobile tools',
           webTools: 'Web tools',
-          backendTools: 'Backend tools',
           otherTools: 'Other tools',
         },
       },
@@ -194,7 +193,6 @@ const resources = {
         categories: {
           mobileTools: 'Outils mobiles',
           webTools: 'Outils web',
-          backendTools: 'Outils backend',
           otherTools: 'Autres outils',
         },
       },
@@ -342,7 +340,6 @@ const resources = {
         categories: {
           mobileTools: '모바일 도구',
           webTools: '웹 도구',
-          backendTools: '백엔드 도구',
           otherTools: '기타 도구',
         },
       },
