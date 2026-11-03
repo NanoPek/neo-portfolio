@@ -5,7 +5,7 @@ import { paletteColors } from '../../styles/colors';
 import pdf from '../../../assets/resumeCARREZJeremie.pdf';
 import LINKS from '../../../constants/links';
 import Icons from '../../molecules/Icons';
-import { ReactComponent as FaceOpen } from '../../../assets/FaceOpen.svg';
+import FaceOpen from '../../../assets/FaceOpen.svg?react';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import RoutersSection from '../../molecules/RoutersSection';
 import Logo from '../../atoms/Logo';
