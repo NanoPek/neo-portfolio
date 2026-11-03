@@ -84,6 +84,9 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
   },
 
   // Mobile Skills
+  [Skill.KMP]: {
+    name: Skill.KMP, category: SkillCategory.mobileTools, icon: 'devicon-kotlin-plain colored',
+  },
   [Skill.Swift]: {
     name: Skill.Swift, category: SkillCategory.mobileTools, icon: 'devicon-swift-plain colored',
   },
@@ -101,9 +104,6 @@ const SkillsDetails: Record<Skill, SkillDetail> = {
   },
   [Skill.Android]: {
     name: Skill.Android, category: SkillCategory.mobileTools, icon: 'devicon-android-plain colored',
-  },
-  [Skill.KMP]: {
-    name: Skill.KMP, category: SkillCategory.mobileTools, icon: 'devicon-kotlin-plain colored',
   },
 
   // Other Tools
