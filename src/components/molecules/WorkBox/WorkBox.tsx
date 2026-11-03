@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { SkillDetail } from '../../../constants/skillData';
-import { paletteColors } from '../../styles/colors';
-import Width from '../../styles/width';
-import WorkBoxHeader from './WorkBoxHeader';
-import WorkBoxImage from './WorkBoxImage';
+import Window from '../Window';
+import useWorkFileName from './useWorkFileName';
 import WorkBoxDescription from './WorkBoxDescription';
-
-const deviceWidth = window.innerWidth;
 
 type WorkBoxProps = {
   image: string;
@@ -16,7 +12,6 @@ type WorkBoxProps = {
   extension: string;
   link?: string;
   location?: string;
-  color?: string;
   startDate: Date;
   endDate?: Date;
   figma?: string;
@@ -26,70 +21,31 @@ type WorkBoxProps = {
 
 function WorkBox({
   image, title, link, location, startDate, endDate, description,
-  techs, extension, figma, github, color, appStore,
+  techs, extension, figma, github, appStore,
 } : WorkBoxProps) {
-  useEffect(() => {
-    const divElm = document.getElementById(`workbox-div-${title}`);
-    const imageElm = document.getElementById(`workbox-image-${title}`);
-    const greyElm = document.getElementById(`workbox-grey-${title}`);
-    const buttonElm = document.getElementById(`workbox-button-${title}`);
-    const highlightColor = color || paletteColors.purple;
-
-    if (divElm) {
-      if (imageElm) {
-        if (deviceWidth > Width.md) {
-          const onMouseOver = () => {
-            if (imageElm) {
-              imageElm.style.transform = 'scale(1.1)';
-              imageElm.style.transition = 'transform 0.5s cubic-bezier(0.04, 0.3, 0.1, 1)';
-              imageElm.style.filter = 'grayscale(0%)';
-            }
-            if (greyElm) {
-              greyElm.style.backgroundColor = highlightColor;
-            }
-            if (buttonElm) {
-              buttonElm.style.backgroundColor = highlightColor;
-            }
-            divElm.style.boxShadow = '16px 16px 1px 0 rgba(67,49,86,0.8)';
-          };
-          divElm.addEventListener('mouseover', onMouseOver);
-          return () => divElm.removeEventListener('mouseover', onMouseOver);
-        } else {
-          if (imageElm) {
-            imageElm.style.transform = 'scale(1.1)';
-            imageElm.style.transition = 'transform 0.5s cubic-bezier(0.04, 0.3, 0.1, 1)';
-            imageElm.style.filter = 'grayscale(0%)';
-          }
-          if (greyElm) {
-            greyElm.style.backgroundColor = highlightColor;
-          }
-          if (buttonElm) {
-            buttonElm.style.backgroundColor = highlightColor;
-          }
-        }
-      }
-    }
-    return undefined;
-  }, []);
+  const fileName = useWorkFileName(startDate, endDate, extension);
 
   return (
-    <div
-      className="w-full max-w-[400px] h-full flex flex-col bg-white border-[3px] border-dark shadow-[16px_16px_1px_0_rgba(25,11,40,0.8)]"
-      id={`workbox-div-${title}`}
-    >
-      <WorkBoxHeader title={title} startDate={startDate} endDate={endDate} extension={extension} />
-      <WorkBoxImage image={image} title={title} />
-      <WorkBoxDescription
-        title={title}
-        description={description}
-        location={location}
-        techs={techs}
-        link={link}
-        figma={figma}
-        github={github}
-        appStore={appStore}
-      />
-    </div>
+    <article className="h-full min-w-0">
+      <Window title={fileName} className="h-full">
+        <img
+          src={image}
+          alt=""
+          loading="lazy"
+          className="aspect-[16/10] w-full border-b-3 border-ink bg-ink object-contain"
+        />
+        <WorkBoxDescription
+          title={title}
+          description={description}
+          location={location}
+          techs={techs}
+          link={link}
+          figma={figma}
+          github={github}
+          appStore={appStore}
+        />
+      </Window>
+    </article>
   );
 }
 

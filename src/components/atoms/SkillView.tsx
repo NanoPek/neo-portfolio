@@ -1,34 +1,22 @@
 import React from 'react';
+import { SkillDetail } from '../../constants/skillData';
+import SkillIcon from './SkillIcon';
 
 type SkillProps = {
-  name: string;
-  icon: string;
-  color: string;
-  isSmall?: boolean;
+  skill: SkillDetail;
   sticker?: string;
 };
 
-function SkillView({
-  name, icon, color, isSmall, sticker,
-}: SkillProps) {
+function SkillView({ skill, sticker }: SkillProps) {
   return (
-    <div
-      className={`relative flex flex-col justify-center items-center w-full ${isSmall ? 'h-[10vh]' : 'h-[15vh]'}`}
-      style={{ backgroundColor: color }}
-    >
+    <div className="relative flex h-32 flex-col items-center justify-center gap-3 rounded-lg pt-4 sm:h-36 border-3 border-ink bg-surface px-3 sm:h-32">
       {sticker && (
-        <span className="absolute top-1 right-1 sm:top-2 sm:right-2 rotate-6 rounded-full border-2 border-dark bg-light px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-bold text-dark shadow-[3px_3px_0_0_rgba(25,11,40,0.8)]">
+        <span className="absolute right-2 top-2 rounded bg-raised px-1.5 py-0.5 font-mono text-xs text-fg-muted">
           {sticker}
         </span>
       )}
-      <i className={`${icon} ${isSmall ? 'text-[30px]' : 'text-[60px]'}`} />
-      {
-        !isSmall && (
-          <div className="text-center text-white text-xl ">
-            {name}
-          </div>
-        )
-      }
+      <SkillIcon icon={skill.icon} size={40} />
+      <span className="text-center text-[15px] text-fg-secondary">{skill.name}</span>
     </div>
   );
 }

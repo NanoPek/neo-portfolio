@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import MacOSButtons from '../atoms/MacOSButtons';
+import Window from '../molecules/Window';
 
 const LINE_KEYS = ['prompt', 'working', 'bug', 'push'] as const;
 const LINE_DELAY_MS = 900;
 
 const prefersReducedMotion = () => typeof window !== 'undefined'
   && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+const lineClass: Record<typeof LINE_KEYS[number], string> = {
+  prompt: 'text-on-ink',
+  working: 'text-on-ink-secondary',
+  bug: 'text-on-ink-secondary',
+  push: 'text-on-ink',
+};
 
 type PromptTerminalProps = {
   aiMode: boolean;
@@ -16,55 +23,51 @@ type PromptTerminalProps = {
 function PromptTerminal({ aiMode, onToggle }: PromptTerminalProps) {
   const { t } = useTranslation();
   const [visibleLines, setVisibleLines] = useState(() => (prefersReducedMotion() ? LINE_KEYS.length : 0));
+  const isTyping = visibleLines < LINE_KEYS.length;
 
   useEffect(() => {
-    if (visibleLines >= LINE_KEYS.length) return undefined;
+    if (!isTyping) return undefined;
     const timeout = setTimeout(() => setVisibleLines((count) => count + 1), LINE_DELAY_MS);
     return () => clearTimeout(timeout);
-  }, [visibleLines]);
-
-  const lineClass: Record<typeof LINE_KEYS[number], string> = {
-    prompt: 'text-secondary',
-    working: 'text-purple',
-    bug: 'text-purple',
-    push: 'text-secondary',
-  };
+  }, [isTyping, visibleLines]);
 
   return (
-    <div className="w-10/12 max-w-3xl mb-16 bg-white border-dark border-[3px] shadow-[16px_16px_1px_0_rgba(25,11,40,0.8)]">
-      <div className="h-12 flex flex-row items-center gap-4 px-4 bg-grey border-dark border-b-[3px]">
-        <MacOSButtons />
-        <span className="font-bold text-dark">how-i-code-in-2026.sh</span>
-      </div>
-      <div className="min-h-[11rem] p-4 bg-dark font-mono text-sm sm:text-base text-light" aria-live="polite">
+    <Window title="how-i-code-in-2026.sh" className="w-full max-w-3xl">
+      <div className="min-h-44 bg-ink p-5 font-mono text-sm leading-7 sm:text-[15px]" aria-live="polite">
         {LINE_KEYS.slice(0, visibleLines).map((key) => (
           <p key={key} className={lineClass[key]}>
-            {(key === 'prompt' || key === 'push') && <span className="text-accent">$ </span>}
+            {(key === 'prompt' || key === 'push') && <span className="text-accent-on-ink">$ </span>}
             {t(`MySkills.ai.lines.${key}`)}
           </p>
         ))}
-        <span className="inline-block w-2.5 h-5 align-middle bg-light animate-pulse" />
+        {isTyping && <span className="inline-block h-4 w-2 bg-on-ink align-middle" aria-hidden />}
       </div>
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-4">
-        <span className="text-dark font-bold">{t('MySkills.ai.toggleLabel')}</span>
-        <div className="flex flex-row border-dark border-[3px] rounded-full overflow-hidden" role="group" aria-label={t('MySkills.ai.toggleLabel')}>
+      <div className="flex flex-col gap-4 border-t-3 border-ink p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-1">
+          <span className="font-medium text-fg">{t('MySkills.ai.toggleLabel')}</span>
+          <p className="text-sm text-fg-secondary">
+            {t(aiMode ? 'MySkills.ai.captionNow' : 'MySkills.ai.captionPast')}
+          </p>
+        </div>
+        <div
+          className="inline-flex shrink-0 self-start rounded-lg border-3 border-ink bg-surface p-1 sm:self-auto"
+          role="group"
+          aria-label={t('MySkills.ai.toggleLabel')}
+        >
           {[false, true].map((mode) => (
             <button
               key={String(mode)}
               type="button"
               aria-pressed={aiMode === mode}
               onClick={() => onToggle(mode)}
-              className={`px-3 sm:px-4 py-1 text-sm sm:text-base whitespace-nowrap font-bold transition-colors ${aiMode === mode ? 'bg-dark text-secondary' : 'bg-white text-dark hover:bg-light'}`}
+              className={`h-9 whitespace-nowrap rounded px-3 text-sm font-medium transition-colors sm:text-[15px] ${aiMode === mode ? 'bg-ink text-on-ink' : 'text-fg-secondary hover:bg-raised hover:text-fg'}`}
             >
               {t(mode ? 'MySkills.ai.now' : 'MySkills.ai.past')}
             </button>
           ))}
         </div>
       </div>
-      <p className="px-4 pb-4 text-dark text-sm">
-        {t(aiMode ? 'MySkills.ai.captionNow' : 'MySkills.ai.captionPast')}
-      </p>
-    </div>
+    </Window>
   );
 }
 

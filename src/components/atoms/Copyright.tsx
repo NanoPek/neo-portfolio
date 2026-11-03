@@ -8,13 +8,13 @@ function Copyright() {
   const { t } = useTranslation();
 
   return (
-    <div className="text-accent text-lg">
+    <p className="border-t border-on-ink/15 pt-6 text-sm text-on-ink-muted">
       {t('Footer.copyright', { year: CURRENT_YEAR })}
-      {' '}
-      <a href={LINKS.GITHUB_PORTFOLIO} className="underline">
-        {LINKS.GITHUB_PORTFOLIO}
+      {' · '}
+      <a href={LINKS.GITHUB_PORTFOLIO} className="underline underline-offset-4 transition-colors hover:text-on-ink">
+        {t('Footer.source')}
       </a>
-    </div>
+    </p>
   );
 }
 

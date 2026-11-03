@@ -1,73 +1,51 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Icons from '../molecules/Icons';
 import RoutersSection from '../molecules/RoutersSection';
 import LINKS from '../../constants/links';
-import { paletteColors, skillsColors } from '../styles/colors';
 import Copyright from '../atoms/Copyright';
-import Divider from '../atoms/Divider';
 
-type FooterProps = {
-  random?: boolean;
+const linkClasses = {
+  labelClassName: 'text-on-ink-muted',
+  listClassName: 'gap-2',
+  linkClassName: 'text-on-ink-secondary hover:text-on-ink',
+  activeClassName: 'text-on-ink',
 };
 
-function Footer({ random }: FooterProps) {
+function Footer() {
   const { t } = useTranslation();
 
-  const [colors, setColors] = React.useState([paletteColors.accent, paletteColors.secondary,
-    paletteColors.secondary, paletteColors.secondary, paletteColors.secondary, paletteColors.accent,
-    paletteColors.secondary, paletteColors.secondary, paletteColors.accent, paletteColors.accent,
-    paletteColors.accent, paletteColors.accent]);
-
-  function setAllRandomColors() {
-    const localColors = [];
-    for (let i = 0; i < colors.length; i += 1) {
-      const randomNumber = Math.floor(Math.random() * skillsColors.length);
-      localColors.push(skillsColors[randomNumber]);
-    }
-    setColors(localColors);
-  }
-
-  useEffect(() => {
-    if (!random) return undefined;
-    setAllRandomColors();
-    const interval = setInterval(setAllRandomColors, 4000);
-    return () => clearInterval(interval);
-  }, [random]);
-
-  const colorSections = [
-    {
-      text: t('Router.navigation'),
-      routers: [
-        { title: t('Router.home'), route: '/', color: colors[1] },
-        { title: t('Router.myWork'), route: '/my-work', color: colors[2] },
-        { title: t('Router.skillsAndTools'), route: '/my-skills-&-tools', color: colors[3] },
-        { title: t('Router.myLinkedin'), route: LINKS.LINKEDIN, color: colors[4] },
-      ],
-    },
-    {
-      text: t('Router.contactMe'),
-      routers: [
-        { title: LINKS.LINKEDIN_SHORT, route: LINKS.LINKEDIN, color: colors[6] },
-        { title: LINKS.EMAIL, route: LINKS.MAIL_TO, color: colors[7] },
-      ],
-    },
-  ];
-
   return (
-    <div className="p-8 sm:px-16 md:px-32 flex flex-col w-screen gap-4 bg-dark">
-      {colorSections.map((section, index) => (
-        <RoutersSection
-          key={section.text}
-          header={{ text: section.text, color: colors[index * 5] }}
-          routers={section.routers}
-        />
-      ))}
-      <Icons colors={colors.slice(8, colors.length)} />
-      <Divider />
-      <Copyright />
-    </div>
+    <footer className="bg-ink text-on-ink">
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-16 sm:px-8">
+        <div className="grid gap-12 sm:grid-cols-[1fr_auto_auto] sm:gap-16">
+          <div className="flex flex-col gap-4">
+            <span className="text-xl font-semibold tracking-tight">jecarrez</span>
+            <Icons className="text-on-ink-secondary [&_a:hover]:text-on-ink" />
+          </div>
+          <RoutersSection
+            label={t('Router.navigation')}
+            {...linkClasses}
+            routers={[
+              { title: t('Router.home'), route: '/' },
+              { title: t('Router.myWork'), route: '/my-work' },
+              { title: t('Router.skillsAndTools'), route: '/my-skills-&-tools' },
+              { title: t('Router.myLinkedin'), route: LINKS.LINKEDIN },
+            ]}
+          />
+          <RoutersSection
+            label={t('Router.contactMe')}
+            {...linkClasses}
+            routers={[
+              { title: LINKS.LINKEDIN_SHORT, route: LINKS.LINKEDIN },
+              { title: LINKS.EMAIL, route: LINKS.MAIL_TO },
+            ]}
+          />
+        </div>
+        <Copyright />
+      </div>
+    </footer>
   );
 }
 

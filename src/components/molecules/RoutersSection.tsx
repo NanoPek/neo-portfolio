@@ -4,29 +4,35 @@ import Router from '../atoms/Router';
 type RouterType = {
   title: string;
   route: string;
-  color?: string;
 };
 
-type HeaderType = {
-  text: string;
-  color: string;
+type RoutersSectionProps = {
+  label: string;
+  routers: RouterType[];
+  labelClassName: string;
+  listClassName: string;
+  linkClassName: string;
+  activeClassName: string;
 };
 
-function RoutersSection({ header, routers }: { header: HeaderType; routers: RouterType[] }) {
+function RoutersSection({
+  label, routers, labelClassName, listClassName, linkClassName, activeClassName,
+}: RoutersSectionProps) {
   return (
-    <div className="flex flex-col gap-2">
-      <text className={`text-[${header.color}] text-2xl font-medium`} style={{ color: header.color }}>
-        {header.text}
-      </text>
-      {routers.map((router) => (
-        <Router
-          key={router.route}
-          title={router.title}
-          route={router.route}
-          color={router.color}
-        />
-      ))}
-    </div>
+    <nav aria-label={label} className="flex flex-col gap-3">
+      <h2 className={`text-sm font-medium ${labelClassName}`}>{label}</h2>
+      <ul className={`flex flex-col ${listClassName}`}>
+        {routers.map((router) => (
+          <Router
+            key={router.route + router.title}
+            title={router.title}
+            route={router.route}
+            className={linkClassName}
+            activeClassName={activeClassName}
+          />
+        ))}
+      </ul>
+    </nav>
   );
 }
 

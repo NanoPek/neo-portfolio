@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { ArrowUpRight } from 'lucide-react';
 import appStoreIcon from '../../../assets/appStoreIcon.svg';
-import IconButton from '../../atoms/IconButton';
+import Button from '../../atoms/Button';
 
 type WorkBoxButtonsProps = {
-  title: string;
   link?: string;
   figma?: string;
   github?: string;
@@ -12,48 +12,49 @@ type WorkBoxButtonsProps = {
 };
 
 function WorkBoxButtons({
-  title, link, figma, github, appStore,
+  link, figma, github, appStore,
 }: WorkBoxButtonsProps) {
   const { t } = useTranslation();
 
   return (
-    <ul className="h-12 flex flex-row items-center gap-3 list-none">
+    <ul className="flex flex-row flex-wrap items-center gap-3 list-none">
       {link && (
-        <li
-          className="h-full"
-        >
-          <IconButton
-            id={`workbox-button-${title}`}
-            href={link}
-            label={t('MyWork.viewProject')}
-            className="h-full w-32 bg-grey border-dark border-[3px] text-dark hover:bg-black hover:text-white"
-          />
+        <li>
+          <Button size="sm" href={link} newTab icon={ArrowUpRight}>
+            {t('MyWork.viewProject')}
+          </Button>
         </li>
       )}
       {figma && (
         <li>
-          <IconButton
+          <Button
+            size="sm"
             href={figma}
-            ariaLabel="Open Figma in a new tab"
-            icon={<i className="devicon-figma-plain text-3xl text-dark" />}
+            newTab
+            aria-label="Figma"
+            iconOnly={<i className="devicon-figma-plain text-xl" aria-hidden />}
           />
         </li>
       )}
       {github && (
         <li>
-          <IconButton
+          <Button
+            size="sm"
             href={github}
-            ariaLabel="Open Github in a new tab"
-            icon={<i className="devicon-github-plain text-3xl text-dark" />}
+            newTab
+            aria-label="GitHub"
+            iconOnly={<i className="devicon-github-plain text-xl" aria-hidden />}
           />
         </li>
       )}
       {appStore && appStore.map((appStoreLink) => (
         <li key={appStoreLink}>
-          <IconButton
+          <Button
+            size="sm"
             href={appStoreLink}
-            imageSrc={appStoreIcon}
-            imageAlt="AppStore Icon"
+            newTab
+            aria-label="App Store"
+            iconOnly={<img src={appStoreIcon} alt="" className="h-6 w-6" />}
           />
         </li>
       ))}

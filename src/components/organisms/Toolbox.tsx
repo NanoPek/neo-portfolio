@@ -2,28 +2,25 @@ import React from 'react';
 import { SkillDetail } from '../../constants/skillData';
 import SkillView from '../atoms/SkillView';
 
-function Toolbox(props: {
+type ToolboxProps = {
   title: string;
-  search: string;
   skills: SkillDetail[];
   sticker?: string;
-}) {
-  const {
-    title, search, skills, sticker,
-  } = props;
-  const filteredSkills = search.length > 0
-    ? skills.filter((skill) => skill.name.toLowerCase().includes(search.toLowerCase()))
-    : skills;
-  if (filteredSkills.length === 0) return null;
+};
+
+function Toolbox({ title, skills, sticker }: ToolboxProps) {
   return (
-    <div className="w-full flex flex-col">
-      <h2 className="text-4xl font-bold text-center text-dark p-6">{title}</h2>
-      <div className="grid grid-cols-2 w-screen place-items-stretch lg:grid-cols-3 xl:grid-cols-6">
-        {filteredSkills.map(({ name, icon, color }) => (
-          <SkillView name={name} icon={icon} color={color} key={icon} sticker={sticker} />
-        ))}
+    <section className="flex flex-col gap-4">
+      <div className="flex flex-row items-baseline gap-3">
+        <h2 className="text-2xl font-medium">{title}</h2>
+        <span className="font-mono text-sm text-fg-muted tabular-nums">{skills.length}</span>
       </div>
-    </div>
+      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        {skills.map((skill) => (
+          <li key={skill.name}><SkillView skill={skill} sticker={sticker} /></li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

@@ -1,27 +1,34 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const languages: Record<string, { nativeName: string }> = {
-  en: { nativeName: 'English' },
-  fr: { nativeName: 'Français' },
-  ko: { nativeName: '한국어' },
+const languages: Record<string, { nativeName: string; short: string }> = {
+  en: { nativeName: 'English', short: 'EN' },
+  fr: { nativeName: 'Français', short: 'FR' },
+  ko: { nativeName: '한국어', short: 'KO' },
 };
 
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
   return (
-    <div className="flex flex-row gap-x-1.5">
-      {Object.keys(languages).map((lng) => (
-        <button
-          key={lng}
-          className={i18n.resolvedLanguage === lng ? 'font-bold' : 'font-normal'}
-          type="button"
-          onClick={() => i18n.changeLanguage(lng)}
-        >
-          {languages[lng].nativeName}
-        </button>
-      ))}
+    <div className="flex flex-row items-center gap-3 text-sm">
+      {Object.keys(languages).map((lng) => {
+        const active = i18n.resolvedLanguage === lng;
+        return (
+          <button
+            key={lng}
+            type="button"
+            lang={lng}
+            aria-pressed={active}
+            aria-label={languages[lng].nativeName}
+            className={`transition-colors ${active ? 'font-medium text-fg' : 'text-fg-muted hover:text-fg'}`}
+            onClick={() => i18n.changeLanguage(lng)}
+          >
+            <span className="sm:hidden">{languages[lng].short}</span>
+            <span className="hidden sm:inline">{languages[lng].nativeName}</span>
+          </button>
+        );
+      })}
     </div>
   );
 }
